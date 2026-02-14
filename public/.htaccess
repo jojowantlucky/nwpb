@@ -1,3 +1,7 @@
+# Test if .htaccess is working
+RewriteEngine On
+RewriteRule ^test-htaccess$ - [R=410,L]
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /nwpb_updates/
