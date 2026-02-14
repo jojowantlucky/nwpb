@@ -966,7 +966,7 @@ export default function NoteworthyPhotoBooths() {
 						left: 0,
 						right: 0,
 						bottom: 0,
-						backgroundImage: 'url(/hero-mobile.jpg)',
+						backgroundImage: `url(${process.env.PUBLIC_URL}/hero-mobile.jpg)`,
 						backgroundSize: 'cover',
 						backgroundPosition: 'center',
 						zIndex: 0,
@@ -3074,7 +3074,7 @@ export default function NoteworthyPhotoBooths() {
 										justifyContent: 'center',
 									}}>
 									<img
-										src={`/badges/${badge.filename}`}
+										src={`${process.env.PUBLIC_URL}/badges/${badge.filename}`}
 										alt={`${badge.name} Badge`}
 										style={{
 											width: '100%',
