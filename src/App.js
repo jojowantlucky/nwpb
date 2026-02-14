@@ -951,7 +951,10 @@ export default function NoteworthyPhotoBooths() {
 						objectFit: 'cover',
 						zIndex: 0,
 					}}>
-					<source src='/NWPB_Home_Page_Video_v3.webm' type='video/webm' />
+					<source
+						src={process.env.PUBLIC_URL + '/NWPB_Home_Page_Video_v3.webm'}
+						type='video/webm'
+					/>
 				</video>
 
 				{/* Hero Mobile Background Image - Hidden by default, shown on mobile when you add image */}
@@ -2598,7 +2601,7 @@ export default function NoteworthyPhotoBooths() {
 				className='section-padding'
 				style={{
 					position: 'relative',
-					backgroundImage: 'url(/mount-hood.jpg)',
+					backgroundImage: `url(${process.env.PUBLIC_URL}/mount-hood.jpg)`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 					backgroundAttachment: 'fixed',
