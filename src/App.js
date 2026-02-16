@@ -1655,18 +1655,9 @@ export default function NoteworthyPhotoBooths() {
 											fontSize: '18px',
 											fontWeight: 600,
 											color: '#121212',
-											marginBottom: '8px',
 										}}>
 										{design.name}
 									</h3>
-									<p
-										className='body-font'
-										style={{
-											fontSize: '14px',
-											color: '#666666',
-										}}>
-										{design.imageCount} layout{design.imageCount !== 1 ? 's' : ''}
-									</p>
 								</div>
 							</div>
 						))}
