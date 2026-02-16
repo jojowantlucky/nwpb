@@ -24,6 +24,8 @@ export default function NoteworthyPhotoBooths() {
 	const [activeBoothModal, setActiveBoothModal] = useState(null);
 	const [photoBookModal, setPhotoBookModal] = useState(null);
 	const [boothGalleryModal, setBoothGalleryModal] = useState(null);
+	const [photoBookGallery, setPhotoBookGallery] = useState(null);
+	const [currentPhotoBookImage, setCurrentPhotoBookImage] = useState(0);
 	const [isPaused, setIsPaused] = useState(false);
 	const carouselRef = React.useRef(null);
 	const isScrolling = React.useRef(false);
@@ -260,6 +262,34 @@ export default function NoteworthyPhotoBooths() {
 		{ icon: Sparkles, title: 'Props Included', desc: 'Fun accessories provided' },
 		{ icon: Share2, title: 'Social Sharing', desc: 'Text or email instantly' },
 		{ icon: Star, title: 'Custom Print Design', desc: 'Your assets or our templates' },
+	];
+
+	const photoBookDesigns = [
+		{ id: 'bamboo-leaves', name: 'Bamboo Leaves', imageCount: 3 },
+		{ id: 'best-day', name: 'Best Day', imageCount: 2 },
+		{ id: 'box-modern', name: 'Box Modern', imageCount: 6 },
+		{ id: 'city-skyline', name: 'City Skyline', imageCount: 2 },
+		{ id: 'color-explosion', name: 'Color Explosion', imageCount: 6 },
+		{ id: 'diamond-geo', name: 'Diamond Geo', imageCount: 6 },
+		{ id: 'double-diamond', name: 'Double Diamond', imageCount: 6 },
+		{ id: 'eat-drink-and-be-married', name: 'Eat Drink And Be Married', imageCount: 6 },
+		{ id: 'endless-love', name: 'Endless Love', imageCount: 6 },
+		{ id: 'eucalyptus', name: 'Eucalyptus', imageCount: 6 },
+		{ id: 'feather-flowers', name: 'Feather Flowers', imageCount: 6 },
+		{ id: 'floral-swirls', name: 'Floral Swirls', imageCount: 2 },
+		{ id: 'geo-flowers', name: 'Geo Flowers', imageCount: 6 },
+		{ id: 'geo-sparks', name: 'Geo Sparks', imageCount: 6 },
+		{ id: 'hanging-sign', name: 'Hanging Sign', imageCount: 8 },
+		{ id: 'heart-duo', name: 'Heart Duo', imageCount: 6 },
+		{ id: 'keep-it-simple', name: 'Keep It Simple', imageCount: 6 },
+		{ id: 'lace-design', name: 'Lace Design', imageCount: 6 },
+		{ id: 'line-simple', name: 'Line Simple', imageCount: 6 },
+		{ id: 'mums', name: 'Mums', imageCount: 2 },
+		{ id: 'picture-frames', name: 'Picture Frames', imageCount: 6 },
+		{ id: 'polka-dots', name: 'Polka Dots', imageCount: 6 },
+		{ id: 'thistle-flower', name: 'Thistle Flower', imageCount: 6 },
+		{ id: 'vintage-lanterns', name: 'Vintage Lanterns', imageCount: 6 },
+		{ id: 'wildflower-stencil', name: 'Wildflower Stencil', imageCount: 6 },
 	];
 
 	return (
@@ -1524,12 +1554,7 @@ export default function NoteworthyPhotoBooths() {
 			</section>
 
 			{/* Photo Books Section */}
-			<section
-				className='section-padding'
-				style={{
-					background: '#FFFFFF',
-					position: 'relative',
-				}}>
+			<section className='section-padding' style={{ background: '#FAFAF8' }}>
 				<div style={{ maxWidth: '1400px', margin: '0 auto' }}>
 					<div style={{ textAlign: 'center', marginBottom: '64px' }}>
 						<p
@@ -1539,7 +1564,7 @@ export default function NoteworthyPhotoBooths() {
 								color: '#ff3a7c',
 								marginBottom: '12px',
 							}}>
-							Memories that last forever
+							Preserve your memories
 						</p>
 						<h2
 							className='display-font'
@@ -1549,7 +1574,7 @@ export default function NoteworthyPhotoBooths() {
 								color: '#121212',
 								marginBottom: '16px',
 							}}>
-							Photo Books
+							Photo Book Designs
 						</h2>
 						<p
 							className='body-font'
@@ -1559,295 +1584,287 @@ export default function NoteworthyPhotoBooths() {
 								maxWidth: '700px',
 								margin: '0 auto',
 							}}>
-							Preserve your event memories in a beautiful, professionally designed photo book
+							Choose from 25 beautiful designs for your custom photo book. Each design includes
+							multiple layout options to showcase your event memories.
 						</p>
 					</div>
 
+					{/* Photo Book Grid */}
 					<div
 						style={{
 							display: 'grid',
-							gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-							gap: '48px',
-							maxWidth: '1100px',
-							margin: '0 auto',
+							gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+							gap: '24px',
 						}}>
-						{/* Standard Photo Books */}
-						<div
-							style={{
-								background: '#FAFAF8',
-								borderRadius: '24px',
-								overflow: 'hidden',
-								border: '1px solid rgba(18, 18, 18, 0.1)',
-								boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
-								transition: 'all 0.3s ease',
-								display: 'flex',
-								flexDirection: 'column',
-							}}
-							onMouseEnter={(e) => {
-								e.currentTarget.style.transform = 'translateY(-8px)';
-								e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.12)';
-							}}
-							onMouseLeave={(e) => {
-								e.currentTarget.style.transform = 'translateY(0)';
-								e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
-							}}>
-							{/* Placeholder Image */}
+						{photoBookDesigns.map((design, idx) => (
 							<div
+								key={idx}
+								onClick={() => {
+									setPhotoBookGallery(design);
+									setCurrentPhotoBookImage(0);
+								}}
 								style={{
-									height: '300px',
-									background: 'linear-gradient(135deg, #ff3a7c 0%, #ff5c94 100%)',
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-									fontSize: '80px',
-									position: 'relative',
+									background: '#FFFFFF',
+									borderRadius: '12px',
 									overflow: 'hidden',
+									cursor: 'pointer',
+									border: '1px solid rgba(18, 18, 18, 0.1)',
+									boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+									transition: 'all 0.3s ease',
+								}}
+								onMouseEnter={(e) => {
+									e.currentTarget.style.transform = 'translateY(-4px)';
+									e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)';
+								}}
+								onMouseLeave={(e) => {
+									e.currentTarget.style.transform = 'translateY(0)';
+									e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
 								}}>
+								{/* Thumbnail Image */}
 								<div
 									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										right: 0,
-										bottom: 0,
-										opacity: 0.1,
-										fontSize: '60px',
+										width: '100%',
+										height: '200px',
+										background: 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)',
 										display: 'flex',
-										flexWrap: 'wrap',
-										gap: '30px',
-										padding: '20px',
+										alignItems: 'center',
+										justifyContent: 'center',
+										overflow: 'hidden',
 									}}>
-									{[...Array(8)].map((_, i) => (
-										<div key={i}>📖</div>
-									))}
+									<img
+										src={`${process.env.PUBLIC_URL}/photo-books/${design.id}-1.webp`}
+										alt={design.name}
+										style={{
+											width: '100%',
+											height: '100%',
+											objectFit: 'cover',
+										}}
+										onError={(e) => {
+											e.target.style.display = 'none';
+											e.target.parentElement.innerHTML =
+												'<div style="color: #999; font-size: 14px;">Preview Coming Soon</div>';
+										}}
+									/>
 								</div>
-								<div style={{ position: 'relative', zIndex: 1, opacity: 0.9 }}>📚</div>
-							</div>
 
-							<div
-								style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-								<h3
-									className='display-font'
-									style={{
-										fontSize: '32px',
-										fontWeight: 600,
-										color: '#121212',
-										marginBottom: '16px',
-									}}>
-									Standard Photo Books
-								</h3>
-								<p
-									className='body-font'
-									style={{
-										fontSize: '16px',
-										color: '#555555',
-										lineHeight: 1.7,
-										marginBottom: '24px',
-										flexGrow: 1,
-									}}>
-									Choose from our curated selection of professionally designed templates. Perfect
-									for guests to take home a keepsake from your event.
-								</p>
-								<ul
-									style={{
-										listStyle: 'none',
-										padding: 0,
-										marginBottom: '32px',
-									}}>
-									{[
-										'Multiple template designs',
-										'High-quality printing',
-										'Professional binding',
-										'Quick turnaround',
-									].map((feature, idx) => (
-										<li
-											key={idx}
-											style={{
-												display: 'flex',
-												alignItems: 'center',
-												gap: '12px',
-												marginBottom: '12px',
-											}}>
-											<div
-												style={{
-													width: '24px',
-													height: '24px',
-													background: '#FFE5D9',
-													borderRadius: '50%',
-													display: 'flex',
-													alignItems: 'center',
-													justifyContent: 'center',
-													flexShrink: 0,
-												}}>
-												<span style={{ color: '#ff3a7c', fontWeight: 'bold', fontSize: '14px' }}>
-													✓
-												</span>
-											</div>
-											<span className='body-font' style={{ color: '#555555', fontSize: '15px' }}>
-												{feature}
-											</span>
-										</li>
-									))}
-								</ul>
-								<button
-									className='btn-primary'
-									style={{ width: '100%', justifyContent: 'center', fontSize: '16px' }}
-									onClick={() => setPhotoBookModal('standard')}>
-									View Examples
-								</button>
-							</div>
-						</div>
-
-						{/* Custom Photo Books */}
-						<div
-							style={{
-								background: '#FAFAF8',
-								borderRadius: '24px',
-								overflow: 'hidden',
-								border: '2px solid #2563eb',
-								boxShadow: '0 8px 24px rgba(37, 99, 235, 0.2)',
-								transition: 'all 0.3s ease',
-								position: 'relative',
-								display: 'flex',
-								flexDirection: 'column',
-							}}
-							onMouseEnter={(e) => {
-								e.currentTarget.style.transform = 'translateY(-8px)';
-								e.currentTarget.style.boxShadow = '0 16px 40px rgba(37, 99, 235, 0.3)';
-							}}
-							onMouseLeave={(e) => {
-								e.currentTarget.style.transform = 'translateY(0)';
-								e.currentTarget.style.boxShadow = '0 8px 24px rgba(37, 99, 235, 0.2)';
-							}}>
-							{/* Popular Badge */}
-							<div
-								className='body-font'
-								style={{
-									position: 'absolute',
-									top: '20px',
-									right: '20px',
-									background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-									color: '#FAFAF8',
-									padding: '8px 20px',
-									borderRadius: '20px',
-									fontSize: '12px',
-									fontWeight: 600,
-									letterSpacing: '1px',
-									zIndex: 10,
-									boxShadow: '0 4px 12px rgba(37, 99, 235, 0.4)',
-								}}>
-								POPULAR
-							</div>
-
-							{/* Placeholder Image */}
-							<div
-								style={{
-									height: '300px',
-									background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-									fontSize: '80px',
-									position: 'relative',
-									overflow: 'hidden',
-								}}>
-								<div
-									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										right: 0,
-										bottom: 0,
-										opacity: 0.15,
-										fontSize: '60px',
-										display: 'flex',
-										flexWrap: 'wrap',
-										gap: '30px',
-										padding: '20px',
-									}}>
-									{[...Array(8)].map((_, i) => (
-										<div key={i}>✨</div>
-									))}
+								{/* Design Info */}
+								<div style={{ padding: '20px' }}>
+									<h3
+										className='body-font'
+										style={{
+											fontSize: '18px',
+											fontWeight: 600,
+											color: '#121212',
+											marginBottom: '8px',
+										}}>
+										{design.name}
+									</h3>
+									<p
+										className='body-font'
+										style={{
+											fontSize: '14px',
+											color: '#666666',
+										}}>
+										{design.imageCount} layout{design.imageCount !== 1 ? 's' : ''}
+									</p>
 								</div>
-								<div style={{ position: 'relative', zIndex: 1, opacity: 0.9 }}>🎨</div>
 							</div>
-
-							<div
-								style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-								<h3
-									className='display-font'
-									style={{
-										fontSize: '32px',
-										fontWeight: 600,
-										color: '#121212',
-										marginBottom: '16px',
-									}}>
-									Custom Photo Books
-								</h3>
-								<p
-									className='body-font'
-									style={{
-										fontSize: '16px',
-										color: '#555555',
-										lineHeight: 1.7,
-										marginBottom: '24px',
-										flexGrow: 1,
-									}}>
-									Work with our design team to create a completely unique photo book. Use your
-									branding, logos, and custom layouts for a truly personalized keepsake.
-								</p>
-								<ul
-									style={{
-										listStyle: 'none',
-										padding: 0,
-										marginBottom: '32px',
-									}}>
-									{[
-										'Fully customized designs',
-										'Your branding & logos',
-										'Premium paper options',
-										'Dedicated design consultation',
-									].map((feature, idx) => (
-										<li
-											key={idx}
-											style={{
-												display: 'flex',
-												alignItems: 'center',
-												gap: '12px',
-												marginBottom: '12px',
-											}}>
-											<div
-												style={{
-													width: '24px',
-													height: '24px',
-													background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-													borderRadius: '50%',
-													display: 'flex',
-													alignItems: 'center',
-													justifyContent: 'center',
-													flexShrink: 0,
-												}}>
-												<span style={{ color: '#FAFAF8', fontWeight: 'bold', fontSize: '14px' }}>
-													✓
-												</span>
-											</div>
-											<span className='body-font' style={{ color: '#555555', fontSize: '15px' }}>
-												{feature}
-											</span>
-										</li>
-									))}
-								</ul>
-								<button
-									className='btn-primary'
-									style={{ width: '100%', justifyContent: 'center', fontSize: '16px' }}
-									onClick={() => setPhotoBookModal('custom')}>
-									View Examples
-								</button>
-							</div>
-						</div>
+						))}
 					</div>
 				</div>
 			</section>
+
+			{/* Photo Book Gallery Modal */}
+			{photoBookGallery && (
+				<div
+					style={{
+						position: 'fixed',
+						top: 0,
+						left: 0,
+						right: 0,
+						bottom: 0,
+						background: 'rgba(0, 0, 0, 0.95)',
+						zIndex: 1000,
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						padding: '20px',
+					}}
+					onClick={() => setPhotoBookGallery(null)}>
+					<div
+						style={{
+							position: 'relative',
+							maxWidth: '1200px',
+							width: '100%',
+							maxHeight: '90vh',
+						}}
+						onClick={(e) => e.stopPropagation()}>
+						{/* Close Button */}
+						<button
+							onClick={() => setPhotoBookGallery(null)}
+							style={{
+								position: 'absolute',
+								top: '-50px',
+								right: '0',
+								background: 'transparent',
+								border: 'none',
+								color: '#FFFFFF',
+								fontSize: '40px',
+								cursor: 'pointer',
+								zIndex: 1001,
+								width: '50px',
+								height: '50px',
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+							}}>
+							<X size={32} />
+						</button>
+
+						{/* Design Title */}
+						<div
+							style={{
+								position: 'absolute',
+								top: '-50px',
+								left: '0',
+								color: '#FFFFFF',
+								fontSize: '24px',
+								fontWeight: 600,
+							}}>
+							{photoBookGallery.name}
+						</div>
+
+						{/* Main Image */}
+						<div
+							style={{
+								background: '#FFFFFF',
+								borderRadius: '8px',
+								overflow: 'hidden',
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								maxHeight: '80vh',
+							}}>
+							<img
+								src={`${process.env.PUBLIC_URL}/photo-books/${photoBookGallery.id}-${currentPhotoBookImage + 1}.webp`}
+								alt={`${photoBookGallery.name} layout ${currentPhotoBookImage + 1}`}
+								style={{
+									maxWidth: '100%',
+									maxHeight: '80vh',
+									objectFit: 'contain',
+								}}
+							/>
+						</div>
+
+						{/* Navigation Arrows */}
+						{currentPhotoBookImage > 0 && (
+							<button
+								onClick={() => setCurrentPhotoBookImage(currentPhotoBookImage - 1)}
+								style={{
+									position: 'absolute',
+									left: '20px',
+									top: '50%',
+									transform: 'translateY(-50%)',
+									background: 'rgba(255, 255, 255, 0.9)',
+									border: 'none',
+									borderRadius: '50%',
+									width: '50px',
+									height: '50px',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									cursor: 'pointer',
+									boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+									zIndex: 1001,
+								}}>
+								<ChevronDown size={28} style={{ transform: 'rotate(90deg)', color: '#121212' }} />
+							</button>
+						)}
+
+						{currentPhotoBookImage < photoBookGallery.imageCount - 1 && (
+							<button
+								onClick={() => setCurrentPhotoBookImage(currentPhotoBookImage + 1)}
+								style={{
+									position: 'absolute',
+									right: '20px',
+									top: '50%',
+									transform: 'translateY(-50%)',
+									background: 'rgba(255, 255, 255, 0.9)',
+									border: 'none',
+									borderRadius: '50%',
+									width: '50px',
+									height: '50px',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									cursor: 'pointer',
+									boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+									zIndex: 1001,
+								}}>
+								<ChevronDown size={28} style={{ transform: 'rotate(-90deg)', color: '#121212' }} />
+							</button>
+						)}
+
+						{/* Image Counter */}
+						<div
+							style={{
+								position: 'absolute',
+								bottom: '-40px',
+								left: '50%',
+								transform: 'translateX(-50%)',
+								color: '#FFFFFF',
+								fontSize: '16px',
+								background: 'rgba(0, 0, 0, 0.5)',
+								padding: '8px 16px',
+								borderRadius: '20px',
+							}}>
+							{currentPhotoBookImage + 1} / {photoBookGallery.imageCount}
+						</div>
+
+						{/* Thumbnail Strip */}
+						<div
+							style={{
+								position: 'absolute',
+								bottom: '-120px',
+								left: '50%',
+								transform: 'translateX(-50%)',
+								display: 'flex',
+								gap: '12px',
+								maxWidth: '100%',
+								overflowX: 'auto',
+								padding: '10px',
+							}}>
+							{Array.from({ length: photoBookGallery.imageCount }).map((_, idx) => (
+								<div
+									key={idx}
+									onClick={() => setCurrentPhotoBookImage(idx)}
+									style={{
+										width: '80px',
+										height: '60px',
+										borderRadius: '4px',
+										overflow: 'hidden',
+										cursor: 'pointer',
+										border:
+											currentPhotoBookImage === idx ? '3px solid #ff3a7c' : '3px solid transparent',
+										opacity: currentPhotoBookImage === idx ? 1 : 0.6,
+										transition: 'all 0.3s ease',
+										flexShrink: 0,
+									}}>
+									<img
+										src={`${process.env.PUBLIC_URL}/photo-books/${photoBookGallery.id}-${idx + 1}.webp`}
+										alt={`Thumbnail ${idx + 1}`}
+										style={{
+											width: '100%',
+											height: '100%',
+											objectFit: 'cover',
+										}}
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			)}
 
 			{/* Backdrops Section */}
 			<section
