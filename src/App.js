@@ -10,6 +10,8 @@ export default function NoteworthyPhotoBooths() {
   const [photoBookPage, setPhotoBookPage] = useState(0);
   const [photoBookGallery, setPhotoBookGallery] = useState(null);
   const [currentPhotoBookImage, setCurrentPhotoBookImage] = useState(0);
+  const [backdropModal, setBackdropModal] = useState(null);
+  const [backdropPage, setBackdropPage] = useState(0);
   const [boothGalleryModal, setBoothGalleryModal] = useState(null);
   const DESIGNS_PER_PAGE = 6;
   const [isPaused, setIsPaused] = useState(false);
@@ -1504,354 +1506,209 @@ export default function NoteworthyPhotoBooths() {
             margin: '0 auto'
           }}>
             {/* Standard Backdrops */}
-            <div style={{
-              background: '#FFFFFF',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              border: '1px solid rgba(18, 18, 18, 0.1)',
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
-              transition: 'all 0.3s ease',
-              display: 'flex',
-              flexDirection: 'column'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-8px)';
-              e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.12)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
-            }}>
-              {/* Placeholder Image */}
+            <div
+              onClick={() => setBackdropModal('standard')}
+              style={{
+                background: '#FFFFFF', borderRadius: '24px', overflow: 'hidden',
+                border: '1px solid rgba(18, 18, 18, 0.1)',
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s ease', display: 'flex',
+                flexDirection: 'column', cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
+              }}
+            >
               <div style={{
                 height: '300px',
                 background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '80px',
-                position: 'relative',
-                overflow: 'hidden'
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                position: 'relative', overflow: 'hidden'
               }}>
                 <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  opacity: 0.1,
-                  fontSize: '60px',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(4, 1fr)',
-                  gap: '20px',
-                  padding: '20px'
+                  position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+                  opacity: 0.1, fontSize: '60px', display: 'grid',
+                  gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', padding: '20px'
                 }}>
-                  {[...Array(12)].map((_, i) => (
-                    <div key={i}>🎨</div>
-                  ))}
+                  {[...Array(12)].map((_, i) => <div key={i}>🎨</div>)}
                 </div>
-                <div style={{ position: 'relative', zIndex: 1, opacity: 0.9 }}>🎭</div>
+                <div style={{ position: 'relative', zIndex: 1, fontSize: '80px', opacity: 0.9 }}>🎭</div>
               </div>
-              
               <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 className="display-font" style={{
-                  fontSize: '32px',
-                  fontWeight: 600,
-                  color: '#121212',
-                  marginBottom: '16px'
+                  fontSize: '32px', fontWeight: 600, color: '#121212', marginBottom: '16px'
                 }}>
                   Standard Backdrops
                 </h3>
                 <p className="body-font" style={{
-                  fontSize: '16px',
-                  color: '#555555',
-                  lineHeight: 1.7,
-                  marginBottom: '24px',
-                  flexGrow: 1
+                  fontSize: '16px', color: '#555555', lineHeight: 1.7, marginBottom: '24px', flexGrow: 1
                 }}>
                   Classic solid color backdrops perfect for any event. Choose from our wide selection of colors to match your event theme.
                 </p>
-                <ul style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '32px'
-                }}>
-                  {[
-                    'Wide color selection',
-                    'Professional wrinkle-free material',
-                    'Easy to match theme',
-                    'Included with booth rental'
-                  ].map((feature, idx) => (
-                    <li key={idx} style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      marginBottom: '12px'
-                    }}>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '32px' }}>
+                  {['Wide color selection', 'Professional wrinkle-free material', 'Easy to match theme', 'Included with booth rental'].map((feature, idx) => (
+                    <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                       <div style={{
-                        width: '24px',
-                        height: '24px',
+                        width: '24px', height: '24px',
                         background: 'linear-gradient(135deg, #ff3a7c 0%, #ff5c94 100%)',
-                        borderRadius: '50%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
+                        borderRadius: '50%', display: 'flex', alignItems: 'center',
+                        justifyContent: 'center', flexShrink: 0
                       }}>
-                        <span style={{ color: '#FAFAF8', fontWeight: 'bold', fontSize: '14px' }}>✓</span>
+                        <Check size={14} color="#FAFAF8" strokeWidth={3} />
                       </div>
                       <span className="body-font" style={{ color: '#555555', fontSize: '15px' }}>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <button 
-                  className="btn-primary"
-                  style={{ width: '100%', justifyContent: 'center', fontSize: '16px' }}
-                  onClick={() => scrollToSection('contact')}
-                >
-                  Learn More
-                </button>
+                <div className="btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: '16px', textAlign: 'center', padding: '14px 24px' }}>
+                  Browse Options
+                </div>
               </div>
             </div>
 
-            {/* Premium Backdrops */}
-            <div style={{
-              background: '#FFFFFF',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              border: '2px solid #2563eb',
-              boxShadow: '0 8px 24px rgba(37, 99, 235, 0.2)',
-              transition: 'all 0.3s ease',
-              position: 'relative',
-              display: 'flex',
-              flexDirection: 'column'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-8px)';
-              e.currentTarget.style.boxShadow = '0 16px 40px rgba(37, 99, 235, 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 8px 24px rgba(37, 99, 235, 0.2)';
-            }}>
-              {/* Popular Badge */}
+            {/* Premium Sequin Backdrops */}
+            <div
+              onClick={() => setBackdropModal('sequin')}
+              style={{
+                background: '#FFFFFF', borderRadius: '24px', overflow: 'hidden',
+                border: '2px solid #2563eb',
+                boxShadow: '0 8px 24px rgba(37, 99, 235, 0.2)',
+                transition: 'all 0.3s ease', position: 'relative',
+                display: 'flex', flexDirection: 'column', cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.boxShadow = '0 16px 40px rgba(37, 99, 235, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(37, 99, 235, 0.2)';
+              }}
+            >
               <div className="body-font" style={{
-                position: 'absolute',
-                top: '20px',
-                right: '20px',
+                position: 'absolute', top: '20px', right: '20px',
                 background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-                color: '#FAFAF8',
-                padding: '8px 20px',
-                borderRadius: '20px',
-                fontSize: '13px',
-                fontWeight: 700,
-                letterSpacing: '0.5px',
-                zIndex: 5,
-                boxShadow: '0 4px 12px rgba(37, 99, 235, 0.3)'
+                color: '#FAFAF8', padding: '8px 20px', borderRadius: '20px',
+                fontSize: '13px', fontWeight: 700, letterSpacing: '0.5px',
+                zIndex: 5, boxShadow: '0 4px 12px rgba(37, 99, 235, 0.3)'
               }}>
                 POPULAR
               </div>
-
-              {/* Placeholder Image */}
               <div style={{
                 height: '300px',
                 background: 'linear-gradient(135deg, #ffd700 0%, #ffed4e 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '80px',
-                position: 'relative',
-                overflow: 'hidden'
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                position: 'relative', overflow: 'hidden'
               }}>
                 <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  opacity: 0.2,
-                  fontSize: '40px',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(6, 1fr)',
-                  gap: '10px',
-                  padding: '10px'
+                  position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+                  opacity: 0.2, fontSize: '40px', display: 'grid',
+                  gridTemplateColumns: 'repeat(6, 1fr)', gap: '10px', padding: '10px'
                 }}>
-                  {[...Array(24)].map((_, i) => (
-                    <div key={i}>✨</div>
-                  ))}
+                  {[...Array(24)].map((_, i) => <div key={i}>✨</div>)}
                 </div>
-                <div style={{ position: 'relative', zIndex: 1, opacity: 0.9 }}>✨</div>
+                <div style={{ position: 'relative', zIndex: 1, fontSize: '80px', opacity: 0.9 }}>✨</div>
               </div>
-              
               <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 className="display-font" style={{
-                  fontSize: '32px',
-                  fontWeight: 600,
-                  color: '#121212',
-                  marginBottom: '16px'
+                  fontSize: '32px', fontWeight: 600, color: '#121212', marginBottom: '16px'
                 }}>
                   Premium Sequin
                 </h3>
                 <p className="body-font" style={{
-                  fontSize: '16px',
-                  color: '#555555',
-                  lineHeight: 1.7,
-                  marginBottom: '24px',
-                  flexGrow: 1
+                  fontSize: '16px', color: '#555555', lineHeight: 1.7, marginBottom: '24px', flexGrow: 1
                 }}>
                   Stunning sequin backdrops that shimmer and shine. Perfect for adding glamour and elegance to your photos.
                 </p>
-                <ul style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '32px'
-                }}>
-                  {[
-                    'Shimmering sequin material',
-                    'Multiple metallic colors',
-                    'Creates stunning photos',
-                    'Popular for weddings & events'
-                  ].map((feature, idx) => (
-                    <li key={idx} style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      marginBottom: '12px'
-                    }}>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '32px' }}>
+                  {['Shimmering sequin material', 'Multiple metallic colors', 'Creates stunning photos', 'Popular for weddings & events'].map((feature, idx) => (
+                    <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                       <div style={{
-                        width: '24px',
-                        height: '24px',
+                        width: '24px', height: '24px',
                         background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-                        borderRadius: '50%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
+                        borderRadius: '50%', display: 'flex', alignItems: 'center',
+                        justifyContent: 'center', flexShrink: 0
                       }}>
-                        <span style={{ color: '#FAFAF8', fontWeight: 'bold', fontSize: '14px' }}>✓</span>
+                        <Check size={14} color="#FAFAF8" strokeWidth={3} />
                       </div>
                       <span className="body-font" style={{ color: '#555555', fontSize: '15px' }}>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <button 
-                  className="btn-primary"
-                  style={{ width: '100%', justifyContent: 'center', fontSize: '16px' }}
-                  onClick={() => scrollToSection('contact')}
-                >
-                  Learn More
-                </button>
+                <div className="btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: '16px', textAlign: 'center', padding: '14px 24px' }}>
+                  Browse Options
+                </div>
               </div>
             </div>
 
             {/* Custom Backdrops */}
-            <div style={{
-              background: '#FFFFFF',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              border: '1px solid rgba(18, 18, 18, 0.1)',
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
-              transition: 'all 0.3s ease',
-              display: 'flex',
-              flexDirection: 'column'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-8px)';
-              e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.12)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
-            }}>
-              {/* Placeholder Image */}
+            <div
+              onClick={() => setBackdropModal('custom')}
+              style={{
+                background: '#FFFFFF', borderRadius: '24px', overflow: 'hidden',
+                border: '1px solid rgba(18, 18, 18, 0.1)',
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s ease', display: 'flex',
+                flexDirection: 'column', cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
+              }}
+            >
               <div style={{
                 height: '300px',
                 background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '80px',
-                position: 'relative',
-                overflow: 'hidden'
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                position: 'relative', overflow: 'hidden'
               }}>
                 <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  opacity: 0.1,
-                  fontSize: '60px',
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '30px',
-                  padding: '20px'
+                  position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+                  opacity: 0.1, fontSize: '60px', display: 'flex',
+                  flexWrap: 'wrap', gap: '30px', padding: '20px'
                 }}>
-                  {[...Array(8)].map((_, i) => (
-                    <div key={i}>🎨</div>
-                  ))}
+                  {[...Array(8)].map((_, i) => <div key={i}>🎨</div>)}
                 </div>
-                <div style={{ position: 'relative', zIndex: 1, opacity: 0.9 }}>🖼️</div>
+                <div style={{ position: 'relative', zIndex: 1, fontSize: '80px', opacity: 0.9 }}>🖼️</div>
               </div>
-              
               <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 className="display-font" style={{
-                  fontSize: '32px',
-                  fontWeight: 600,
-                  color: '#121212',
-                  marginBottom: '16px'
+                  fontSize: '32px', fontWeight: 600, color: '#121212', marginBottom: '16px'
                 }}>
                   Custom Designs
                 </h3>
                 <p className="body-font" style={{
-                  fontSize: '16px',
-                  color: '#555555',
-                  lineHeight: 1.7,
-                  marginBottom: '24px',
-                  flexGrow: 1
+                  fontSize: '16px', color: '#555555', lineHeight: 1.7, marginBottom: '24px', flexGrow: 1
                 }}>
                   Fully customized backdrops designed specifically for your event. Add your logo, branding, or themed designs.
                 </p>
-                <ul style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '32px'
-                }}>
-                  {[
-                    'Fully custom designs',
-                    'Your logos & branding',
-                    'Themed artwork',
-                    'Professional printing'
-                  ].map((feature, idx) => (
-                    <li key={idx} style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      marginBottom: '12px'
-                    }}>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '32px' }}>
+                  {['Fully custom designs', 'Your logos & branding', 'Themed artwork', 'Professional printing'].map((feature, idx) => (
+                    <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                       <div style={{
-                        width: '24px',
-                        height: '24px',
+                        width: '24px', height: '24px',
                         background: 'linear-gradient(135deg, #ff3a7c 0%, #ff5c94 100%)',
-                        borderRadius: '50%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
+                        borderRadius: '50%', display: 'flex', alignItems: 'center',
+                        justifyContent: 'center', flexShrink: 0
                       }}>
-                        <span style={{ color: '#FAFAF8', fontWeight: 'bold', fontSize: '14px' }}>✓</span>
+                        <Check size={14} color="#FAFAF8" strokeWidth={3} />
                       </div>
                       <span className="body-font" style={{ color: '#555555', fontSize: '15px' }}>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <button 
-                  className="btn-primary"
-                  style={{ width: '100%', justifyContent: 'center', fontSize: '16px' }}
-                  onClick={() => scrollToSection('contact')}
-                >
-                  Learn More
-                </button>
+                <div className="btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: '16px', textAlign: 'center', padding: '14px 24px' }}>
+                  Browse Options
+                </div>
               </div>
             </div>
           </div>
@@ -3490,6 +3347,99 @@ export default function NoteworthyPhotoBooths() {
                 onClick={() => {
                   setPhotoBookModal(null);
                   setPhotoBookPage(0);
+                  scrollToSection('contact');
+                }}
+              >
+                Get a Quote
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Backdrop Modal */}
+      {backdropModal && (
+        <div className="modal-overlay" onClick={() => { setBackdropModal(null); setBackdropPage(0); }}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '1100px' }}>
+            <button
+              onClick={() => { setBackdropModal(null); setBackdropPage(0); }}
+              style={{
+                position: 'absolute', top: '20px', right: '20px',
+                background: 'rgba(18, 18, 18, 0.1)', border: 'none', borderRadius: '50%',
+                width: '40px', height: '40px', display: 'flex', alignItems: 'center',
+                justifyContent: 'center', cursor: 'pointer', zIndex: 10
+              }}
+            >
+              <X size={24} color="#121212" />
+            </button>
+
+            <div style={{ padding: '48px 40px' }}>
+              {/* Title */}
+              <h3 className="display-font" style={{
+                fontSize: '36px', fontWeight: 600, color: '#121212',
+                marginBottom: '8px', textAlign: 'center'
+              }}>
+                {backdropModal === 'standard' ? 'Standard Backdrops'
+                  : backdropModal === 'sequin' ? 'Premium Sequin Backdrops'
+                  : 'Custom Backdrops'}
+              </h3>
+              <p className="body-font" style={{
+                fontSize: '16px', color: '#555555', textAlign: 'center', marginBottom: '40px'
+              }}>
+                {backdropModal === 'standard'
+                  ? 'Our full color selection — coming soon!'
+                  : backdropModal === 'sequin'
+                  ? 'Our shimmer & sequin options — coming soon!'
+                  : 'Custom backdrop examples — coming soon!'}
+              </p>
+
+              {/* Placeholder Cards Grid */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                gap: '20px',
+                marginBottom: '32px'
+              }}>
+                {[1, 2, 3, 4, 5, 6].map((num) => (
+                  <div key={num} style={{
+                    background: 'linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%)',
+                    borderRadius: '12px', overflow: 'hidden',
+                    border: '1px solid rgba(18,18,18,0.08)',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+                  }}>
+                    <div style={{
+                      height: '160px',
+                      background: backdropModal === 'standard'
+                        ? 'linear-gradient(135deg, #e8eeff 0%, #d4ddff 100%)'
+                        : backdropModal === 'sequin'
+                        ? 'linear-gradient(135deg, #fff8e1 0%, #fff0b3 100%)'
+                        : 'linear-gradient(135deg, #fce4f0 0%, #f8c8e4 100%)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center'
+                    }}>
+                      {backdropModal === 'standard'
+                        ? <span style={{ fontSize: '40px', opacity: 0.4 }}>🎭</span>
+                        : backdropModal === 'sequin'
+                        ? <span style={{ fontSize: '40px', opacity: 0.4 }}>✨</span>
+                        : <span style={{ fontSize: '40px', opacity: 0.4 }}>🖼️</span>}
+                    </div>
+                    <div style={{ padding: '16px' }}>
+                      <p className="body-font" style={{
+                        fontSize: '14px', fontWeight: 600, color: '#aaaaaa', textAlign: 'center'
+                      }}>
+                        Coming Soon
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <button
+                className="btn-primary"
+                style={{ width: '100%', justifyContent: 'center', fontSize: '18px' }}
+                onClick={() => {
+                  setBackdropModal(null);
+                  setBackdropPage(0);
                   scrollToSection('contact');
                 }}
               >
