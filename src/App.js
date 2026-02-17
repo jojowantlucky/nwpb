@@ -238,6 +238,34 @@ export default function NoteworthyPhotoBooths() {
     { icon: Star, title: 'Custom Print Design', desc: 'Your assets or our templates' }
   ];
 
+  const photoBookDesigns = [
+    { id: 'bamboo-leaves', name: 'Bamboo Leaves', imageCount: 3 },
+    { id: 'best-day', name: 'Best Day', imageCount: 2 },
+    { id: 'box-modern', name: 'Box Modern', imageCount: 6 },
+    { id: 'city-skyline', name: 'City Skyline', imageCount: 2 },
+    { id: 'color-explosion', name: 'Color Explosion', imageCount: 6 },
+    { id: 'diamond-geo', name: 'Diamond Geo', imageCount: 6 },
+    { id: 'double-diamond', name: 'Double Diamond', imageCount: 6 },
+    { id: 'eat-drink-and-be-married', name: 'Eat Drink And Be Married', imageCount: 6 },
+    { id: 'endless-love', name: 'Endless Love', imageCount: 6 },
+    { id: 'eucalyptus', name: 'Eucalyptus', imageCount: 6 },
+    { id: 'feather-flowers', name: 'Feather Flowers', imageCount: 6 },
+    { id: 'floral-swirls', name: 'Floral Swirls', imageCount: 2 },
+    { id: 'geo-flowers', name: 'Geo Flowers', imageCount: 6 },
+    { id: 'geo-sparks', name: 'Geo Sparks', imageCount: 6 },
+    { id: 'hanging-sign', name: 'Hanging Sign', imageCount: 8 },
+    { id: 'heart-duo', name: 'Heart Duo', imageCount: 6 },
+    { id: 'keep-it-simple', name: 'Keep It Simple', imageCount: 6 },
+    { id: 'lace-design', name: 'Lace Design', imageCount: 6 },
+    { id: 'line-simple', name: 'Line Simple', imageCount: 6 },
+    { id: 'mums', name: 'Mums', imageCount: 2 },
+    { id: 'picture-frames', name: 'Picture Frames', imageCount: 6 },
+    { id: 'polka-dots', name: 'Polka Dots', imageCount: 6 },
+    { id: 'thistle-flower', name: 'Thistle Flower', imageCount: 6 },
+    { id: 'vintage-lanterns', name: 'Vintage Lanterns', imageCount: 6 },
+    { id: 'wildflower-stencil', name: 'Wildflower Stencil', imageCount: 6 }
+  ];
+
   return (
     <div style={{ 
       background: '#FAFAF8',
