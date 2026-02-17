@@ -600,6 +600,8 @@ export default function NoteworthyPhotoBooths() {
 				/* Contact Form Iframe Styling */
 				.checkcherry-autoresize-frame {
 					background: transparent !important;
+					width: 100% !important;
+					max-width: 100% !important;
 				}
 
 				/* Carousel Scroll Snap */
@@ -3507,9 +3509,8 @@ export default function NoteworthyPhotoBooths() {
 						</p>
 						<div
 							style={{
-								background: '#FAFAF8',
 								borderRadius: '12px',
-								padding: '24px',
+								overflow: 'hidden',
 								border: '1px solid rgba(18, 18, 18, 0.05)',
 							}}>
 							<iframe
@@ -3519,9 +3520,9 @@ export default function NoteworthyPhotoBooths() {
 									margin: '0',
 									padding: '0',
 									border: 'none',
-									maxWidth: '500px',
 									width: '100%',
-									height: '400px',
+									minHeight: '600px',
+									display: 'block',
 								}}
 								scrolling='auto'
 								allowTransparency='true'
