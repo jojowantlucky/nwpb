@@ -13,6 +13,7 @@ export default function NoteworthyPhotoBooths() {
   const [backdropModal, setBackdropModal] = useState(null);
   const [backdropPage, setBackdropPage] = useState(0);
   const [boothGalleryModal, setBoothGalleryModal] = useState(null);
+  const [formLoading, setFormLoading] = useState(true);
   const DESIGNS_PER_PAGE = 6;
   const [isPaused, setIsPaused] = useState(false);
   const carouselRef = React.useRef(null);
@@ -25,6 +26,28 @@ export default function NoteworthyPhotoBooths() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Load Check Cherry auto-resize script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://noteworthy-djs.checkcherry.com/api/checkcherry_widgets/iframe';
+    script.type = 'text/javascript';
+    script.charset = 'utf-8';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+  // Hide form loading spinner after iframe loads
+  useEffect(() => {
+    const timer = setTimeout(() => setFormLoading(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   // Load PB Backdrops widget script
@@ -370,6 +393,15 @@ export default function NoteworthyPhotoBooths() {
           }
         }
 
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
         .parallax-bg {
           animation: parallaxFloat 20s ease-in-out infinite;
         }
@@ -577,6 +609,13 @@ export default function NoteworthyPhotoBooths() {
           width: 100%;
           height: 100%;
           border: 0;
+        }
+
+        /* Contact Form Iframe Styling */
+        .checkcherry-autoresize-frame {
+          background: transparent !important;
+          width: 100% !important;
+          max-width: 100% !important;
         }
 
         /* Carousel Scroll Snap */
@@ -2662,6 +2701,56 @@ export default function NoteworthyPhotoBooths() {
                 />
               </div>
             </div>
+          </div>
+
+          {/* Contact Form - No Card Wrapper */}
+          <div style={{
+            maxWidth: '800px',
+            margin: '48px auto 0',
+            position: 'relative',
+            minHeight: '900px'
+          }}>
+            {/* Loading Spinner */}
+            {formLoading && (
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: '#FAF8FC',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                zIndex: 10
+              }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  border: '5px solid rgba(232, 108, 108, 0.2)',
+                  borderTop: '5px solid #e86c6c',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite'
+                }} />
+              </div>
+            )}
+            
+            <iframe 
+              className="checkcherry-autoresize-frame" 
+              src="https://noteworthy-djs.checkcherry.com/contact/2994?iframe=true&props=%7B%22labelsAsPlaceholders%22%3Afalse%2C%22wideSubmitButtons%22%3Afalse%2C%22buttonBackgroundColor%22%3A%22%22%2C%22buttonForegroundColor%22%3A%22%22%2C%22maxWidth%22%3A%22100%25%22%2C%22fontFamily%22%3A%22Montserrat%22%7D" 
+              style={{
+                margin: '0',
+                padding: '0',
+                border: 'none',
+                width: '100%',
+                minHeight: '900px',
+                display: 'block'
+              }}
+              scrolling="auto"
+              allowTransparency="true"
+              title="Contact Form"
+              onLoad={() => setFormLoading(false)}
+            />
           </div>
         </div>
       </section>
