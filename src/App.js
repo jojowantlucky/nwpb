@@ -2376,15 +2376,25 @@ export default function NoteworthyPhotoBooths() {
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <img 
-                    src={`${process.env.PUBLIC_URL}/badges/${badge.filename}`}
-                    alt={`${badge.name} Badge`}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'contain'
-                    }}
-                  />
+                  {badge.name === 'BBB' ? (
+                    <iframe 
+                      border="0" 
+                      frameBorder="0" 
+                      style={{ border: 0, height: '110px', width: '150px' }} 
+                      src="https://seal-alaskaoregonwesternwashington.bbb.org/frame/blue-seal-150-110-bbb-1000083774.png?chk=0DE3410CC9"
+                      title="BBB Accredited Business"
+                    />
+                  ) : (
+                    <img 
+                      src={`${process.env.PUBLIC_URL}/badges/${badge.filename}`}
+                      alt={`${badge.name} Badge`}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  )}
                 </div>
               </a>
             ))}
