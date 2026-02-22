@@ -2356,30 +2356,22 @@ export default function NoteworthyPhotoBooths() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  background: '#f4f4f4',
-                  borderRadius: '16px',
-                  padding: '32px 24px',
                   textAlign: 'center',
-                  border: '1px solid rgba(18, 18, 18, 0.08)',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.06)',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer',
                   textDecoration: 'none',
-                  display: 'block'
+                  display: 'block',
+                  transition: 'opacity 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.1)';
+                  e.currentTarget.style.opacity = '0.7';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.06)';
+                  e.currentTarget.style.opacity = '1';
                 }}
               >
                 <div style={{
-                  width: '120px',
-                  height: '120px',
-                  margin: '0 auto 16px',
+                  width: '160px',
+                  height: '160px',
+                  margin: '0 auto',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
@@ -2394,20 +2386,6 @@ export default function NoteworthyPhotoBooths() {
                     }}
                   />
                 </div>
-                <h4 className="display-font" style={{
-                  fontSize: '18px',
-                  fontWeight: 600,
-                  color: '#4a4a4a',
-                  marginBottom: '8px'
-                }}>
-                  {badge.name}
-                </h4>
-                <p className="body-font" style={{
-                  fontSize: '14px',
-                  color: '#9b9b9b'
-                }}>
-                  {badge.name === 'BBB' ? 'Accredited Business' : 'Top Rated'}
-                </p>
               </a>
             ))}
           </div>
