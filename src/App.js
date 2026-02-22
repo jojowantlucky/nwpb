@@ -1763,7 +1763,7 @@ export default function NoteworthyPhotoBooths() {
       {/* Parallax Divider */}
       <section style={{
         height: '300px',
-        background: 'linear-gradient(135deg, #e86c6c 20%, #e14040 80%)',
+        background: '#f9f9f9',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
@@ -1778,8 +1778,8 @@ export default function NoteworthyPhotoBooths() {
           right: 0,
           bottom: 0,
           backgroundImage: `
-            radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-            radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 1px)
+            radial-gradient(circle at 20% 50%, rgba(74, 74, 74, 0.05) 1px, transparent 1px),
+            radial-gradient(circle at 80% 50%, rgba(74, 74, 74, 0.05) 1px, transparent 1px)
           `,
           backgroundSize: '50px 50px',
           opacity: 0.5,
@@ -1794,7 +1794,7 @@ export default function NoteworthyPhotoBooths() {
           position: 'relative',
           zIndex: 1,
           fontSize: '80px',
-          opacity: 0.15,
+          opacity: 0.08,
           display: 'flex',
           gap: '40px',
           animation: 'float 4s ease-in-out infinite'
@@ -1896,7 +1896,7 @@ export default function NoteworthyPhotoBooths() {
       </section>
       {/* Features Section */}
       <section className="section-padding" style={{ 
-        background: '#FFF5F9',
+        background: '#f9f9f9',
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -1907,7 +1907,7 @@ export default function NoteworthyPhotoBooths() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `radial-gradient(circle, rgba(251, 191, 36, 0.15) 2px, transparent 2px)`,
+          backgroundImage: `radial-gradient(circle, rgba(74, 74, 74, 0.08) 2px, transparent 2px)`,
           backgroundSize: '40px 40px',
           backgroundPosition: '0 0, 20px 20px',
           opacity: 0.4,
