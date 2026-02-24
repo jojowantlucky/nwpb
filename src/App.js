@@ -16,8 +16,6 @@ export default function NoteworthyPhotoBooths() {
   const [formLoading, setFormLoading] = useState(true);
   const DESIGNS_PER_PAGE = 6;
   const [isPaused, setIsPaused] = useState(false);
-  const carouselRef = React.useRef(null);
-  const isScrolling = React.useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,65 +62,10 @@ export default function NoteworthyPhotoBooths() {
     };
   }, []);
 
-  // Initialize carousel position to middle set
-  useEffect(() => {
-    if (carouselRef.current) {
-      const cardWidth = 320 + 32; // card width + gap
-      const numBooths = 5;
-      carouselRef.current.scrollLeft = cardWidth * numBooths; // Start at second set
-    }
-  }, []);
-
-  // Handle infinite scroll
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const handleCarouselScroll = () => {
-      if (isScrolling.current) return;
-
-      const cardWidth = 320 + 32;
-      const numBooths = 5;
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-      const currentScroll = carousel.scrollLeft;
-
-      // If scrolled to near the end, jump back to middle set
-      if (currentScroll >= maxScroll - cardWidth) {
-        isScrolling.current = true;
-        carousel.scrollLeft = cardWidth * numBooths;
-        setTimeout(() => { isScrolling.current = false; }, 50);
-      }
-      // If scrolled to near the beginning, jump forward to middle set
-      else if (currentScroll <= cardWidth) {
-        isScrolling.current = true;
-        carousel.scrollLeft = cardWidth * numBooths;
-        setTimeout(() => { isScrolling.current = false; }, 50);
-      }
-    };
-
-    carousel.addEventListener('scroll', handleCarouselScroll);
-    return () => carousel.removeEventListener('scroll', handleCarouselScroll);
-  }, []);
-
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollCarousel = (direction) => {
-    if (carouselRef.current) {
-      const scrollAmount = 352; // card width (320px) + gap (32px)
-      const currentScroll = carouselRef.current.scrollLeft;
-      const targetScroll = direction === 'left' 
-        ? currentScroll - scrollAmount 
-        : currentScroll + scrollAmount;
-      
-      carouselRef.current.scrollTo({
-        left: targetScroll,
-        behavior: 'smooth'
-      });
     }
   };
 
@@ -161,58 +104,28 @@ export default function NoteworthyPhotoBooths() {
     {
       id: 1,
       name: 'Open-Air Photo Booth',
-      description: 'Perfect for larger groups and events where flexibility is key. Our open-air booths accommodate groups of any size and can be positioned anywhere at your venue.',
-      features: [
-        'Accommodates unlimited group sizes',
-        'Professional DSLR camera',
-        'Customizable backdrop options',
-        'Perfect for high-traffic events'
-      ],
+      subtitle: 'Perfect For Any Group Size',
+      description: 'Our open-air booths accommodate groups of any size and can be positioned anywhere at your venue. Professional DSLR camera with customizable backdrop options, perfect for high-traffic events.',
+      image: '/booth-images/open-air-booth.jpg', // You'll need to add these images
       icon: '📸'
     },
     {
       id: 2,
-      name: '360 Photo Booth',
-      description: 'Create stunning slow-motion videos with our revolutionary 360-degree video booth. Guests stand on a platform while a camera rotates around them, capturing dynamic content perfect for social sharing.',
-      features: [
-        'Cinematic slow-motion video',
-        '360-degree rotating camera',
-        'Instant social media sharing',
-        'Digital delivery only'
-      ],
-      icon: '🎬'
-    },
-    {
-      id: 3,
-      name: 'Enclosed Photo Booth',
-      description: 'The classic photo booth experience with modern technology. Private, intimate space for smaller groups to let loose and have fun.',
-      features: [
-        'Private enclosed space',
-        'Seats up to 6 people',
-        'Vintage aesthetic with modern tech',
-        'Instant print strips'
-      ],
-      icon: '📦'
-    },
-    {
-      id: 4,
       name: 'Selfie-Station Booth',
-      description: 'A compact, modern solution perfect for corporate events and smaller venues. Guests can take unlimited photos using a touchscreen interface.',
-      features: [
-        'Compact footprint',
-        'Touchscreen interface',
-        'Digital sharing options',
-        'No instant prints'
-      ],
+      subtitle: 'Compact & Modern',
+      description: 'A compact, modern solution perfect for corporate events and smaller venues. Guests can take unlimited photos using a touchscreen interface with digital sharing options.',
+      image: '/booth-images/selfie-station-booth.jpg',
       icon: '🤳'
     },
     {
-      id: 5,
-      name: 'Mirror Photo Booth',
-      description: 'An interactive experience featuring a full-length mirror that comes alive with animations and prompts. Touch the mirror to take photos, sign your prints, and more.',
-      features: [
-        'Interactive touch mirror',
-        'Full-length elegance',
+      id: 3,
+      name: '360 Photo Booth',
+      subtitle: 'Stunning Slow-Motion Videos',
+      description: 'Create stunning slow-motion videos with our revolutionary 360-degree video booth. Guests stand on a platform while a camera rotates around them, capturing dynamic content perfect for social sharing.',
+      image: '/booth-images/360-booth.jpg',
+      icon: '🎬'
+    }
+  ];
         'Animated emoji stamps',
         'Digital signature capture'
       ],
@@ -365,6 +278,15 @@ export default function NoteworthyPhotoBooths() {
           }
           100% {
             transform: translateX(calc(-160px * 8 - 80px * 8));
+          }
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
           }
         }
 
@@ -1183,13 +1105,13 @@ export default function NoteworthyPhotoBooths() {
         </div>
       </section>
 
-      {/* Photo Booth Types - Carousel */}
+      {/* Our Photo Booths Section - NWDJ Style */}
       <section id="booths" className="section-padding" style={{ 
-        background: '#FFF7E6',
-        overflow: 'hidden'
+        background: '#FFFFFF'
       }}>
-        <div style={{ maxWidth: '80%', margin: '0 auto', marginBottom: '64px' }} className="section-heading-wrapper">
-          <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '1em' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center', paddingBottom: '48px' }}>
+          {/* Section Header */}
+          <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
               backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
@@ -1222,182 +1144,83 @@ export default function NoteworthyPhotoBooths() {
               marginTop: '0.5em',
               opacity: 0.5
             }} />
+          </div>
 
-            <p className="body-font" style={{ 
-              fontSize: '18px', 
-              color: '#9b9b9b',
-              maxWidth: '700px',
-              margin: '16px auto 0'
-            }}>
-              Choose from our diverse selection of photo booth experiences,
-              each designed to create lasting memories for your guests
+          {/* Intro Text */}
+          <div style={{ marginBottom: '3em', maxWidth: '38rem', margin: '0 auto 3em' }}>
+            <p style={{ color: '#9b9b9b', marginBottom: '1em', lineHeight: 1.8 }}>
+              Choose from our diverse selection of photo booth experiences, each designed to create lasting memories for your guests. Professional equipment, unlimited photos, and customizable options for every event.
             </p>
+            <p style={{ color: '#9b9b9b' }}>Click on an image below to learn more.</p>
           </div>
         </div>
 
-        {/* Carousel Container */}
+        {/* Booth Cards - 3 Column Layout */}
         <div style={{ 
-          position: 'relative', 
-          paddingLeft: '24px', 
-          paddingRight: '24px',
-          maxWidth: '80%',
-          margin: '0 auto'
-        }}
-        className="carousel-container"
-        >
-          {/* Left Arrow */}
-          <button
-            onClick={() => scrollCarousel('left')}
-            className="carousel-arrow"
-            style={{
-              position: 'absolute',
-              left: '0',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 20,
-              width: '56px',
-              height: '56px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-              border: 'none',
-              boxShadow: '0 4px 16px rgba(37, 99, 235, 0.4)',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
-              e.currentTarget.style.boxShadow = '0 6px 24px rgba(37, 99, 235, 0.5)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
-              e.currentTarget.style.boxShadow = '0 4px 16px rgba(37, 99, 235, 0.4)';
-            }}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f4f4f4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-
-          {/* Right Arrow */}
-          <button
-            onClick={() => scrollCarousel('right')}
-            className="carousel-arrow"
-            style={{
-              position: 'absolute',
-              right: '0',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 20,
-              width: '56px',
-              height: '56px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-              border: 'none',
-              boxShadow: '0 4px 16px rgba(37, 99, 235, 0.4)',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
-              e.currentTarget.style.boxShadow = '0 6px 24px rgba(37, 99, 235, 0.5)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
-              e.currentTarget.style.boxShadow = '0 4px 16px rgba(37, 99, 235, 0.4)';
-            }}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f4f4f4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
-
-          {/* Carousel Track Wrapper - clips partial cards */}
-          <div style={{
-            overflow: 'hidden',
-            position: 'relative'
-          }}>
-            {/* Right edge fade to cover partial cards */}
-            <div className="carousel-fade-overlay" style={{
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              width: '150px',
-              height: '100%',
-              background: 'linear-gradient(to left, #FFF7E6 0%, transparent 100%)',
-              pointerEvents: 'none',
-              zIndex: 10
-            }} />
-            
-            <div 
-              ref={carouselRef}
-              className="carousel-track"
-              style={{
-                display: 'flex',
-                gap: '32px',
-                overflowX: 'scroll',
-                scrollBehavior: 'smooth',
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-                WebkitOverflowScrolling: 'touch',
-                scrollSnapType: 'x mandatory',
-                paddingRight: '200px'
-              }}
-            >
-            {/* Render booths 3 times for infinite scroll */}
-            {[...boothTypes, ...boothTypes, ...boothTypes].map((booth, index) => (
-              <div
-                key={`booth-${booth.id}-${index}`}
-                className="booth-card"
-                style={{
-                  background: '#FFFFFF',
-                  borderRadius: '20px',
-                  padding: '32px 24px',
-                  border: '1px solid rgba(18, 18, 18, 0.1)',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
-                  transition: 'all 0.3s ease',
-                  width: '320px',
-                  minWidth: '320px',
-                  maxWidth: '320px',
-                  flexShrink: 0,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  scrollSnapAlign: 'start'
+          display: 'flex', 
+          flexDirection: 'row',
+          justifyContent: 'center', 
+          gap: '48px', 
+          maxWidth: '1200px', 
+          margin: '0 auto',
+          flexWrap: 'wrap'
+        }}>
+          {boothTypes.map(booth => (
+            <div key={booth.id} style={{ flex: '1', minWidth: '280px', maxWidth: '350px', textAlign: 'center' }}>
+              <a 
+                href={`#booth-${booth.id}`} 
+                style={{ display: 'block', marginBottom: '16px', overflow: 'hidden', textDecoration: 'none' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  // Add click handler later for modal or detail view
                 }}
               >
-                <div style={{
-                  fontSize: '56px',
-                  marginBottom: '20px',
-                  textAlign: 'center'
-                }}>
-                  {booth.icon}
-                </div>
-                <h3 className="display-font" style={{
-                  fontSize: '24px',
-                  fontWeight: 600,
-                  color: '#4a4a4a',
-                  marginBottom: '12px',
-                  textAlign: 'center'
-                }}>
-                  {booth.name}
-                </h3>
-                <p className="body-font" style={{
-                  fontSize: '15px',
-                  color: '#9b9b9b',
-                  lineHeight: 1.6,
-                  marginBottom: '20px',
-                  textAlign: 'center',
-                  flexGrow: 1
-                }}>
-                  {booth.description}
-                </p>
-                <div style={{
-                  display: 'flex',
+                <img
+                  src={booth.image}
+                  alt={booth.name}
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    transition: 'all 0.3s ease',
+                    filter: 'contrast(60%)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter = 'contrast(100%)';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = 'contrast(60%)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                  loading="lazy"
+                />
+              </a>
+              <h3 className="script-font" style={{
+                fontSize: '28px',
+                fontWeight: 400,
+                marginTop: 0,
+                marginBottom: '8px',
+                color: '#4a4a4a'
+              }}>
+                {booth.name}
+              </h3>
+              <h4 style={{
+                fontSize: '12px',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                fontWeight: 700,
+                color: '#4a4a4a',
+                marginBottom: '16px'
+              }}>
+                {booth.subtitle}
+              </h4>
+              <p style={{ color: '#9b9b9b', fontSize: '15px', lineHeight: 1.6 }}>
+                {booth.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
                   display: 'flex',
                   gap: '8px',
                   marginTop: 'auto'
@@ -1421,6 +1244,113 @@ export default function NoteworthyPhotoBooths() {
             ))}
           </div>
           </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Separator - Icons Section */}
+      <section style={{
+        background: '#f9f9f9',
+        padding: '80px 24px',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        {/* Parallax Background Pattern */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `radial-gradient(circle, rgba(74, 74, 74, 0.08) 2px, transparent 2px)`,
+          backgroundSize: '40px 40px',
+          opacity: 0.4
+        }} 
+        className="parallax-bg"
+        />
+
+        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <div className="why-choose-grid">
+            {[
+              { icon: '⚡', title: 'Fast Setup', desc: 'Professional setup and breakdown included' },
+              { icon: '🎨', title: 'Custom Designs', desc: 'Personalized prints and backdrops' },
+              { icon: '📸', title: 'High Quality', desc: 'Professional DSLR cameras and lighting' },
+              { icon: '🎉', title: 'Unlimited Prints', desc: 'No limits on photos during your event' }
+            ].map((item, idx) => (
+              <div key={idx} style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '56px', marginBottom: '16px' }}>{item.icon}</div>
+                <h4 className="display-font" style={{
+                  fontSize: '20px',
+                  fontWeight: 600,
+                  color: '#4a4a4a',
+                  marginBottom: '8px'
+                }}>
+                  {item.title}
+                </h4>
+                <p className="body-font" style={{
+                  fontSize: '15px',
+                  color: '#9b9b9b',
+                  lineHeight: 1.6
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Scrolling Carousel Divider */}
+      <section style={{
+        background: '#FFFFFF',
+        padding: '60px 0',
+        overflow: 'hidden',
+        borderTop: '1px solid rgba(18, 18, 18, 0.05)',
+        borderBottom: '1px solid rgba(18, 18, 18, 0.05)'
+      }}>
+        <div style={{
+          display: 'flex',
+          animation: 'scroll 30s linear infinite',
+          gap: '80px',
+          width: 'fit-content'
+        }}>
+          {/* Duplicate client logos twice for seamless loop */}
+          {[...Array(2)].map((_, setIndex) => (
+            <React.Fragment key={setIndex}>
+              {[
+                { name: 'Nike', emoji: '👟' },
+                { name: 'Intel', emoji: '💻' },
+                { name: 'Adidas', emoji: '👕' },
+                { name: 'Amazon', emoji: '📦' },
+                { name: 'Google', emoji: '🔍' },
+                { name: 'Microsoft', emoji: '🪟' }
+              ].map((client, idx) => (
+                <div
+                  key={`${setIndex}-${idx}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    minWidth: '120px',
+                    height: '80px',
+                    fontSize: '48px',
+                    opacity: 0.6,
+                    filter: 'grayscale(100%)',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = '1';
+                    e.currentTarget.style.filter = 'grayscale(0%)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = '0.6';
+                    e.currentTarget.style.filter = 'grayscale(100%)';
+                  }}
+                >
+                  {client.emoji}
+                </div>
+              ))}
+            </React.Fragment>
+          ))}
         </div>
       </section>
 
