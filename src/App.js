@@ -106,7 +106,7 @@ export default function NoteworthyPhotoBooths() {
       name: 'Open-Air Photo Booth',
       subtitle: 'Perfect For Any Group Size',
       description: 'Our open-air booths accommodate groups of any size and can be positioned anywhere at your venue. Professional DSLR camera with customizable backdrop options, perfect for high-traffic events.',
-      image: '/booth-images/open-air-booth.jpg', // You'll need to add these images
+      image: '/img/booths/open-air-booth.webp',
       icon: '📸'
     },
     {
@@ -114,7 +114,7 @@ export default function NoteworthyPhotoBooths() {
       name: 'Selfie-Station Booth',
       subtitle: 'Compact & Modern',
       description: 'A compact, modern solution perfect for corporate events and smaller venues. Guests can take unlimited photos using a touchscreen interface with digital sharing options.',
-      image: '/booth-images/selfie-station-booth.jpg',
+      image: '/img/booths/selfie-station-booth.webp',
       icon: '🤳'
     },
     {
@@ -122,7 +122,7 @@ export default function NoteworthyPhotoBooths() {
       name: '360 Photo Booth',
       subtitle: 'Stunning Slow-Motion Videos',
       description: 'Create stunning slow-motion videos with our revolutionary 360-degree video booth. Guests stand on a platform while a camera rotates around them, capturing dynamic content perfect for social sharing.',
-      image: '/booth-images/360-booth.jpg',
+      image: '/img/booths/360-booth.webp',
       icon: '🎬'
     }
   ];
@@ -1016,7 +1016,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1038,7 +1038,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1114,7 +1114,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1136,7 +1136,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1849,7 +1849,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1871,7 +1871,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1978,7 +1978,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2000,7 +2000,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2388,7 +2388,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2410,7 +2410,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2482,7 +2482,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2504,7 +2504,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2602,7 +2602,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2624,7 +2624,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
