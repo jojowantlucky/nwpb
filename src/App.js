@@ -526,12 +526,7 @@ export default function NoteworthyPhotoBooths() {
         /* Booth Cards Responsive */
         @media (max-width: 768px) {
           .booth-cards-container {
-            flex-direction: column !important;
-            align-items: center;
-          }
-          
-          .booth-cards-container > div {
-            flex-direction: column !important;
+            grid-template-columns: 1fr !important;
           }
         }
 
@@ -1071,33 +1066,24 @@ export default function NoteworthyPhotoBooths() {
           </p>
         </div>
 
-        {/* Booth Cards - 3 Column Layout - Directly under description */}
+        {/* Booth Cards - 2x2 Grid Layout */}
         <div style={{ 
-          display: 'flex', 
-          flexDirection: 'column',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '48px', 
-          maxWidth: '1200px', 
+          maxWidth: '900px',
           margin: '0 auto 64px',
           padding: '0 24px'
         }}
         className="booth-cards-container"
         >
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            gap: '48px',
-            flexWrap: 'wrap'
-          }}>
-            {boothTypes.map(booth => (
-              <div key={booth.id} style={{ 
-                flex: '1 1 300px', 
-                maxWidth: '400px', 
-                textAlign: 'center',
-                border: 'none',
-                background: 'transparent',
-                padding: 0
-              }}>
+          {boothTypes.map(booth => (
+            <div key={booth.id} style={{ 
+              textAlign: 'center',
+              border: 'none',
+              background: 'transparent',
+              padding: 0
+            }}>
                 <a 
                   href={`#booth-${booth.id}`} 
                   style={{ 
@@ -1175,7 +1161,6 @@ export default function NoteworthyPhotoBooths() {
                 </p>
               </div>
             ))}
-          </div>
         </div>
 
         <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
