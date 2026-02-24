@@ -402,6 +402,24 @@ export default function NoteworthyPhotoBooths() {
           }
         }
 
+        @keyframes scroll-down {
+          0% {
+            opacity: 0;
+            top: 8px;
+          }
+          40% {
+            opacity: 1;
+          }
+          80% {
+            opacity: 0;
+            top: 24px;
+          }
+          100% {
+            opacity: 0;
+            top: 8px;
+          }
+        }
+
         .parallax-bg {
           animation: parallaxFloat 20s ease-in-out infinite;
         }
@@ -548,16 +566,17 @@ export default function NoteworthyPhotoBooths() {
           padding: 100px 24px;
         }
 
-        /* Book With Confidence Badges - Even Numbers Per Row */
+        /* Book With Confidence Badges - NWDJ Style */
         .badges-grid {
           display: grid;
-          grid-template-columns: repeat(6, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 32px;
+          justify-items: center;
         }
 
-        @media (max-width: 1024px) {
+        @media (min-width: 640px) {
           .badges-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
           }
         }
 
@@ -565,16 +584,18 @@ export default function NoteworthyPhotoBooths() {
           .section-padding {
             padding: 60px 24px;
           }
-          .badges-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-          }
         }
 
-        @media (max-width: 480px) {
-          .badges-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        /* Hero Buttons - Responsive */}
+        @media (min-width: 640px) {
+          .hero-buttons {
+            flex-direction: row !important;
+            max-width: 100% !important;
+          }
+          
+          .hero-buttons a {
+            width: auto !important;
+            min-width: 200px;
           }
         }
 
@@ -815,7 +836,7 @@ export default function NoteworthyPhotoBooths() {
       {/* Hero Section */}
       <section id="home" style={{
         minHeight: '100vh',
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)',
+        background: '#000',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -838,28 +859,14 @@ export default function NoteworthyPhotoBooths() {
           <source src={process.env.PUBLIC_URL + '/NWPB_Home_Page_Video_v3.webm'} type="video/webm" />
         </video>
 
-        {/* Hero Mobile Background Image - Hidden by default, shown on mobile when you add image */}
-        <div className="hero-mobile-image" style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: 'url(/hero-mobile.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex: 0,
-          display: 'none'
-        }} />
-
-        {/* Overlay */}
+        {/* Overlay - Darker for better readability */}
         <div style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(135deg, rgba(255, 58, 124, 0.15) 0%, rgba(18, 18, 18, 0.5) 100%)',
+          background: 'rgba(0, 0, 0, 0.4)',
           zIndex: 1
         }} />
 
@@ -870,105 +877,182 @@ export default function NoteworthyPhotoBooths() {
           maxWidth: '1000px',
           padding: '24px'
         }}>
-          {/* Frosted Glass Container */}
-          <div style={{
-            background: 'rgba(18, 18, 18, 0.4)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-            borderRadius: '48px',
-            padding: '60px 48px',
-            border: '1px solid rgba(250, 250, 248, 0.1)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+          <div style={{ marginBottom: '16px' }}>
+            <Camera size={64} color="#e86c6c" strokeWidth={2} />
+          </div>
+          
+          <p className="script-font" style={{
+            fontSize: 'clamp(20px, 4vw, 28px)',
+            color: '#e86c6c',
+            marginBottom: '24px',
+            fontWeight: 400
           }}>
-            <div style={{ marginBottom: '24px' }}>
-              <Camera size={64} color="#e86c6c" strokeWidth={2} />
-            </div>
-            <h1 className="display-font animate-fadeIn" style={{
-              fontSize: 'clamp(48px, 8vw, 86px)',
-              fontWeight: 600,
-              color: '#f4f4f4',
-              marginBottom: '24px',
-              lineHeight: 1.1
+            Creating unforgettable moments
+          </p>
+
+          <h1 className="display-font" style={{
+            fontSize: 'clamp(48px, 8vw, 86px)',
+            fontWeight: 300,
+            color: '#FFFFFF',
+            marginBottom: '32px',
+            lineHeight: 1.1
+          }}>
+            Noteworthy Photo Booths
+          </h1>
+
+          {/* Phone Number with Lines */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '16px',
+            marginBottom: '40px'
+          }}>
+            <div style={{
+              flex: '1',
+              maxWidth: '100px',
+              height: '1px',
+              background: 'rgba(255, 255, 255, 0.3)'
+            }} />
+            <p className="body-font" style={{
+              fontSize: 'clamp(16px, 3vw, 20px)',
+              color: '#FFFFFF',
+              margin: 0,
+              whiteSpace: 'nowrap'
             }}>
-              Noteworthy
-              <span style={{
-                display: 'block',
-                background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}>
-                Photo Booths
-              </span>
-            </h1>
-            <p className="script-font animate-fadeIn" style={{
-              fontSize: '28px',
-              color: '#ff5c94',
-              marginBottom: '24px',
-              animationDelay: '0.1s',
-              opacity: 0,
-              animation: 'fadeIn 0.6s ease-out 0.1s forwards'
-            }}>
-              Creating unforgettable moments
+              Call/Text: 503-770-0382
             </p>
-            <p className="body-font animate-fadeIn" style={{
-              fontSize: '20px',
-              color: 'rgba(250, 250, 248, 0.95)',
-              marginBottom: '40px',
-              lineHeight: 1.6,
-              animationDelay: '0.2s',
-              opacity: 0,
-              animation: 'fadeIn 0.6s ease-out 0.2s forwards'
-            }}>
-              Professional photo booth experiences for weddings, corporate events, 
-              and celebrations across Portland.
-            </p>
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <button 
-                className="btn-primary" 
-                style={{ fontSize: '18px', padding: '16px 40px' }}
-                onClick={() => scrollToSection('booths')}
-              >
-                Explore Booths
-              </button>
-              <button 
-                className="btn-secondary" 
-                style={{ 
-                  borderColor: '#f4f4f4', 
-                  color: '#f4f4f4',
-                  fontSize: '18px',
-                  padding: '16px 40px'
-                }}
-                onClick={() => scrollToSection('contact')}
-              >
-                Get in Touch
-              </button>
-            </div>
+            <div style={{
+              flex: '1',
+              maxWidth: '100px',
+              height: '1px',
+              background: 'rgba(255, 255, 255, 0.3)'
+            }} />
+          </div>
+
+          {/* Buttons */}
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column',
+            gap: '16px', 
+            justifyContent: 'center',
+            alignItems: 'center',
+            maxWidth: '400px',
+            margin: '0 auto'
+          }}
+          className="hero-buttons"
+          >
+            <a 
+              href="https://noteworthy-djs.checkcherry.com/reservation"
+              className="btn-primary" 
+              style={{ 
+                fontSize: '16px',
+                padding: '14px 32px',
+                textTransform: 'uppercase',
+                letterSpacing: '3px',
+                fontWeight: 700,
+                width: '100%',
+                textAlign: 'center',
+                textDecoration: 'none',
+                display: 'block'
+              }}
+            >
+              Get an Instant Quote
+            </a>
+            <a 
+              href="https://calendly.com/noteworthydjs"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ 
+                fontSize: '16px',
+                padding: '14px 32px',
+                textTransform: 'uppercase',
+                letterSpacing: '3px',
+                fontWeight: 700,
+                background: 'transparent',
+                color: '#FFFFFF',
+                border: '2px solid #FFFFFF',
+                borderRadius: '28px',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                width: '100%',
+                textAlign: 'center',
+                textDecoration: 'none',
+                display: 'block'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+              }}
+            >
+              Schedule a Call
+            </a>
+            <a 
+              href="tel:503-770-0382"
+              style={{ 
+                fontSize: '16px',
+                padding: '14px 32px',
+                textTransform: 'uppercase',
+                letterSpacing: '3px',
+                fontWeight: 700,
+                background: 'transparent',
+                color: '#FFFFFF',
+                border: '2px solid #FFFFFF',
+                borderRadius: '28px',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                width: '100%',
+                textAlign: 'center',
+                textDecoration: 'none',
+                display: 'block'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+              }}
+            >
+              Call Us
+            </a>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div style={{
-          position: 'absolute',
-          bottom: '40px',
-          right: '40px',
-          zIndex: 3,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '8px'
-        }}>
-          <span className="body-font" style={{ 
-            color: 'rgba(250, 250, 248, 0.7)', 
-            fontSize: '14px',
-            fontWeight: 600,
-            letterSpacing: '1px'
-          }}>
-            SCROLL
-          </span>
-          <div className="animate-bounce">
-            <ChevronDown size={28} color="#e86c6c" strokeWidth={3} />
-          </div>
-        </div>
+        {/* Scroll Indicator - NWDJ Style */}
+        <a
+          href="#about"
+          aria-label="Scroll down"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('about');
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '2em',
+            right: '2em',
+            zIndex: 3,
+            width: '25px',
+            height: '40px',
+            borderRadius: '12.5px',
+            border: '2px solid #9b9b9b',
+            display: 'block',
+            cursor: 'pointer'
+          }}
+        >
+          <span style={{
+            position: 'absolute',
+            display: 'block',
+            width: '3px',
+            height: '8px',
+            backgroundColor: '#9b9b9b',
+            top: '8px',
+            left: '9px',
+            borderRadius: '2px',
+            animation: 'scroll-down 1s ease infinite'
+          }} />
+        </a>
       </section>
 
       {/* About Us Section */}
@@ -2304,51 +2388,29 @@ export default function NoteworthyPhotoBooths() {
         </div>
       </section>
 
-      {/* Book With Confidence Section */}
-      <section className="section-padding" style={{ 
-        background: '#FFFFFF'
+      {/* Book With Confidence Section - NWDJ Style */}
+      <section id="reviews" className="section-padding" style={{ 
+        background: '#FFFFFF',
+        padding: '64px 24px'
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <p className="script-font" style={{
-              fontSize: '24px',
-              color: '#e86c6c',
-              marginBottom: '12px'
-            }}>
-              Trusted by thousands
-            </p>
-            <h2 className="display-font" style={{
-              fontSize: 'clamp(36px, 6vw, 56px)',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '16px'
-            }}>
-              Book With Confidence
-            </h2>
-            <p className="body-font" style={{ 
-              fontSize: '18px', 
-              color: '#9b9b9b',
-              maxWidth: '700px',
-              margin: '0 auto'
-            }}>
-              Award-winning service recognized by leading wedding and event platforms
-            </p>
-          </div>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 className="display-font" style={{
+            fontSize: '48px',
+            fontWeight: 300,
+            color: '#4a4a4a',
+            marginBottom: '40px'
+          }}>
+            Book With Confidence
+          </h2>
 
-          <div 
-            className="badges-grid"
-            style={{
-              maxWidth: '1200px',
-              margin: '0 auto'
-            }}
-          >
+          <div className="badges-grid">
             {[
-              { name: 'WeddingWire', filename: 'weddingwire.png', color: '#6C5CE7', url: 'https://www.weddingwire.com/biz/noteworthy-djs-portland/9661cffdf7751c14.html' },
-              { name: 'The Knot', filename: 'theknot.png', color: '#FF6B9D', url: 'https://www.theknot.com/marketplace/redirect-558056' },
-              { name: 'Yelp', filename: 'yelp.png', color: '#D32323', url: 'https://www.yelp.com/biz/noteworthy-djs-and-photo-booths-portland' },
-              { name: 'Google', filename: 'google.png', color: '#4285F4', url: 'https://g.page/r/CZfmtyV1dyK0EBM/review' },
-              { name: 'Zola', filename: 'zola.png', color: '#2EC4B6', url: 'https://www.zola.com/wedding-vendors/wedding-bands-djs/noteworthy-djs-photo-booths' },
-              { name: 'BBB', filename: 'bbb.png', color: '#003366', url: 'https://www.bbb.org/us/or/portland/profile/photo-booth-rental/YOUR-ID' }
+              { name: 'WeddingWire', filename: 'weddingwire.png', url: 'https://www.weddingwire.com/biz/noteworthy-djs-portland/9661cffdf7751c14.html' },
+              { name: 'The Knot', filename: 'theknot.png', url: 'https://www.theknot.com/marketplace/redirect-558056' },
+              { name: 'Yelp', filename: 'yelp.png', url: 'https://www.yelp.com/biz/noteworthy-djs-and-photo-booths-portland' },
+              { name: 'Google', filename: 'google.png', url: 'https://g.page/r/CZfmtyV1dyK0EBM/review' },
+              { name: 'Zola', filename: 'zola.png', url: 'https://www.zola.com/wedding-vendors/wedding-bands-djs/noteworthy-djs-photo-booths' },
+              { name: 'BBB', filename: 'bbb-iframe', url: 'https://www.bbb.org/us/or/portland/profile/photo-booth-rental/noteworthy-productions-llc-1296-1000083774' }
             ].map((badge, idx) => (
               <a
                 key={idx}
@@ -2356,69 +2418,37 @@ export default function NoteworthyPhotoBooths() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  textAlign: 'center',
-                  textDecoration: 'none',
                   display: 'block',
                   transition: 'opacity 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.opacity = '0.7';
+                  e.currentTarget.style.opacity = '0.8';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.opacity = '1';
                 }}
               >
-                <div style={{
-                  width: '160px',
-                  height: '160px',
-                  margin: '0 auto',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  {badge.name === 'BBB' ? (
-                    <iframe 
-                      border="0" 
-                      frameBorder="0" 
-                      style={{ border: 0, height: '110px', width: '150px' }} 
-                      src="https://seal-alaskaoregonwesternwashington.bbb.org/frame/blue-seal-150-110-bbb-1000083774.png?chk=0DE3410CC9"
-                      title="BBB Accredited Business"
-                    />
-                  ) : (
-                    <img 
-                      src={`${process.env.PUBLIC_URL}/badges/${badge.filename}`}
-                      alt={`${badge.name} Badge`}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain'
-                      }}
-                    />
-                  )}
-                </div>
+                {badge.name === 'BBB' ? (
+                  <iframe 
+                    border="0" 
+                    frameBorder="0" 
+                    style={{ border: 0, height: '110px', width: '150px' }} 
+                    src="https://seal-alaskaoregonwesternwashington.bbb.org/frame/blue-seal-150-110-bbb-1000083774.png?chk=0DE3410CC9"
+                    title="BBB Accredited Business"
+                  />
+                ) : (
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/badges/${badge.filename}`}
+                    alt={`${badge.name} Badge`}
+                    style={{
+                      width: '144px',
+                      height: '144px',
+                      objectFit: 'contain'
+                    }}
+                  />
+                )}
               </a>
             ))}
-          </div>
-
-          <div style={{
-            textAlign: 'center',
-            marginTop: '48px',
-            padding: '32px',
-            background: '#FAF8FC',
-            borderRadius: '16px',
-            border: '1px solid rgba(18, 18, 18, 0.05)'
-          }}>
-            <p className="body-font" style={{
-              fontSize: '17px',
-              color: '#9b9b9b',
-              lineHeight: 1.8,
-              maxWidth: '800px',
-              margin: '0 auto'
-            }}>
-              <strong style={{ color: '#4a4a4a' }}>Join hundreds of satisfied clients</strong> who have trusted us with 
-              their special moments. Our commitment to excellence and attention to detail has earned us top ratings 
-              across all major review platforms.
-            </p>
           </div>
         </div>
       </section>
