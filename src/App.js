@@ -106,7 +106,7 @@ export default function NoteworthyPhotoBooths() {
       name: 'Open-Air Photo Booth',
       subtitle: 'Perfect For Any Group Size',
       description: 'Our open-air booths accommodate groups of any size and can be positioned anywhere at your venue. Professional DSLR camera with customizable backdrop options, perfect for high-traffic events.',
-      image: '/img/booths/open-air-booth.webp',
+      image: '/img/booths/openair-booth.webp',
       icon: '📸'
     },
     {
@@ -122,7 +122,7 @@ export default function NoteworthyPhotoBooths() {
       name: '360 Photo Booth',
       subtitle: 'Stunning Slow-Motion Videos',
       description: 'Create stunning slow-motion videos with our revolutionary 360-degree video booth. Guests stand on a platform while a camera rotates around them, capturing dynamic content perfect for social sharing.',
-      image: '/img/booths/360-booth.webp',
+      image: '/img/booths/booth-360.webp',
       icon: '🎬'
     }
   ];
