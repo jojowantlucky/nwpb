@@ -763,9 +763,6 @@ export default function NoteworthyPhotoBooths() {
             <a onClick={() => scrollToSection('booths')} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>Booths</a>
             <a onClick={() => scrollToSection('contact')} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>Contact</a>
             <a href="https://noteworthy-djs.checkcherry.com/users/sign_in" target="_blank" rel="noopener noreferrer" style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none' }}>Login</a>
-            <button className="btn-primary" style={{ padding: '10px 24px', fontSize: '14px' }} onClick={() => scrollToSection('contact')}>
-              Book Now
-            </button>
           </div>
           
           {/* Mobile Hamburger Button */}
@@ -811,12 +808,7 @@ export default function NoteworthyPhotoBooths() {
           <a onClick={() => { scrollToSection('team'); setMobileMenuOpen(false); }} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', cursor: 'pointer', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Team</a>
           <a onClick={() => { scrollToSection('booths'); setMobileMenuOpen(false); }} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', cursor: 'pointer', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Booths</a>
           <a onClick={() => { scrollToSection('contact'); setMobileMenuOpen(false); }} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', cursor: 'pointer', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Contact</a>
-          <a href="https://noteworthy-djs.checkcherry.com/users/sign_in" target="_blank" rel="noopener noreferrer" style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Login</a>
-          <div style={{ padding: '16px 24px' }}>
-            <button className="btn-primary" style={{ padding: '12px 24px', fontSize: '16px', width: '100%' }} onClick={() => { scrollToSection('contact'); setMobileMenuOpen(false); }}>
-              Book Now
-            </button>
-          </div>
+          <a href="https://noteworthy-djs.checkcherry.com/users/sign_in" target="_blank" rel="noopener noreferrer" style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', padding: '16px 24px' }}>Login</a>
         </div>
       </nav>
 
