@@ -580,6 +580,19 @@ export default function NoteworthyPhotoBooths() {
           }
         }
 
+        /* Why Choose Us Icons */
+        .why-choose-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 48px;
+        }
+
+        @media (min-width: 768px) {
+          .why-choose-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+
         @media (max-width: 768px) {
           .section-padding {
             padding: 60px 24px;
@@ -1141,14 +1154,14 @@ export default function NoteworthyPhotoBooths() {
           </p>
 
           {/* Why Choose Us - Icons without card */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '48px',
-            marginTop: '64px',
-            maxWidth: '1000px',
-            margin: '64px auto 0'
-          }}>
+          <div 
+            className="why-choose-grid"
+            style={{
+              marginTop: '64px',
+              maxWidth: '1000px',
+              margin: '64px auto 0'
+            }}
+          >
             {[
               { icon: '⚡', title: 'Fast Setup', desc: 'Professional setup and breakdown included' },
               { icon: '🎨', title: 'Custom Designs', desc: 'Personalized prints and backdrops' },
