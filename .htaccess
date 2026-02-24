@@ -6,7 +6,10 @@ RewriteRule ^test-htaccess$ - [R=410,L]
   RewriteEngine On
   RewriteBase /nwpb_updates/
   
-  # Don't rewrite if it's an actual file that exists
+  # Skip rewrite for static assets (images, css, js)
+  RewriteRule \.(jpg|jpeg|png|gif|webp|css|js|ico|svg|woff|woff2|ttf|eot)$ - [L]
+  
+  # Don't rewrite if it's an actual file or directory
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
