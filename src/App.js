@@ -1215,31 +1215,6 @@ export default function NoteworthyPhotoBooths() {
           ))}
         </div>
       </section>
-                  display: 'flex',
-                  gap: '8px',
-                  marginTop: 'auto'
-                }}>
-                  <button 
-                    className="btn-primary" 
-                    style={{ flex: 1, justifyContent: 'center', fontSize: '14px', padding: '12px 16px' }}
-                    onClick={() => scrollToSection('contact')}
-                  >
-                    Book Now
-                  </button>
-                  <button 
-                    className="btn-secondary" 
-                    style={{ flex: 1, fontSize: '14px', padding: '12px 16px' }}
-                    onClick={() => setActiveBoothModal(booth)}
-                  >
-                    More Info
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us Separator - Icons Section */}
       <section style={{
