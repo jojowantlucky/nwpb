@@ -126,12 +126,6 @@ export default function NoteworthyPhotoBooths() {
       icon: '🎬'
     }
   ];
-        'Animated emoji stamps',
-        'Digital signature capture'
-      ],
-      icon: '🪞'
-    }
-  ];
 
   const testimonials = [
     {
