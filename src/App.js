@@ -515,6 +515,18 @@ export default function NoteworthyPhotoBooths() {
           }
         }
 
+        /* Booth Cards Responsive */
+        @media (max-width: 768px) {
+          .booth-cards-container {
+            flex-direction: column !important;
+            align-items: center;
+          }
+          
+          .booth-cards-container > div {
+            flex-direction: column !important;
+          }
+        }
+
         /* Mobile Navigation */
         @media (max-width: 968px) {
           .desktop-nav {
@@ -1010,7 +1022,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1032,7 +1044,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1108,7 +1120,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1130,7 +1142,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1152,67 +1164,76 @@ export default function NoteworthyPhotoBooths() {
         {/* Booth Cards - 3 Column Layout */}
         <div style={{ 
           display: 'flex', 
-          flexDirection: 'row',
-          justifyContent: 'center', 
+          flexDirection: 'column',
           gap: '48px', 
           maxWidth: '1200px', 
           margin: '0 auto',
-          flexWrap: 'wrap'
-        }}>
-          {boothTypes.map(booth => (
-            <div key={booth.id} style={{ flex: '1', minWidth: '280px', maxWidth: '350px', textAlign: 'center' }}>
-              <a 
-                href={`#booth-${booth.id}`} 
-                style={{ display: 'block', marginBottom: '16px', overflow: 'hidden', textDecoration: 'none' }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  // Add click handler later for modal or detail view
-                }}
-              >
-                <img
-                  src={booth.image}
-                  alt={booth.name}
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    transition: 'all 0.3s ease',
-                    filter: 'contrast(60%)'
+          padding: '0 24px'
+        }}
+        className="booth-cards-container"
+        >
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            gap: '48px',
+            flexWrap: 'wrap'
+          }}>
+            {boothTypes.map(booth => (
+              <div key={booth.id} style={{ flex: '1 1 300px', maxWidth: '400px', textAlign: 'center' }}>
+                <a 
+                  href={`#booth-${booth.id}`} 
+                  style={{ display: 'block', marginBottom: '16px', overflow: 'hidden', textDecoration: 'none' }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    // Add click handler later for modal or detail view
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.filter = 'contrast(100%)';
-                    e.currentTarget.style.transform = 'scale(1.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.filter = 'contrast(60%)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
-                  loading="lazy"
-                />
-              </a>
-              <h3 className="script-font" style={{
-                fontSize: '28px',
-                fontWeight: 400,
-                marginTop: 0,
-                marginBottom: '8px',
-                color: '#4a4a4a'
-              }}>
-                {booth.name}
-              </h3>
-              <h4 style={{
-                fontSize: '12px',
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-                fontWeight: 700,
-                color: '#4a4a4a',
-                marginBottom: '16px'
-              }}>
-                {booth.subtitle}
-              </h4>
-              <p style={{ color: '#9b9b9b', fontSize: '15px', lineHeight: 1.6 }}>
-                {booth.description}
-              </p>
-            </div>
-          ))}
+                >
+                  <img
+                    src={`${process.env.PUBLIC_URL}${booth.image}`}
+                    alt={booth.name}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      transition: 'all 0.3s ease',
+                      filter: 'contrast(60%)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.filter = 'contrast(100%)';
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.filter = 'contrast(60%)';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                    loading="lazy"
+                  />
+                </a>
+                <h3 className="script-font" style={{
+                  fontSize: '32px',
+                  fontWeight: 400,
+                  marginTop: 0,
+                  marginBottom: '8px',
+                  color: '#4a4a4a'
+                }}>
+                  {booth.name}
+                </h3>
+                <h4 style={{
+                  fontSize: '11px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '2px',
+                  fontWeight: 700,
+                  color: '#4a4a4a',
+                  marginBottom: '12px'
+                }}>
+                  {booth.subtitle}
+                </h4>
+                <p style={{ color: '#9b9b9b', fontSize: '14px', lineHeight: 1.6 }}>
+                  {booth.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1818,7 +1839,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1840,7 +1861,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1947,7 +1968,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -1969,7 +1990,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2357,7 +2378,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2379,7 +2400,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2451,7 +2472,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2473,7 +2494,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2571,7 +2592,7 @@ export default function NoteworthyPhotoBooths() {
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
             {/* Line above */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
@@ -2593,7 +2614,7 @@ export default function NoteworthyPhotoBooths() {
             
             {/* Line below */}
             <div style={{
-              backgroundImage: 'url(/img/logo/nwpb-horizontal-line.webp)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
