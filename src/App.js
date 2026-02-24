@@ -1111,7 +1111,6 @@ export default function NoteworthyPhotoBooths() {
             }} />
             
             <h2 style={{
-              textTransform: 'uppercase',
               letterSpacing: '3px',
               fontSize: '1.8em',
               margin: '0',
@@ -1197,27 +1196,45 @@ export default function NoteworthyPhotoBooths() {
         overflow: 'hidden'
       }}>
         <div style={{ maxWidth: '80%', margin: '0 auto', marginBottom: '64px' }} className="section-heading-wrapper">
-          <div style={{ textAlign: 'center' }}>
-            <p className="script-font" style={{
-              fontSize: '24px',
-              color: '#e86c6c',
-              marginBottom: '12px'
-            }}>
-              Choose your perfect booth
-            </p>
-            <h2 className="display-font" style={{
-              fontSize: 'clamp(36px, 6vw, 56px)',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '16px'
+          <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '1em' }}>
+            {/* Line above */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginBottom: '0.5em',
+              opacity: 0.5
+            }} />
+            
+            <h2 style={{
+              letterSpacing: '3px',
+              fontSize: '1.8em',
+              margin: '0',
+              padding: '0.5em 0',
+              fontWeight: 300,
+              color: '#4a4a4a'
             }}>
               Our Photo Booths
             </h2>
+            
+            {/* Line below */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginTop: '0.5em',
+              opacity: 0.5
+            }} />
+
             <p className="body-font" style={{ 
               fontSize: '18px', 
               color: '#9b9b9b',
               maxWidth: '700px',
-              margin: '0 auto'
+              margin: '16px auto 0'
             }}>
               Choose from our diverse selection of photo booth experiences,
               each designed to create lasting memories for your guests
@@ -1906,27 +1923,45 @@ export default function NoteworthyPhotoBooths() {
       {/* Team Section */}
       <section id="team" className="section-padding" style={{ background: '#f6c4c4' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <p className="script-font" style={{
-              fontSize: '24px',
-              color: '#e86c6c',
-              marginBottom: '12px'
+          <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
+            {/* Line above */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginBottom: '0.5em',
+              opacity: 0.5
+            }} />
+            
+            <h2 style={{
+              letterSpacing: '3px',
+              fontSize: '1.8em',
+              margin: '0',
+              padding: '0.5em 0',
+              fontWeight: 300,
+              color: '#4a4a4a'
             }}>
-              The faces behind the fun
-            </p>
-            <h2 className="display-font" style={{
-              fontSize: 'clamp(36px, 6vw, 56px)',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '16px'
-            }}>
-              Meet the Team
+              Meet The Team
             </h2>
+            
+            {/* Line below */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginTop: '0.5em',
+              opacity: 0.5
+            }} />
+
             <p className="body-font" style={{ 
               fontSize: '18px', 
               color: '#9b9b9b',
               maxWidth: '600px',
-              margin: '0 auto'
+              margin: '16px auto 0'
             }}>
               The passionate professionals behind every memorable event
             </p>
@@ -2017,27 +2052,45 @@ export default function NoteworthyPhotoBooths() {
         />
         
         <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <p className="script-font" style={{
-              fontSize: '24px',
-              color: '#e86c6c',
-              marginBottom: '12px'
-            }}>
-              Everything you need & more
-            </p>
-            <h2 className="display-font" style={{
-              fontSize: 'clamp(36px, 6vw, 56px)',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '16px'
+          <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
+            {/* Line above */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginBottom: '0.5em',
+              opacity: 0.5
+            }} />
+            
+            <h2 style={{
+              letterSpacing: '3px',
+              fontSize: '1.8em',
+              margin: '0',
+              padding: '0.5em 0',
+              fontWeight: 300,
+              color: '#4a4a4a'
             }}>
               What's Included
             </h2>
+            
+            {/* Line below */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginTop: '0.5em',
+              opacity: 0.5
+            }} />
+
             <p className="body-font" style={{ 
               fontSize: '18px', 
               color: '#9b9b9b',
               maxWidth: '700px',
-              margin: '0 auto'
+              margin: '16px auto 0'
             }}>
               Premium features included with every booth rental
             </p>
@@ -2409,14 +2462,40 @@ export default function NoteworthyPhotoBooths() {
         padding: '64px 24px'
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 className="display-font" style={{
-            fontSize: '48px',
-            fontWeight: 300,
-            color: '#4a4a4a',
-            marginBottom: '40px'
-          }}>
-            Book With Confidence
-          </h2>
+          <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
+            {/* Line above */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginBottom: '0.5em',
+              opacity: 0.5
+            }} />
+            
+            <h2 style={{
+              letterSpacing: '3px',
+              fontSize: '1.8em',
+              margin: '0',
+              padding: '0.5em 0',
+              fontWeight: 300,
+              color: '#4a4a4a'
+            }}>
+              Book With Confidence
+            </h2>
+            
+            {/* Line below */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginTop: '0.5em',
+              opacity: 0.5
+            }} />
+          </div>
 
           <div className="badges-grid">
             {[
@@ -2477,22 +2556,39 @@ export default function NoteworthyPhotoBooths() {
         overflow: 'hidden'
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', marginBottom: '48px' }}>
-          <div style={{ textAlign: 'center' }}>
-            <p className="script-font" style={{
-              fontSize: '24px',
-              color: '#e86c6c',
-              marginBottom: '12px'
-            }}>
-              Trusted by amazing brands
-            </p>
-            <h2 className="display-font" style={{
-              fontSize: 'clamp(32px, 5vw, 48px)',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '16px'
+          <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
+            {/* Line above */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginBottom: '0.5em',
+              opacity: 0.5
+            }} />
+            
+            <h2 style={{
+              letterSpacing: '3px',
+              fontSize: '1.8em',
+              margin: '0',
+              padding: '0.5em 0',
+              fontWeight: 300,
+              color: '#4a4a4a'
             }}>
               Previous Clients
             </h2>
+            
+            {/* Line below */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginTop: '0.5em',
+              opacity: 0.5
+            }} />
           </div>
         </div>
 
@@ -2580,27 +2676,45 @@ export default function NoteworthyPhotoBooths() {
         background: '#FAF8FC'
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <p className="script-font" style={{
-              fontSize: '24px',
-              color: '#e86c6c',
-              marginBottom: '12px'
+          <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
+            {/* Line above */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginBottom: '0.5em',
+              opacity: 0.5
+            }} />
+            
+            <h2 style={{
+              letterSpacing: '3px',
+              fontSize: '1.8em',
+              margin: '0',
+              padding: '0.5em 0',
+              fontWeight: 300,
+              color: '#4a4a4a'
             }}>
-              Let's make it happen
-            </p>
-            <h2 className="display-font" style={{
-              fontSize: 'clamp(36px, 6vw, 56px)',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '16px'
-            }}>
-              Get in Touch
+              Get In Touch
             </h2>
+            
+            {/* Line below */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginTop: '0.5em',
+              opacity: 0.5
+            }} />
+
             <p className="body-font" style={{ 
               fontSize: '18px', 
               color: '#9b9b9b',
               maxWidth: '600px',
-              margin: '0 auto'
+              margin: '16px auto 0'
             }}>
               Ready to book your photo booth? Contact us today for availability and pricing
             </p>
