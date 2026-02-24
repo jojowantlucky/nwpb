@@ -586,19 +586,6 @@ export default function NoteworthyPhotoBooths() {
           }
         }
 
-        /* Hero Buttons - Responsive */}
-        @media (min-width: 640px) {
-          .hero-buttons {
-            flex-direction: row !important;
-            max-width: 100% !important;
-          }
-          
-          .hero-buttons a {
-            width: auto !important;
-            min-width: 200px;
-          }
-        }
-
         /* Mobile Navigation */
         @media (max-width: 968px) {
           .desktop-nav {
@@ -905,12 +892,13 @@ export default function NoteworthyPhotoBooths() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '16px',
-            marginBottom: '40px'
+            gap: '24px',
+            marginBottom: '48px',
+            maxWidth: '600px',
+            margin: '0 auto 48px'
           }}>
             <div style={{
               flex: '1',
-              maxWidth: '100px',
               height: '1px',
               background: 'rgba(255, 255, 255, 0.3)'
             }} />
@@ -924,7 +912,6 @@ export default function NoteworthyPhotoBooths() {
             </p>
             <div style={{
               flex: '1',
-              maxWidth: '100px',
               height: '1px',
               background: 'rgba(255, 255, 255, 0.3)'
             }} />
@@ -933,28 +920,35 @@ export default function NoteworthyPhotoBooths() {
           {/* Buttons */}
           <div style={{ 
             display: 'flex', 
-            flexDirection: 'column',
+            flexDirection: 'row',
             gap: '16px', 
             justifyContent: 'center',
             alignItems: 'center',
-            maxWidth: '400px',
-            margin: '0 auto'
-          }}
-          className="hero-buttons"
-          >
+            flexWrap: 'wrap'
+          }}>
             <a 
               href="https://noteworthy-djs.checkcherry.com/reservation"
-              className="btn-primary" 
               style={{ 
-                fontSize: '16px',
-                padding: '14px 32px',
+                fontSize: '14px',
+                padding: '12px 28px',
                 textTransform: 'uppercase',
                 letterSpacing: '3px',
                 fontWeight: 700,
-                width: '100%',
+                background: '#e86c6c',
+                color: '#FFFFFF',
+                border: 'none',
+                borderRadius: '0',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
                 textAlign: 'center',
                 textDecoration: 'none',
-                display: 'block'
+                display: 'inline-block'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#e14040';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = '#e86c6c';
               }}
             >
               Get an Instant Quote
@@ -964,21 +958,20 @@ export default function NoteworthyPhotoBooths() {
               target="_blank"
               rel="noopener noreferrer"
               style={{ 
-                fontSize: '16px',
-                padding: '14px 32px',
+                fontSize: '14px',
+                padding: '12px 28px',
                 textTransform: 'uppercase',
                 letterSpacing: '3px',
                 fontWeight: 700,
                 background: 'transparent',
                 color: '#FFFFFF',
                 border: '2px solid #FFFFFF',
-                borderRadius: '28px',
+                borderRadius: '0',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
-                width: '100%',
                 textAlign: 'center',
                 textDecoration: 'none',
-                display: 'block'
+                display: 'inline-block'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
@@ -992,21 +985,20 @@ export default function NoteworthyPhotoBooths() {
             <a 
               href="tel:503-770-0382"
               style={{ 
-                fontSize: '16px',
-                padding: '14px 32px',
+                fontSize: '14px',
+                padding: '12px 28px',
                 textTransform: 'uppercase',
                 letterSpacing: '3px',
                 fontWeight: 700,
                 background: 'transparent',
                 color: '#FFFFFF',
                 border: '2px solid #FFFFFF',
-                borderRadius: '28px',
+                borderRadius: '0',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
-                width: '100%',
                 textAlign: 'center',
                 textDecoration: 'none',
-                display: 'block'
+                display: 'inline-block'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
