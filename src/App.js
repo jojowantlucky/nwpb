@@ -1206,7 +1206,6 @@ export default function NoteworthyPhotoBooths() {
                   <div style={{
                     position: 'relative',
                     overflow: 'hidden',
-                    boxShadow: 'inset 0 0 0 8px rgba(255, 255, 255, 0.3)',
                     lineHeight: 0
                   }}>
                     <img
@@ -1229,6 +1228,17 @@ export default function NoteworthyPhotoBooths() {
                       }}
                       loading="lazy"
                     />
+                    {/* Frame overlay */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      border: '8px solid rgba(255, 255, 255, 0.3)',
+                      pointerEvents: 'none',
+                      boxSizing: 'border-box'
+                    }} />
                   </div>
                 </a>
                 <h3 className="script-font" style={{
