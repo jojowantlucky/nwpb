@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Camera, ChevronDown, X, Phone, Mail, MapPin, Check, Star, Image, Book, Clock, Users, Sparkles, Share2, Menu } from 'lucide-react';
+import { Camera, ChevronDown, X, Phone, Mail, MapPin, Check, Star, Image, Book, Clock, Users, Sparkles, Share2, Menu, User } from 'lucide-react';
 
 export default function NoteworthyPhotoBooths() {
   const [navVisible, setNavVisible] = useState(false);
@@ -775,7 +775,23 @@ export default function NoteworthyPhotoBooths() {
             <a onClick={() => scrollToSection('team')} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>Team</a>
             <a onClick={() => scrollToSection('booths')} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>Booths</a>
             <a onClick={() => scrollToSection('contact')} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>Contact</a>
-            <a href="https://noteworthy-djs.checkcherry.com/users/sign_in" target="_blank" rel="noopener noreferrer" style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none' }}>Login</a>
+            <a 
+              href="https://noteworthy-djs.checkcherry.com/users/sign_in" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ 
+                color: '#9b9b9b', 
+                fontWeight: 500, 
+                fontSize: '14px', 
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px'
+              }}
+            >
+              <User size={16} strokeWidth={2} />
+              Login
+            </a>
           </div>
           
           {/* Mobile Hamburger Button */}
@@ -821,7 +837,24 @@ export default function NoteworthyPhotoBooths() {
           <a onClick={() => { scrollToSection('team'); setMobileMenuOpen(false); }} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', cursor: 'pointer', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Team</a>
           <a onClick={() => { scrollToSection('booths'); setMobileMenuOpen(false); }} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', cursor: 'pointer', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Booths</a>
           <a onClick={() => { scrollToSection('contact'); setMobileMenuOpen(false); }} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', cursor: 'pointer', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Contact</a>
-          <a href="https://noteworthy-djs.checkcherry.com/users/sign_in" target="_blank" rel="noopener noreferrer" style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', padding: '16px 24px' }}>Login</a>
+          <a 
+            href="https://noteworthy-djs.checkcherry.com/users/sign_in" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style={{ 
+              color: '#9b9b9b', 
+              fontWeight: 500, 
+              fontSize: '15px', 
+              textDecoration: 'none', 
+              padding: '16px 24px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            <User size={16} strokeWidth={2} />
+            Login
+          </a>
         </div>
       </nav>
 
