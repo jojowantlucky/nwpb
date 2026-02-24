@@ -1180,10 +1180,23 @@ export default function NoteworthyPhotoBooths() {
             flexWrap: 'wrap'
           }}>
             {boothTypes.map(booth => (
-              <div key={booth.id} style={{ flex: '1 1 300px', maxWidth: '400px', textAlign: 'center' }}>
+              <div key={booth.id} style={{ 
+                flex: '1 1 300px', 
+                maxWidth: '400px', 
+                textAlign: 'center',
+                border: 'none',
+                background: 'transparent',
+                padding: 0
+              }}>
                 <a 
                   href={`#booth-${booth.id}`} 
-                  style={{ display: 'block', marginBottom: '16px', overflow: 'hidden', textDecoration: 'none' }}
+                  style={{ 
+                    display: 'block', 
+                    marginBottom: '16px', 
+                    overflow: 'hidden', 
+                    textDecoration: 'none',
+                    border: 'none'
+                  }}
                   onClick={(e) => {
                     e.preventDefault();
                     // Add click handler later for modal or detail view
@@ -1196,7 +1209,9 @@ export default function NoteworthyPhotoBooths() {
                       width: '100%',
                       height: 'auto',
                       transition: 'all 0.3s ease',
-                      filter: 'contrast(60%)'
+                      filter: 'contrast(60%)',
+                      boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.1)',
+                      boxSizing: 'border-box'
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.filter = 'contrast(100%)';
@@ -1214,7 +1229,7 @@ export default function NoteworthyPhotoBooths() {
                   fontWeight: 400,
                   marginTop: 0,
                   marginBottom: '8px',
-                  color: '#4a4a4a'
+                  color: '#e86c6c'
                 }}>
                   {booth.name}
                 </h3>
