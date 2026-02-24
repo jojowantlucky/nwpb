@@ -1047,124 +1047,66 @@ export default function NoteworthyPhotoBooths() {
         </a>
       </section>
 
-      {/* About Us Section */}
+      {/* About Us Section - NWDJ Style */}
       <section id="about" className="section-padding" style={{ 
         background: '#FFFFFF'
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <p className="script-font" style={{
-              fontSize: '24px',
-              color: '#e86c6c',
-              marginBottom: '12px'
-            }}>
-              Who we are
-            </p>
-            <h2 className="display-font" style={{
-              fontSize: 'clamp(36px, 6vw, 56px)',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '16px'
-            }}>
-              About Us
-            </h2>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '48px',
-            marginBottom: '64px'
-          }}>
-            <div>
-              <h3 className="display-font" style={{
-                fontSize: '28px',
-                fontWeight: 600,
-                color: '#4a4a4a',
-                marginBottom: '24px'
-              }}>
-                Our Story
-              </h3>
-              <p className="body-font" style={{
-                fontSize: '17px',
-                color: '#9b9b9b',
-                lineHeight: 1.8
-              }}>
-                Noteworthy Photo Booths is Portland's premier photo booth rental company, dedicated to creating 
-                unforgettable memories for your special events. With years of experience in the entertainment 
-                industry, we combine cutting-edge technology with exceptional service to deliver an experience 
-                your guests will love.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="display-font" style={{
-                fontSize: '28px',
-                fontWeight: 600,
-                color: '#4a4a4a',
-                marginBottom: '24px'
-              }}>
-                Our Mission
-              </h3>
-              <p className="body-font" style={{
-                fontSize: '17px',
-                color: '#9b9b9b',
-                lineHeight: 1.8
-              }}>
-                We believe every event deserves to be memorable. Our mission is to provide top-quality photo booth 
-                experiences that bring joy, laughter, and lasting memories to weddings, corporate events, and 
-                celebrations throughout the Pacific Northwest.
-              </p>
-            </div>
-          </div>
-
-          <div style={{
-            background: '#FAF8FC',
-            borderRadius: '24px',
-            padding: '48px',
-            border: '1px solid rgba(18, 18, 18, 0.05)'
-          }}>
-            <h3 className="display-font" style={{
-              fontSize: '28px',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '32px',
-              textAlign: 'center'
-            }}>
-              Why Choose Us?
-            </h3>
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          {/* Section Header with Decorative Lines */}
+          <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
+            {/* Line above */}
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '32px'
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginBottom: '0.5em',
+              opacity: 0.5
+            }} />
+            
+            <h2 style={{
+              textTransform: 'uppercase',
+              letterSpacing: '3px',
+              fontSize: '1.8em',
+              margin: '0',
+              padding: '0.5em 0',
+              fontWeight: 300,
+              color: '#4a4a4a'
             }}>
-              {[
-                { icon: '⚡', title: 'Fast Setup', desc: 'Professional setup and breakdown included' },
-                { icon: '🎨', title: 'Custom Designs', desc: 'Personalized prints and backdrops' },
-                { icon: '📸', title: 'High Quality', desc: 'Professional DSLR cameras and lighting' },
-                { icon: '🎉', title: 'Unlimited Prints', desc: 'No limits on photos during your event' }
-              ].map((item, idx) => (
-                <div key={idx} style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '48px', marginBottom: '16px' }}>{item.icon}</div>
-                  <h4 className="display-font" style={{
-                    fontSize: '20px',
-                    fontWeight: 600,
-                    color: '#4a4a4a',
-                    marginBottom: '8px'
-                  }}>
-                    {item.title}
-                  </h4>
-                  <p className="body-font" style={{
-                    fontSize: '15px',
-                    color: '#9b9b9b',
-                    lineHeight: 1.6
-                  }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+              Award Winning Service
+            </h2>
+            
+            {/* Line below */}
+            <div style={{
+              backgroundImage: 'url(/img/logo/nwdj-horizontal-line.webp)',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginTop: '0.5em',
+              opacity: 0.5
+            }} />
           </div>
+
+          {/* Description Text */}
+          <p style={{ 
+            color: '#9b9b9b',
+            fontSize: '1.1em',
+            lineHeight: '1.8',
+            marginBottom: '1.5em'
+          }}>
+            Noteworthy Photo Booths is Portland's premier photo booth rental company, dedicated to creating 
+            unforgettable memories for your special events. With years of experience in the entertainment 
+            industry, we combine cutting-edge technology with exceptional service to deliver an experience 
+            your guests will love. Every event deserves to be memorable, and our mission is to provide 
+            top-quality photo booth experiences that bring joy, laughter, and lasting memories to weddings, 
+            corporate events, and celebrations throughout the Pacific Northwest.
+          </p>
+
+          <p style={{ color: '#9b9b9b', marginBottom: '2em' }}>
+            Click on a booth type below to learn more.
+          </p>
         </div>
       </section>
 
