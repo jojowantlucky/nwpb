@@ -1195,34 +1195,41 @@ export default function NoteworthyPhotoBooths() {
                     marginBottom: '16px', 
                     overflow: 'hidden', 
                     textDecoration: 'none',
-                    border: 'none'
+                    border: 'none',
+                    position: 'relative'
                   }}
                   onClick={(e) => {
                     e.preventDefault();
                     // Add click handler later for modal or detail view
                   }}
                 >
-                  <img
-                    src={`${process.env.PUBLIC_URL}${booth.image}`}
-                    alt={booth.name}
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      transition: 'all 0.3s ease',
-                      filter: 'contrast(60%)',
-                      boxShadow: 'inset 0 0 0 8px rgba(255, 255, 255, 0.3)',
-                      boxSizing: 'border-box'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.filter = 'contrast(100%)';
-                      e.currentTarget.style.transform = 'scale(1.05)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.filter = 'contrast(60%)';
-                      e.currentTarget.style.transform = 'scale(1)';
-                    }}
-                    loading="lazy"
-                  />
+                  <div style={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    boxShadow: 'inset 0 0 0 8px rgba(255, 255, 255, 0.3)',
+                    lineHeight: 0
+                  }}>
+                    <img
+                      src={`${process.env.PUBLIC_URL}${booth.image}`}
+                      alt={booth.name}
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        display: 'block',
+                        transition: 'all 0.3s ease',
+                        filter: 'contrast(60%)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.filter = 'contrast(100%)';
+                        e.currentTarget.style.transform = 'scale(1.05)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.filter = 'contrast(60%)';
+                        e.currentTarget.style.transform = 'scale(1)';
+                      }}
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
                 <h3 className="script-font" style={{
                   fontSize: '32px',
