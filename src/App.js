@@ -762,7 +762,26 @@ export default function NoteworthyPhotoBooths() {
             <a onClick={() => scrollToSection('team')} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>Team</a>
             <a onClick={() => scrollToSection('booths')} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>Booths</a>
             <a onClick={() => scrollToSection('contact')} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>Contact</a>
-            <a href="https://noteworthy-djs.checkcherry.com/users/sign_in" target="_blank" rel="noopener noreferrer" style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '15px', textDecoration: 'none' }}>Login</a>
+            <a 
+              href="https://noteworthy-djs.checkcherry.com/users/sign_in" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ 
+                color: '#FFFFFF',
+                backgroundColor: '#e86c6c',
+                fontWeight: 700,
+                fontSize: '14px',
+                textDecoration: 'none',
+                padding: '10px 24px',
+                textTransform: 'uppercase',
+                letterSpacing: '3px',
+                transition: 'background 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e14040'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e86c6c'}
+            >
+              Client Portal
+            </a>
           </div>
           
           {/* Mobile Hamburger Button */}
@@ -808,7 +827,28 @@ export default function NoteworthyPhotoBooths() {
           <a onClick={() => { scrollToSection('team'); setMobileMenuOpen(false); }} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', cursor: 'pointer', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Team</a>
           <a onClick={() => { scrollToSection('booths'); setMobileMenuOpen(false); }} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', cursor: 'pointer', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Booths</a>
           <a onClick={() => { scrollToSection('contact'); setMobileMenuOpen(false); }} style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', cursor: 'pointer', padding: '16px 24px', borderBottom: '1px solid rgba(18, 18, 18, 0.05)' }}>Contact</a>
-          <a href="https://noteworthy-djs.checkcherry.com/users/sign_in" target="_blank" rel="noopener noreferrer" style={{ color: '#4a4a4a', fontWeight: 600, fontSize: '16px', textDecoration: 'none', padding: '16px 24px' }}>Login</a>
+          <div style={{ padding: '16px 24px' }}>
+            <a 
+              href="https://noteworthy-djs.checkcherry.com/users/sign_in" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ 
+                color: '#FFFFFF',
+                backgroundColor: '#e86c6c',
+                fontWeight: 700,
+                fontSize: '14px',
+                textDecoration: 'none',
+                padding: '12px 24px',
+                textTransform: 'uppercase',
+                letterSpacing: '3px',
+                display: 'block',
+                textAlign: 'center',
+                width: '100%'
+              }}
+            >
+              Client Portal
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -1099,6 +1139,42 @@ export default function NoteworthyPhotoBooths() {
           <p style={{ color: '#9b9b9b', marginBottom: '2em' }}>
             Click on a booth type below to learn more.
           </p>
+
+          {/* Why Choose Us - Icons without card */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '48px',
+            marginTop: '64px',
+            maxWidth: '1000px',
+            margin: '64px auto 0'
+          }}>
+            {[
+              { icon: '⚡', title: 'Fast Setup', desc: 'Professional setup and breakdown included' },
+              { icon: '🎨', title: 'Custom Designs', desc: 'Personalized prints and backdrops' },
+              { icon: '📸', title: 'High Quality', desc: 'Professional DSLR cameras and lighting' },
+              { icon: '🎉', title: 'Unlimited Prints', desc: 'No limits on photos during your event' }
+            ].map((item, idx) => (
+              <div key={idx} style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '56px', marginBottom: '16px' }}>{item.icon}</div>
+                <h4 className="display-font" style={{
+                  fontSize: '20px',
+                  fontWeight: 600,
+                  color: '#4a4a4a',
+                  marginBottom: '8px'
+                }}>
+                  {item.title}
+                </h4>
+                <p className="body-font" style={{
+                  fontSize: '15px',
+                  color: '#9b9b9b',
+                  lineHeight: 1.6
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
