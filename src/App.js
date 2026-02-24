@@ -124,6 +124,14 @@ export default function NoteworthyPhotoBooths() {
       description: 'Create stunning slow-motion videos with our revolutionary 360-degree video booth. Guests stand on a platform while a camera rotates around them, capturing dynamic content perfect for social sharing.',
       image: '/img/booths/booth-360.webp',
       icon: '🎬'
+    },
+    {
+      id: 4,
+      name: 'Mirror Photo Booth',
+      subtitle: 'Interactive Touch Experience',
+      description: 'An interactive experience featuring a full-length mirror that comes alive with animations and prompts. Touch the mirror to take photos, sign your prints, and enjoy animated emoji stamps for a truly unique photo booth experience.',
+      image: '/img/booths/mirror-booth.webp',
+      icon: '🪞'
     }
   ];
 
@@ -1017,20 +1025,9 @@ export default function NoteworthyPhotoBooths() {
       <section id="about" className="section-padding" style={{ 
         background: '#FFFFFF'
       }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          {/* Section Header with Decorative Lines */}
+        <div id="booths" style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          {/* Section Header - No top line */}
           <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
-            {/* Line above */}
-            <div style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              height: '1em',
-              marginBottom: '0.5em',
-              opacity: 0.5
-            }} />
-            
             <h2 style={{
               letterSpacing: '3px',
               fontSize: '1.8em',
@@ -1039,10 +1036,10 @@ export default function NoteworthyPhotoBooths() {
               fontWeight: 300,
               color: '#4a4a4a'
             }}>
-              Award Winning Service
+              Find Your Perfect Booth
             </h2>
             
-            {/* Line below */}
+            {/* Line below only */}
             <div style={{
               backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
               backgroundPosition: 'center',
@@ -1069,105 +1066,18 @@ export default function NoteworthyPhotoBooths() {
             corporate events, and celebrations throughout the Pacific Northwest.
           </p>
 
-          <p style={{ color: '#9b9b9b', marginBottom: '2em' }}>
+          <p style={{ color: '#9b9b9b', marginBottom: '3em' }}>
             Click on a booth type below to learn more.
           </p>
-
-          {/* Why Choose Us - Icons without card */}
-          <div 
-            className="why-choose-grid"
-            style={{
-              marginTop: '64px',
-              maxWidth: '1000px',
-              margin: '64px auto 0'
-            }}
-          >
-            {[
-              { icon: '⚡', title: 'Fast Setup', desc: 'Professional setup and breakdown included' },
-              { icon: '🎨', title: 'Custom Designs', desc: 'Personalized prints and backdrops' },
-              { icon: '📸', title: 'High Quality', desc: 'Professional DSLR cameras and lighting' },
-              { icon: '🎉', title: 'Unlimited Prints', desc: 'No limits on photos during your event' }
-            ].map((item, idx) => (
-              <div key={idx} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '56px', marginBottom: '16px' }}>{item.icon}</div>
-                <h4 className="display-font" style={{
-                  fontSize: '20px',
-                  fontWeight: 600,
-                  color: '#4a4a4a',
-                  marginBottom: '8px'
-                }}>
-                  {item.title}
-                </h4>
-                <p className="body-font" style={{
-                  fontSize: '15px',
-                  color: '#9b9b9b',
-                  lineHeight: 1.6
-                }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Photo Booths Section - NWDJ Style */}
-      <section id="booths" className="section-padding" style={{ 
-        background: '#FFFFFF'
-      }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center', paddingBottom: '48px' }}>
-          {/* Section Header */}
-          <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
-            {/* Line above */}
-            <div style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              height: '1em',
-              marginBottom: '0.5em',
-              opacity: 0.5
-            }} />
-            
-            <h2 style={{
-              letterSpacing: '3px',
-              fontSize: '1.8em',
-              margin: '0',
-              padding: '0.5em 0',
-              fontWeight: 300,
-              color: '#4a4a4a'
-            }}>
-              Our Photo Booths
-            </h2>
-            
-            {/* Line below */}
-            <div style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              height: '1em',
-              marginTop: '0.5em',
-              opacity: 0.5
-            }} />
-          </div>
-
-          {/* Intro Text */}
-          <div style={{ marginBottom: '3em', maxWidth: '38rem', margin: '0 auto 3em' }}>
-            <p style={{ color: '#9b9b9b', marginBottom: '1em', lineHeight: 1.8 }}>
-              Choose from our diverse selection of photo booth experiences, each designed to create lasting memories for your guests. Professional equipment, unlimited photos, and customizable options for every event.
-            </p>
-            <p style={{ color: '#9b9b9b' }}>Click on an image below to learn more.</p>
-          </div>
         </div>
 
-        {/* Booth Cards - 3 Column Layout */}
+        {/* Booth Cards - 3 Column Layout - Directly under description */}
         <div style={{ 
           display: 'flex', 
           flexDirection: 'column',
           gap: '48px', 
           maxWidth: '1200px', 
-          margin: '0 auto',
+          margin: '0 auto 64px',
           padding: '0 24px'
         }}
         className="booth-cards-container"
@@ -1262,6 +1172,44 @@ export default function NoteworthyPhotoBooths() {
                 </h4>
                 <p style={{ color: '#9b9b9b', fontSize: '14px', lineHeight: 1.6 }}>
                   {booth.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          {/* Why Choose Us - Icons without card */}
+          <div 
+            className="why-choose-grid"
+            style={{
+              marginTop: '64px',
+              maxWidth: '1000px',
+              margin: '64px auto 0'
+            }}
+          >
+            {[
+              { icon: '⚡', title: 'Fast Setup', desc: 'Professional setup and breakdown included' },
+              { icon: '🎨', title: 'Custom Designs', desc: 'Personalized prints and backdrops' },
+              { icon: '📸', title: 'High Quality', desc: 'Professional DSLR cameras and lighting' },
+              { icon: '🎉', title: 'Unlimited Prints', desc: 'No limits on photos during your event' }
+            ].map((item, idx) => (
+              <div key={idx} style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '56px', marginBottom: '16px' }}>{item.icon}</div>
+                <h4 className="display-font" style={{
+                  fontSize: '20px',
+                  fontWeight: 600,
+                  color: '#4a4a4a',
+                  marginBottom: '8px'
+                }}>
+                  {item.title}
+                </h4>
+                <p className="body-font" style={{
+                  fontSize: '15px',
+                  color: '#9b9b9b',
+                  lineHeight: 1.6
+                }}>
+                  {item.desc}
                 </p>
               </div>
             ))}
