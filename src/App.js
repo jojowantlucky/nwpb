@@ -1764,17 +1764,6 @@ export default function NoteworthyPhotoBooths() {
       <section id="team" className="section-padding" style={{ background: '#f6c4c4' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
-            {/* Line above */}
-            <div style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              height: '1em',
-              marginBottom: '0.5em',
-              opacity: 0.5
-            }} />
-            
             <h2 style={{
               letterSpacing: '3px',
               fontSize: '1.8em',
@@ -1893,17 +1882,6 @@ export default function NoteworthyPhotoBooths() {
         
         <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
-            {/* Line above */}
-            <div style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              height: '1em',
-              marginBottom: '0.5em',
-              opacity: 0.5
-            }} />
-            
             <h2 style={{
               letterSpacing: '3px',
               fontSize: '1.8em',
@@ -2303,17 +2281,6 @@ export default function NoteworthyPhotoBooths() {
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
-            {/* Line above */}
-            <div style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              height: '1em',
-              marginBottom: '0.5em',
-              opacity: 0.5
-            }} />
-            
             <h2 style={{
               letterSpacing: '3px',
               fontSize: '1.8em',
@@ -2397,17 +2364,6 @@ export default function NoteworthyPhotoBooths() {
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', marginBottom: '48px' }}>
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
-            {/* Line above */}
-            <div style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              height: '1em',
-              marginBottom: '0.5em',
-              opacity: 0.5
-            }} />
-            
             <h2 style={{
               letterSpacing: '3px',
               fontSize: '1.8em',
@@ -2517,17 +2473,6 @@ export default function NoteworthyPhotoBooths() {
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
-            {/* Line above */}
-            <div style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              height: '1em',
-              marginBottom: '0.5em',
-              opacity: 0.5
-            }} />
-            
             <h2 style={{
               letterSpacing: '3px',
               fontSize: '1.8em',
