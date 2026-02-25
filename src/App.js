@@ -1227,7 +1227,7 @@ export default function NoteworthyPhotoBooths() {
         <div style={{
           display: 'flex',
           animation: 'scroll 40s linear infinite',
-          gap: '40px',
+          gap: '0',
           width: 'fit-content'
         }}>
           {/* Duplicate booth photos twice for seamless loop */}
@@ -1240,10 +1240,9 @@ export default function NoteworthyPhotoBooths() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    minWidth: '400px',
+                    width: '300px',
                     height: '300px',
                     overflow: 'hidden',
-                    borderRadius: '8px',
                     transition: 'all 0.3s ease'
                   }}
                 >
