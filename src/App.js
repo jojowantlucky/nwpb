@@ -1273,197 +1273,280 @@ export default function NoteworthyPhotoBooths() {
         </div>
       </section>
 
-      {/* Photo Books Section */}
+      {/* Photo Books Section - NWDJ Style */}
       <section className="section-padding" style={{ 
         background: '#FFFFFF',
         position: 'relative'
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <p className="script-font" style={{
-              fontSize: '24px',
-              color: '#e86c6c',
-              marginBottom: '12px'
-            }}>
-              Memories that last forever
-            </p>
-            <h2 className="display-font" style={{
-              fontSize: 'clamp(36px, 6vw, 56px)',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '16px'
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          {/* Section Header */}
+          <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
+            <h2 style={{
+              letterSpacing: '3px',
+              fontSize: '1.8em',
+              margin: '0',
+              padding: '0.5em 0',
+              fontWeight: 300,
+              color: '#4a4a4a'
             }}>
               Photo Books
             </h2>
-            <p className="body-font" style={{ 
-              fontSize: '18px', 
-              color: '#9b9b9b',
-              maxWidth: '700px',
-              margin: '0 auto'
-            }}>
-              Preserve your event memories in a beautiful, professionally designed photo book
-            </p>
+            
+            {/* Line below */}
+            <div style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginTop: '0.5em',
+              opacity: 0.5
+            }} />
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-            gap: '48px',
-            maxWidth: '1100px',
-            margin: '0 auto'
+          {/* Description Text */}
+          <p style={{ 
+            color: '#9b9b9b',
+            fontSize: '1.1em',
+            lineHeight: '1.8',
+            marginBottom: '3em'
           }}>
-            {/* Standard Photo Books */}
-            <div
-              onClick={() => setPhotoBookModal('standard')}
-              style={{
-                background: '#f4f4f4',
-                borderRadius: '24px',
-                overflow: 'hidden',
-                border: '1px solid rgba(18, 18, 18, 0.1)',
-                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                flexDirection: 'column',
-                cursor: 'pointer'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.12)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
+            Preserve your event memories in a beautiful, professionally designed photo book.
+          </p>
+        </div>
+
+        {/* Photo Book Cards - 2 Column Layout */}
+        <div style={{ 
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '48px', 
+          maxWidth: '900px',
+          margin: '0 auto 64px',
+          padding: '0 24px'
+        }}
+        className="booth-cards-container"
+        >
+          {/* Standard Photo Books Card */}
+          <div style={{ 
+            textAlign: 'center',
+            border: 'none',
+            background: 'transparent',
+            padding: 0
+          }}>
+            <a 
+              href="/photo-books"
+              style={{ 
+                display: 'block', 
+                marginBottom: '16px', 
+                overflow: 'hidden', 
+                textDecoration: 'none',
+                border: 'none',
+                position: 'relative'
               }}
             >
               <div style={{
-                height: '300px',
+                position: 'relative',
+                overflow: 'hidden',
+                lineHeight: 0,
                 background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
+                height: '400px',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                position: 'relative',
-                overflow: 'hidden'
+                justifyContent: 'center'
               }}>
+                <div style={{ 
+                  fontSize: '120px', 
+                  opacity: 0.3,
+                  filter: 'contrast(60%)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.filter = 'contrast(100%)';
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.filter = 'contrast(60%)';
+                  e.currentTarget.style.transform = 'scale(1)';
+                }}
+                >
+                  📚
+                </div>
+                {/* Frame overlay */}
                 <div style={{
-                  position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-                  opacity: 0.1, fontSize: '60px', display: 'flex',
-                  flexWrap: 'wrap', gap: '30px', padding: '20px'
-                }}>
-                  {[...Array(8)].map((_, i) => <div key={i}>📖</div>)}
-                </div>
-                <div style={{ position: 'relative', zIndex: 1, fontSize: '80px', opacity: 0.9 }}>📚</div>
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  border: '8px solid rgba(255, 255, 255, 0.3)',
+                  pointerEvents: 'none',
+                  boxSizing: 'border-box'
+                }} />
               </div>
-              <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <h3 className="display-font" style={{
-                  fontSize: '32px', fontWeight: 600, color: '#4a4a4a', marginBottom: '16px'
+            </a>
+            <h3 className="script-font" style={{
+              fontSize: '32px',
+              fontWeight: 400,
+              marginTop: 0,
+              marginBottom: '8px',
+              color: '#e86c6c'
+            }}>
+              Standard Photo Books
+            </h3>
+            <h4 style={{
+              fontSize: '11px',
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              fontWeight: 700,
+              color: '#4a4a4a',
+              marginBottom: '12px'
+            }}>
+              Choose From Templates
+            </h4>
+            <p style={{ color: '#9b9b9b', fontSize: '14px', lineHeight: 1.6, marginBottom: '16px' }}>
+              Choose from our curated selection of professionally designed templates. Perfect for guests to take home a keepsake from your event.
+            </p>
+            <ul style={{ 
+              listStyle: 'none', 
+              padding: 0, 
+              margin: 0,
+              textAlign: 'left',
+              maxWidth: '320px',
+              margin: '0 auto'
+            }}>
+              {['Multiple template designs', 'High-quality printing', 'Professional binding', 'Quick turnaround'].map((feature, idx) => (
+                <li key={idx} style={{ 
+                  display: 'flex', 
+                  alignItems: 'flex-start', 
+                  gap: '8px', 
+                  marginBottom: '8px',
+                  color: '#9b9b9b',
+                  fontSize: '13px'
                 }}>
-                  Standard Photo Books
-                </h3>
-                <p className="body-font" style={{
-                  fontSize: '16px', color: '#9b9b9b', lineHeight: 1.7, marginBottom: '24px', flexGrow: 1
-                }}>
-                  Choose from our curated selection of professionally designed templates.
-                  Perfect for guests to take home a keepsake from your event.
-                </p>
-                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '32px' }}>
-                  {['Multiple template designs', 'High-quality printing', 'Professional binding', 'Quick turnaround'].map((feature, idx) => (
-                    <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                      <div style={{
-                        width: '24px', height: '24px', background: '#FFE5D9', borderRadius: '50%',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
-                      }}>
-                        <Check size={14} color="#e86c6c" strokeWidth={3} />
-                      </div>
-                      <span className="body-font" style={{ color: '#9b9b9b', fontSize: '15px' }}>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: '16px', textAlign: 'center', padding: '14px 24px' }}>
-                  Browse Designs
-                </div>
-              </div>
-            </div>
+                  <span style={{ color: '#e86c6c', flexShrink: 0 }}>✓</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Custom Photo Books */}
-            <div
-              onClick={() => setPhotoBookModal('custom')}
-              style={{
-                background: '#f4f4f4',
-                borderRadius: '24px',
-                overflow: 'hidden',
-                border: '2px solid #e14040',
-                boxShadow: '0 8px 24px rgba(37, 99, 235, 0.2)',
-                transition: 'all 0.3s ease',
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                cursor: 'pointer'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 16px 40px rgba(37, 99, 235, 0.3)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(37, 99, 235, 0.2)';
+          {/* Custom Photo Books Card */}
+          <div style={{ 
+            textAlign: 'center',
+            border: 'none',
+            background: 'transparent',
+            padding: 0
+          }}>
+            <a 
+              href="/photo-books"
+              style={{ 
+                display: 'block', 
+                marginBottom: '16px', 
+                overflow: 'hidden', 
+                textDecoration: 'none',
+                border: 'none',
+                position: 'relative'
               }}
             >
-              <div className="body-font" style={{
-                position: 'absolute', top: '20px', right: '20px',
-                background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-                color: '#f4f4f4', padding: '8px 20px', borderRadius: '20px',
-                fontSize: '12px', fontWeight: 600, letterSpacing: '1px',
-                zIndex: 10, boxShadow: '0 4px 12px rgba(37, 99, 235, 0.4)'
-              }}>
-                POPULAR
-              </div>
               <div style={{
-                height: '300px',
+                position: 'relative',
+                overflow: 'hidden',
+                lineHeight: 0,
                 background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                position: 'relative', overflow: 'hidden'
+                height: '400px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
               }}>
+                <div className="body-font" style={{
+                  position: 'absolute', 
+                  top: '20px', 
+                  right: '20px',
+                  background: '#FFFFFF',
+                  color: '#e14040', 
+                  padding: '6px 16px', 
+                  borderRadius: '20px',
+                  fontSize: '11px', 
+                  fontWeight: 700, 
+                  letterSpacing: '1px',
+                  zIndex: 10
+                }}>
+                  POPULAR
+                </div>
+                <div style={{ 
+                  fontSize: '120px', 
+                  opacity: 0.3,
+                  filter: 'contrast(60%)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.filter = 'contrast(100%)';
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.filter = 'contrast(60%)';
+                  e.currentTarget.style.transform = 'scale(1)';
+                }}
+                >
+                  🎨
+                </div>
+                {/* Frame overlay */}
                 <div style={{
-                  position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-                  opacity: 0.15, fontSize: '60px', display: 'flex',
-                  flexWrap: 'wrap', gap: '30px', padding: '20px'
-                }}>
-                  {[...Array(8)].map((_, i) => <div key={i}>✨</div>)}
-                </div>
-                <div style={{ position: 'relative', zIndex: 1, fontSize: '80px', opacity: 0.9 }}>🎨</div>
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  border: '8px solid rgba(255, 255, 255, 0.3)',
+                  pointerEvents: 'none',
+                  boxSizing: 'border-box'
+                }} />
               </div>
-              <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <h3 className="display-font" style={{
-                  fontSize: '32px', fontWeight: 600, color: '#4a4a4a', marginBottom: '16px'
+            </a>
+            <h3 className="script-font" style={{
+              fontSize: '32px',
+              fontWeight: 400,
+              marginTop: 0,
+              marginBottom: '8px',
+              color: '#e86c6c'
+            }}>
+              Custom Photo Books
+            </h3>
+            <h4 style={{
+              fontSize: '11px',
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              fontWeight: 700,
+              color: '#4a4a4a',
+              marginBottom: '12px'
+            }}>
+              Fully Customized
+            </h4>
+            <p style={{ color: '#9b9b9b', fontSize: '14px', lineHeight: 1.6, marginBottom: '16px' }}>
+              Work with our design team to create a completely unique photo book. Use your branding, logos, and custom layouts for a truly personalized keepsake.
+            </p>
+            <ul style={{ 
+              listStyle: 'none', 
+              padding: 0, 
+              margin: 0,
+              textAlign: 'left',
+              maxWidth: '320px',
+              margin: '0 auto'
+            }}>
+              {['Fully customized designs', 'Your branding & logos', 'Premium paper options', 'Dedicated design consultation'].map((feature, idx) => (
+                <li key={idx} style={{ 
+                  display: 'flex', 
+                  alignItems: 'flex-start', 
+                  gap: '8px', 
+                  marginBottom: '8px',
+                  color: '#9b9b9b',
+                  fontSize: '13px'
                 }}>
-                  Custom Photo Books
-                </h3>
-                <p className="body-font" style={{
-                  fontSize: '16px', color: '#9b9b9b', lineHeight: 1.7, marginBottom: '24px', flexGrow: 1
-                }}>
-                  Work with our design team to create a completely unique photo book.
-                  Use your branding, logos, and custom layouts for a truly personalized keepsake.
-                </p>
-                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '32px' }}>
-                  {['Fully customized designs', 'Your branding & logos', 'Premium paper options', 'Dedicated design consultation'].map((feature, idx) => (
-                    <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                      <div style={{
-                        width: '24px', height: '24px',
-                        background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-                        borderRadius: '50%', display: 'flex', alignItems: 'center',
-                        justifyContent: 'center', flexShrink: 0
-                      }}>
-                        <Check size={14} color="#f4f4f4" strokeWidth={3} />
-                      </div>
-                      <span className="body-font" style={{ color: '#9b9b9b', fontSize: '15px' }}>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: '16px', textAlign: 'center', padding: '14px 24px' }}>
-                  Browse Designs
-                </div>
-              </div>
-            </div>
+                  <span style={{ color: '#e86c6c', flexShrink: 0 }}>✓</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
