@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Camera, ChevronDown, X, Phone, Mail, MapPin, Check, Star, Image, Book, Clock, Users, Sparkles, Share2, Menu, User } from 'lucide-react';
 
 export default function NoteworthyPhotoBooths() {
@@ -1333,8 +1334,8 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <a 
-              href="/photo-books"
+            <Link 
+              to="/photo-books"
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1383,7 +1384,7 @@ export default function NoteworthyPhotoBooths() {
                   boxSizing: 'border-box'
                 }} />
               </div>
-            </a>
+            </Link>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,
@@ -1437,8 +1438,8 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <a 
-              href="/photo-books"
+            <Link 
+              to="/photo-books"
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1502,7 +1503,7 @@ export default function NoteworthyPhotoBooths() {
                   boxSizing: 'border-box'
                 }} />
               </div>
-            </a>
+            </Link>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,

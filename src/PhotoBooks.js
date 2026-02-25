@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
 function PhotoBooks() {
@@ -45,8 +46,8 @@ function PhotoBooks() {
         zIndex: 100
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px' }}>
-          <a 
-            href="/"
+          <Link 
+            to="/"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -62,7 +63,7 @@ function PhotoBooks() {
           >
             <ArrowLeft size={20} />
             Back to Home
-          </a>
+          </Link>
         </div>
       </div>
 
