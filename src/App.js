@@ -106,7 +106,7 @@ export default function NoteworthyPhotoBooths() {
       name: 'Open-Air Photo Booth',
       subtitle: 'Perfect For Any Group Size',
       description: 'Our open-air booths accommodate groups of any size and can be positioned anywhere at your venue. Professional DSLR camera with customizable backdrop options, perfect for high-traffic events.',
-      image: '/img/booths/openair-booth.webp',
+      image: '/img/booths/open-air-booth.webp',
       icon: '📸'
     },
     {
@@ -1161,44 +1161,6 @@ export default function NoteworthyPhotoBooths() {
                 </p>
               </div>
             ))}
-        </div>
-
-        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          {/* Why Choose Us - Icons without card */}
-          <div 
-            className="why-choose-grid"
-            style={{
-              marginTop: '64px',
-              maxWidth: '1000px',
-              margin: '64px auto 0'
-            }}
-          >
-            {[
-              { icon: '⚡', title: 'Fast Setup', desc: 'Professional setup and breakdown included' },
-              { icon: '🎨', title: 'Custom Designs', desc: 'Personalized prints and backdrops' },
-              { icon: '📸', title: 'High Quality', desc: 'Professional DSLR cameras and lighting' },
-              { icon: '🎉', title: 'Unlimited Prints', desc: 'No limits on photos during your event' }
-            ].map((item, idx) => (
-              <div key={idx} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '56px', marginBottom: '16px' }}>{item.icon}</div>
-                <h4 className="display-font" style={{
-                  fontSize: '20px',
-                  fontWeight: 600,
-                  color: '#4a4a4a',
-                  marginBottom: '8px'
-                }}>
-                  {item.title}
-                </h4>
-                <p className="body-font" style={{
-                  fontSize: '15px',
-                  color: '#9b9b9b',
-                  lineHeight: 1.6
-                }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
