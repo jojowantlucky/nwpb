@@ -1240,8 +1240,8 @@ export default function NoteworthyPhotoBooths() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: '300px',
-                    height: '300px',
+                    width: '400px',
+                    height: '400px',
                     overflow: 'hidden',
                     transition: 'all 0.3s ease'
                   }}
@@ -1253,15 +1253,15 @@ export default function NoteworthyPhotoBooths() {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      filter: 'grayscale(100%) contrast(80%)',
+                      opacity: 0.6,
                       transition: 'all 0.3s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.filter = 'grayscale(0%) contrast(100%)';
+                      e.currentTarget.style.opacity = '1';
                       e.currentTarget.style.transform = 'scale(1.05)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.filter = 'grayscale(100%) contrast(80%)';
+                      e.currentTarget.style.opacity = '0.6';
                       e.currentTarget.style.transform = 'scale(1)';
                     }}
                     loading="lazy"
