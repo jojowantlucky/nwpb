@@ -1216,7 +1216,7 @@ export default function NoteworthyPhotoBooths() {
         </div>
       </section>
 
-      {/* Scrolling Carousel Divider */}
+      {/* Scrolling Carousel Divider - Booth Action Photos */}
       <section style={{
         background: '#FFFFFF',
         padding: '60px 0',
@@ -1226,44 +1226,47 @@ export default function NoteworthyPhotoBooths() {
       }}>
         <div style={{
           display: 'flex',
-          animation: 'scroll 30s linear infinite',
-          gap: '80px',
+          animation: 'scroll 40s linear infinite',
+          gap: '40px',
           width: 'fit-content'
         }}>
-          {/* Duplicate client logos twice for seamless loop */}
+          {/* Duplicate booth photos twice for seamless loop */}
           {[...Array(2)].map((_, setIndex) => (
             <React.Fragment key={setIndex}>
-              {[
-                { name: 'Nike', emoji: '👟' },
-                { name: 'Intel', emoji: '💻' },
-                { name: 'Adidas', emoji: '👕' },
-                { name: 'Amazon', emoji: '📦' },
-                { name: 'Google', emoji: '🔍' },
-                { name: 'Microsoft', emoji: '🪟' }
-              ].map((client, idx) => (
+              {[1, 2, 3, 4, 5, 6, 7].map((num) => (
                 <div
-                  key={`${setIndex}-${idx}`}
+                  key={`${setIndex}-${num}`}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    minWidth: '120px',
-                    height: '80px',
-                    fontSize: '48px',
-                    opacity: 0.6,
-                    filter: 'grayscale(100%)',
+                    minWidth: '400px',
+                    height: '300px',
+                    overflow: 'hidden',
+                    borderRadius: '8px',
                     transition: 'all 0.3s ease'
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.opacity = '1';
-                    e.currentTarget.style.filter = 'grayscale(0%)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.opacity = '0.6';
-                    e.currentTarget.style.filter = 'grayscale(100%)';
-                  }}
                 >
-                  {client.emoji}
+                  <img
+                    src={`${process.env.PUBLIC_URL}/img/carousel/booth-action-images/booth-action-${num}.webp`}
+                    alt={`Booth in action ${num}`}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      filter: 'grayscale(100%) contrast(80%)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.filter = 'grayscale(0%) contrast(100%)';
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.filter = 'grayscale(100%) contrast(80%)';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </React.Fragment>
