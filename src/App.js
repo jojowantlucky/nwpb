@@ -1982,10 +1982,11 @@ export default function NoteworthyPhotoBooths() {
           <span>✨</span>
         </div>
       </section>
-      {/* Team Section */}
-      <section id="team" className="section-padding" style={{ background: '#f6c4c4' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', paddingTop: '1em', marginBottom: '2em' }}>
+      {/* Team Section - NWDJ Style */}
+      <section id="team" className="section-padding" style={{ background: '#FFFFFF' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          {/* Section Header */}
+          <div style={{ paddingTop: '1em', marginBottom: '2em' }}>
             <h2 style={{
               letterSpacing: '3px',
               fontSize: '1.8em',
@@ -2007,76 +2008,118 @@ export default function NoteworthyPhotoBooths() {
               marginTop: '0.5em',
               opacity: 0.5
             }} />
-
-            <p className="body-font" style={{ 
-              fontSize: '18px', 
-              color: '#9b9b9b',
-              maxWidth: '600px',
-              margin: '16px auto 0'
-            }}>
-              The passionate professionals behind every memorable event
-            </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '32px'
+          {/* Description Text */}
+          <p style={{ 
+            color: '#9b9b9b',
+            fontSize: '1.1em',
+            lineHeight: '1.8',
+            marginBottom: '3em'
           }}>
-            {teamMembers.map(member => (
-              <div
-                key={member.id}
-                className="card-hover"
+            The passionate professionals behind every memorable event.
+          </p>
+        </div>
+
+        {/* Team Cards - 2x2 Grid */}
+        <div style={{ 
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '48px', 
+          maxWidth: '900px',
+          margin: '0 auto 64px',
+          padding: '0 24px'
+        }}
+        className="booth-cards-container"
+        >
+          {teamMembers.map(member => (
+            <div key={member.id} style={{ 
+              textAlign: 'center',
+              border: 'none',
+              background: 'transparent',
+              padding: 0
+            }}>
+              <div 
                 onClick={() => setActiveModal(member)}
-                style={{
-                  background: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '32px',
-                  textAlign: 'center',
-                  border: '1px solid rgba(18, 18, 18, 0.1)',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)'
+                style={{ 
+                  display: 'block', 
+                  marginBottom: '16px', 
+                  overflow: 'hidden', 
+                  textDecoration: 'none',
+                  border: 'none',
+                  position: 'relative',
+                  cursor: 'pointer'
                 }}
               >
                 <div style={{
-                  width: '120px',
-                  height: '120px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  lineHeight: 0,
                   background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                  borderRadius: '50%',
+                  height: '400px',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 24px',
-                  fontSize: '60px',
-                  boxShadow: '0 8px 24px rgba(255, 58, 124, 0.25)'
+                  justifyContent: 'center'
                 }}>
-                  {member.image}
+                  <div style={{ 
+                    fontSize: '120px', 
+                    opacity: 0.9,
+                    filter: 'contrast(60%)',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter = 'contrast(100%)';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = 'contrast(60%)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                  >
+                    {member.image}
+                  </div>
+                  {/* Frame overlay */}
+                  <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    border: '8px solid rgba(255, 255, 255, 0.3)',
+                    pointerEvents: 'none',
+                    boxSizing: 'border-box'
+                  }} />
                 </div>
-                <h3 className="display-font" style={{
-                  fontSize: '24px',
-                  fontWeight: 600,
-                  color: '#4a4a4a',
-                  marginBottom: '8px'
-                }}>
-                  {member.name}
-                </h3>
-                <p className="body-font" style={{
-                  fontSize: '16px',
-                  color: '#e86c6c',
-                  fontWeight: 600,
-                  marginBottom: '16px'
-                }}>
-                  {member.role}
-                </p>
-                <button className="btn-secondary" style={{ 
-                  fontSize: '14px', 
-                  padding: '10px 24px',
-                  width: '100%'
-                }}>
-                  Read Bio
-                </button>
               </div>
-            ))}
-          </div>
+              <h3 className="script-font" style={{
+                fontSize: '32px',
+                fontWeight: 400,
+                marginTop: 0,
+                marginBottom: '8px',
+                color: '#e86c6c'
+              }}>
+                {member.name}
+              </h3>
+              <h4 style={{
+                fontSize: '11px',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                fontWeight: 700,
+                color: '#4a4a4a',
+                marginBottom: '12px'
+              }}>
+                {member.role}
+              </h4>
+              <p style={{ 
+                color: '#9b9b9b', 
+                fontSize: '14px', 
+                lineHeight: 1.6,
+                marginBottom: '16px'
+              }}>
+                {member.bio}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
       {/* Features Section */}
