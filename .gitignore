@@ -10,7 +10,7 @@
 
 # production
 /bld_files
-
+/build_files
 
 # misc
 .DS_Store
