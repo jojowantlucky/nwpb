@@ -4,12 +4,21 @@ import { ArrowLeft } from 'lucide-react';
 
 function PhotoBooks() {
   const customDesigns = [
-    { id: 1, name: 'Custom Design 1', image: '/photo-books/custom-1.webp' },
-    { id: 2, name: 'Custom Design 2', image: '/photo-books/custom-2.webp' },
-    { id: 3, name: 'Custom Design 3', image: '/photo-books/custom-3.webp' },
-    { id: 4, name: 'Custom Design 4', image: '/photo-books/custom-4.webp' },
-    { id: 5, name: 'Custom Design 5', image: '/photo-books/custom-5.webp' },
-    { id: 6, name: 'Custom Design 6', image: '/photo-books/custom-6.webp' }
+    { id: 1, name: 'Bamboo Leaves', image: '/img/photobooks/custom/bamboo-leaves/bamboo-leaves1.webp' },
+    { id: 2, name: 'Beach Sandals', image: '/img/photobooks/custom/beach-sandles/beach-sandals1.webp' },
+    { id: 3, name: 'City Skyline', image: '/img/photobooks/custom/city-skyline/city-skyline1.webp' },
+    { id: 4, name: 'Color Explosion', image: '/img/photobooks/custom/color-explosion/color-explosion1.webp' },
+    { id: 5, name: 'Diamond Geo', image: '/img/photobooks/custom/diamond-geo/diamond-geo1.webp' },
+    { id: 6, name: 'Double Diamond', image: '/img/photobooks/custom/double-diamond/double-diamond1.webp' },
+    { id: 7, name: 'Feather Flowers', image: '/img/photobooks/custom/feather-flowers/feather-flowers1.webp' },
+    { id: 8, name: 'Floral Swirls', image: '/img/photobooks/custom/floral-swirls/floral-swirls1.webp' },
+    { id: 9, name: 'Geo Sparks', image: '/img/photobooks/custom/geo-sparks/geo-sparks1.webp' },
+    { id: 10, name: 'Hanging Sign', image: '/img/photobooks/custom/hanging-sign/hanging-sign1.webp' },
+    { id: 11, name: 'Heart Duo', image: '/img/photobooks/custom/heart-duo/heart-duo1.webp' },
+    { id: 12, name: 'Keep It Simple', image: '/img/photobooks/custom/keep-it-simple/keep-it-simple1.webp' },
+    { id: 13, name: 'Mums', image: '/img/photobooks/custom/mums/mums1.webp' },
+    { id: 14, name: 'Vintage Lanterns', image: '/img/photobooks/custom/venture-lanterns/vintage-lanterns1.webp' },
+    { id: 15, name: 'Wildflower Stencil', image: '/img/photobooks/custom/wildflower-stencil/wildflower-stencil1.webp' }
   ];
 
   const standardDesigns = [
