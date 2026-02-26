@@ -1335,7 +1335,7 @@ export default function NoteworthyPhotoBooths() {
             padding: 0
           }}>
             <Link 
-              to="/photo-books"
+              to="/photo-books#standard"
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1436,7 +1436,7 @@ export default function NoteworthyPhotoBooths() {
             padding: 0
           }}>
             <Link 
-              to="/photo-books"
+              to="/photo-books#custom"
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1449,12 +1449,7 @@ export default function NoteworthyPhotoBooths() {
               <div style={{
                 position: 'relative',
                 overflow: 'hidden',
-                lineHeight: 0,
-                background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-                height: '284px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                lineHeight: 0
               }}>
                 <div className="body-font" style={{
                   position: 'absolute', 
@@ -1471,23 +1466,25 @@ export default function NoteworthyPhotoBooths() {
                 }}>
                   POPULAR
                 </div>
-                <div style={{ 
-                  fontSize: '120px', 
-                  opacity: 0.3,
-                  filter: 'contrast(60%)',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.filter = 'contrast(100%)';
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.filter = 'contrast(60%)';
-                  e.currentTarget.style.transform = 'scale(1)';
-                }}
-                >
-                  🎨
-                </div>
+                <img
+                  src={`${process.env.PUBLIC_URL}/img/photobooks/custom/thistle-flower/thistle-flower5.webp`}
+                  alt="Custom Photo Books"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                    transition: 'all 0.3s ease',
+                    filter: 'contrast(60%)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter = 'contrast(100%)';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = 'contrast(60%)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                />
                 {/* Frame overlay */}
                 <div style={{
                   position: 'absolute',

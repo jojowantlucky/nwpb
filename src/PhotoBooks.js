@@ -79,7 +79,7 @@ function PhotoBooks() {
       </div>
 
       {/* Custom Designs Section */}
-      <section style={{ padding: '80px 24px', background: '#FFFFFF' }}>
+      <section id="custom" style={{ padding: '80px 24px', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
@@ -153,7 +153,7 @@ function PhotoBooks() {
       </section>
 
       {/* Standard Designs Section */}
-      <section style={{ padding: '80px 24px', background: '#f9f9f9' }}>
+      <section id="standard" style={{ padding: '80px 24px', background: '#f9f9f9' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
