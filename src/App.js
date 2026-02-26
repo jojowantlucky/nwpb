@@ -1350,7 +1350,7 @@ export default function NoteworthyPhotoBooths() {
                 overflow: 'hidden',
                 lineHeight: 0,
                 background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                height: '400px',
+                height: '284px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
@@ -1454,7 +1454,7 @@ export default function NoteworthyPhotoBooths() {
                 overflow: 'hidden',
                 lineHeight: 0,
                 background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-                height: '400px',
+                height: '284px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
