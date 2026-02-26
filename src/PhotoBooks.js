@@ -13,25 +13,16 @@ function PhotoBooks() {
   ];
 
   const standardDesigns = [
-    { id: 1, name: 'Standard Design 1', image: '/photo-books/standard-1.webp' },
-    { id: 2, name: 'Standard Design 2', image: '/photo-books/standard-2.webp' },
-    { id: 3, name: 'Standard Design 3', image: '/photo-books/standard-3.webp' },
-    { id: 4, name: 'Standard Design 4', image: '/photo-books/standard-4.webp' },
-    { id: 5, name: 'Standard Design 5', image: '/photo-books/standard-5.webp' },
-    { id: 6, name: 'Standard Design 6', image: '/photo-books/standard-6.webp' },
-    { id: 7, name: 'Standard Design 7', image: '/photo-books/standard-7.webp' },
-    { id: 8, name: 'Standard Design 8', image: '/photo-books/standard-8.webp' },
-    { id: 9, name: 'Standard Design 9', image: '/photo-books/standard-9.webp' },
-    { id: 10, name: 'Standard Design 10', image: '/photo-books/standard-10.webp' },
-    { id: 11, name: 'Standard Design 11', image: '/photo-books/standard-11.webp' },
-    { id: 12, name: 'Standard Design 12', image: '/photo-books/standard-12.webp' },
-    { id: 13, name: 'Standard Design 13', image: '/photo-books/standard-13.webp' },
-    { id: 14, name: 'Standard Design 14', image: '/photo-books/standard-14.webp' },
-    { id: 15, name: 'Standard Design 15', image: '/photo-books/standard-15.webp' },
-    { id: 16, name: 'Standard Design 16', image: '/photo-books/standard-16.webp' },
-    { id: 17, name: 'Standard Design 17', image: '/photo-books/standard-17.webp' },
-    { id: 18, name: 'Standard Design 18', image: '/photo-books/standard-18.webp' },
-    { id: 19, name: 'Standard Design 19', image: '/photo-books/standard-19.webp' }
+    { id: 1, name: 'Standard Design 1', image: '/img/photobooks/standard-photobook1.webp' },
+    { id: 2, name: 'Standard Design 2', image: '/img/photobooks/standard-photobook2.webp' },
+    { id: 3, name: 'Standard Design 3', image: '/img/photobooks/standard-photobook3.webp' },
+    { id: 4, name: 'Standard Design 4', image: '/img/photobooks/standard-photobook4.webp' },
+    { id: 5, name: 'Standard Design 5', image: '/img/photobooks/standard-photobook5.webp' },
+    { id: 6, name: 'Standard Design 6', image: '/img/photobooks/standard-photobook6.webp' },
+    { id: 7, name: 'Standard Design 7', image: '/img/photobooks/standard-photobook7.webp' },
+    { id: 8, name: 'Standard Design 8', image: '/img/photobooks/standard-photobook8.webp' },
+    { id: 9, name: 'Standard Design 9', image: '/img/photobooks/standard-photobook9.webp' },
+    { id: 10, name: 'Standard Design 10', image: '/img/photobooks/standard-photobook10.webp' }
   ];
 
   return (
