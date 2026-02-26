@@ -1348,30 +1348,27 @@ export default function NoteworthyPhotoBooths() {
               <div style={{
                 position: 'relative',
                 overflow: 'hidden',
-                lineHeight: 0,
-                background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                height: '284px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                lineHeight: 0
               }}>
-                <div style={{ 
-                  fontSize: '120px', 
-                  opacity: 0.3,
-                  filter: 'contrast(60%)',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.filter = 'contrast(100%)';
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.filter = 'contrast(60%)';
-                  e.currentTarget.style.transform = 'scale(1)';
-                }}
-                >
-                  📚
-                </div>
+                <img
+                  src={`${process.env.PUBLIC_URL}/img/photobooks/standard-photobook1.webp`}
+                  alt="Standard Photo Books"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                    transition: 'all 0.3s ease',
+                    filter: 'contrast(60%)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter = 'contrast(100%)';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = 'contrast(60%)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                />
                 {/* Frame overlay */}
                 <div style={{
                   position: 'absolute',
