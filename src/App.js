@@ -2456,12 +2456,12 @@ export default function NoteworthyPhotoBooths() {
                 display: 'inline-flex',
                 textDecoration: 'none',
                 fontSize: '14px',
-                padding: '12px 28px'
+                padding: '12px 28px',
+                marginRight: '12px'
               }}
             >
               View All Service Areas
             </Link>
-            </p>
             <button 
               className="btn-primary" 
               style={{ padding: '14px 32px', fontSize: '16px' }}
