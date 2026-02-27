@@ -203,6 +203,80 @@ function PhotoBooks() {
         </div>
       </section>
 
+      {/* Features Section */}
+      <section style={{ padding: '80px 24px', background: '#FFFFFF', borderTop: '1px solid rgba(18, 18, 18, 0.05)' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          {/* Section Header */}
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2 style={{
+              letterSpacing: '3px',
+              fontSize: '1.8em',
+              margin: '0 0 0.5em 0',
+              padding: '0.5em 0',
+              fontWeight: 300,
+              color: '#4a4a4a'
+            }}>
+              Album Features
+            </h2>
+            
+            {/* Line below */}
+            <div style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/logo/nwpb-horizontal-line.webp)`,
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              height: '1em',
+              marginTop: '0.5em',
+              opacity: 0.5,
+              margin: '0 auto',
+              maxWidth: '600px'
+            }} />
+          </div>
+
+          {/* Features List */}
+          <div style={{
+            background: '#f9f9f9',
+            borderRadius: '16px',
+            padding: '48px 40px',
+            border: '1px solid rgba(18, 18, 18, 0.05)'
+          }}>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0
+            }}>
+              {[
+                'Each 8.5×11 album is made from high quality metal or bamboo, making it the ultimate album for Photo Booth Guest Books and other events.',
+                'Each album comes with 15 pre-creased, 8.5×11 acid-free sheets (30 pages double sided) and expandable for additional sheets.',
+                'Black, White & Brushed Albums feature black pages.',
+                'Amber & Natural Bamboo feature soft white pages.',
+                'Pages are refillable and removable.',
+                'Album holds up to four 2×6″ photostrips on each page with room to write a personal note above or below each strip.',
+                'All albums made 100% in the United States in support of local small businesses.'
+              ].map((feature, idx) => (
+                <li key={idx} style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '16px',
+                  marginBottom: idx === 6 ? 0 : '20px',
+                  color: '#4a4a4a',
+                  fontSize: '16px',
+                  lineHeight: '1.7'
+                }}>
+                  <span style={{
+                    color: '#e86c6c',
+                    fontSize: '20px',
+                    flexShrink: 0,
+                    marginTop: '2px'
+                  }}>✓</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Standard Designs Section */}
       <section id="standard" style={{ padding: '80px 24px', background: '#f9f9f9' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
