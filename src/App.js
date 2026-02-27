@@ -3091,7 +3091,7 @@ export default function NoteworthyPhotoBooths() {
                 {/* Main Image */}
                 <div style={{
                   width: '100%',
-                  paddingBottom: '66.67%', // 3:2 aspect ratio
+                  paddingBottom: '56.25%', // 16:9 aspect ratio - compact for more content above fold
                   position: 'relative',
                   background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)'
                 }}>
