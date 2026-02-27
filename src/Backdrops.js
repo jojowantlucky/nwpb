@@ -44,7 +44,35 @@ function Backdrops() {
 
     return () => {
       // Cleanup: remove script when component unmounts
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+  // Handle hash scrolling on mount and hash changes
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      }
+    };
+
+    // Scroll on mount
+    scrollToHash();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', scrollToHash);
+    
+    return () => {
+      window.removeEventListener('hashchange', scrollToHash);
     };
   }, []);
 

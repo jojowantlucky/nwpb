@@ -1,10 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 function PhotoBooks() {
   const [activeModal, setActiveModal] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Handle hash scrolling on mount and hash changes
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      }
+    };
+
+    // Scroll on mount
+    scrollToHash();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', scrollToHash);
+    
+    return () => {
+      window.removeEventListener('hashchange', scrollToHash);
+    };
+  }, []);
 
   // Custom designs with image counts
   const customDesigns = [
