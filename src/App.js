@@ -1467,7 +1467,7 @@ export default function NoteworthyPhotoBooths() {
                   background: '#FFFFFF',
                   color: '#e14040', 
                   padding: '6px 16px', 
-                  borderRadius: '20px',
+                  borderRadius: '0',
                   fontSize: '11px', 
                   fontWeight: 700, 
                   letterSpacing: '1px',
@@ -1732,7 +1732,7 @@ export default function NoteworthyPhotoBooths() {
                   background: '#FFFFFF',
                   color: '#ffd700', 
                   padding: '6px 16px', 
-                  borderRadius: '20px',
+                  borderRadius: '0',
                   fontSize: '11px', 
                   fontWeight: 700, 
                   letterSpacing: '1px',
@@ -2293,7 +2293,7 @@ export default function NoteworthyPhotoBooths() {
             textAlign: 'center',
             padding: '32px',
             background: '#FFFFFF',
-            borderRadius: '16px',
+            borderRadius: '0',
             border: '1px solid rgba(18, 18, 18, 0.08)',
             boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
             maxWidth: '700px',
@@ -2305,7 +2305,7 @@ export default function NoteworthyPhotoBooths() {
               lineHeight: 1.8,
               marginBottom: '16px'
             }}>
-              <strong style={{ color: '#4a4a4a' }}>Don't see your city listed?</strong>
+              <strong style={{ color: '#4a4a4a' }}>Serving Oregon and Washington State</strong>
             </p>
             <p className="body-font" style={{
               fontSize: '16px',
@@ -2377,7 +2377,7 @@ export default function NoteworthyPhotoBooths() {
                 key={testimonial.id}
                 style={{
                   background: '#FFFFFF',
-                  borderRadius: '16px',
+                  borderRadius: '0',
                   padding: '40px 32px',
                   border: '1px solid rgba(18, 18, 18, 0.1)',
                   boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
@@ -2591,7 +2591,7 @@ export default function NoteworthyPhotoBooths() {
                       minWidth: '160px',
                       height: '100px',
                       background: '#f4f4f4',
-                      borderRadius: '12px',
+                      borderRadius: '0',
                       border: '1px solid rgba(18, 18, 18, 0.08)',
                       transition: 'all 0.3s ease',
                       cursor: 'pointer'
@@ -2692,7 +2692,7 @@ export default function NoteworthyPhotoBooths() {
                     width: '48px',
                     height: '48px',
                     background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-                    borderRadius: '12px',
+                    borderRadius: '0',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -2718,7 +2718,7 @@ export default function NoteworthyPhotoBooths() {
                     width: '48px',
                     height: '48px',
                     background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-                    borderRadius: '12px',
+                    borderRadius: '0',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -2745,7 +2745,7 @@ export default function NoteworthyPhotoBooths() {
                     width: '48px',
                     height: '48px',
                     background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-                    borderRadius: '12px',
+                    borderRadius: '0',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -2781,7 +2781,7 @@ export default function NoteworthyPhotoBooths() {
                 Our Location
               </h3>
               <div style={{ 
-                borderRadius: '12px', 
+                borderRadius: '0', 
                 overflow: 'hidden', 
                 height: '350px',
                 background: '#FFFFFF',
@@ -3035,7 +3035,7 @@ export default function NoteworthyPhotoBooths() {
                       style={{
                         aspectRatio: '4/3',
                         background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                        borderRadius: '12px',
+                        borderRadius: '0',
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
@@ -3158,7 +3158,7 @@ export default function NoteworthyPhotoBooths() {
 
             {/* Main Image */}
             <div style={{
-              background: '#FFFFFF', borderRadius: '8px', overflow: 'hidden',
+              background: '#FFFFFF', borderRadius: '0', overflow: 'hidden',
               display: 'flex', alignItems: 'center', justifyContent: 'center', maxHeight: '75vh'
             }}>
               <img
@@ -3196,7 +3196,7 @@ export default function NoteworthyPhotoBooths() {
             <div style={{
               position: 'absolute', bottom: '-40px', left: '50%', transform: 'translateX(-50%)',
               color: '#FFFFFF', fontSize: '16px', background: 'rgba(0,0,0,0.5)',
-              padding: '8px 16px', borderRadius: '20px'
+              padding: '8px 16px', borderRadius: '0'
             }}>
               {currentPhotoBookImage + 1} / {photoBookGallery.imageCount}
             </div>
@@ -3208,7 +3208,7 @@ export default function NoteworthyPhotoBooths() {
             }}>
               {Array.from({ length: photoBookGallery.imageCount }).map((_, idx) => (
                 <div key={idx} onClick={() => setCurrentPhotoBookImage(idx)} style={{
-                  width: '72px', height: '54px', borderRadius: '4px', overflow: 'hidden',
+                  width: '72px', height: '54px', borderRadius: '0', overflow: 'hidden',
                   cursor: 'pointer', flexShrink: 0,
                   border: currentPhotoBookImage === idx ? '3px solid #e86c6c' : '3px solid transparent',
                   opacity: currentPhotoBookImage === idx ? 1 : 0.55,
@@ -3270,7 +3270,7 @@ export default function NoteworthyPhotoBooths() {
                   {[1, 2, 3, 4, 5, 6].map((num) => (
                     <div key={num} style={{
                       background: 'linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%)',
-                      borderRadius: '12px', overflow: 'hidden',
+                      borderRadius: '0', overflow: 'hidden',
                       border: '1px solid rgba(18,18,18,0.08)',
                       boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
                     }}>
@@ -3307,7 +3307,7 @@ export default function NoteworthyPhotoBooths() {
                           key={idx}
                           onClick={() => { setPhotoBookGallery(design); setCurrentPhotoBookImage(0); }}
                           style={{
-                            background: '#FFFFFF', borderRadius: '12px', overflow: 'hidden',
+                            background: '#FFFFFF', borderRadius: '0', overflow: 'hidden',
                             border: '1px solid rgba(18,18,18,0.08)',
                             boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
                             cursor: 'pointer', transition: 'all 0.25s ease'
@@ -3358,7 +3358,7 @@ export default function NoteworthyPhotoBooths() {
                       style={{
                         background: photoBookPage === 0 ? '#f0f0f0' : '#4a4a4a',
                         color: photoBookPage === 0 ? '#9b9b9b' : '#FFFFFF',
-                        border: 'none', borderRadius: '8px', padding: '10px 20px',
+                        border: 'none', borderRadius: '0', padding: '10px 20px',
                         cursor: photoBookPage === 0 ? 'default' : 'pointer',
                         fontSize: '14px', fontWeight: 600, transition: 'all 0.2s ease'
                       }}
@@ -3375,7 +3375,7 @@ export default function NoteworthyPhotoBooths() {
                           style={{
                             width: photoBookPage === idx ? '24px' : '8px',
                             height: '8px',
-                            borderRadius: '4px',
+                            borderRadius: '0',
                             background: photoBookPage === idx ? '#e14040' : '#cccccc',
                             cursor: 'pointer',
                             transition: 'all 0.3s ease'
@@ -3390,7 +3390,7 @@ export default function NoteworthyPhotoBooths() {
                       style={{
                         background: (photoBookPage + 1) * DESIGNS_PER_PAGE >= photoBookDesigns.length ? '#f0f0f0' : '#4a4a4a',
                         color: (photoBookPage + 1) * DESIGNS_PER_PAGE >= photoBookDesigns.length ? '#9b9b9b' : '#FFFFFF',
-                        border: 'none', borderRadius: '8px', padding: '10px 20px',
+                        border: 'none', borderRadius: '0', padding: '10px 20px',
                         cursor: (photoBookPage + 1) * DESIGNS_PER_PAGE >= photoBookDesigns.length ? 'default' : 'pointer',
                         fontSize: '14px', fontWeight: 600, transition: 'all 0.2s ease'
                       }}
@@ -3487,7 +3487,7 @@ export default function NoteworthyPhotoBooths() {
                     style={{
                       aspectRatio: '4/3',
                       background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                      borderRadius: '16px',
+                      borderRadius: '0',
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
@@ -3544,7 +3544,7 @@ export default function NoteworthyPhotoBooths() {
               <div style={{
                 background: '#F5F5F3',
                 padding: '24px',
-                borderRadius: '12px',
+                borderRadius: '0',
                 marginBottom: '32px'
               }}>
                 <h4 className="display-font" style={{
@@ -3624,7 +3624,7 @@ export default function NoteworthyPhotoBooths() {
               maxWidth: '1000px',
               height: '90vh',
               background: '#FFFFFF',
-              borderRadius: '16px',
+              borderRadius: '0',
               overflow: 'hidden',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
             }}
@@ -3664,7 +3664,7 @@ export default function NoteworthyPhotoBooths() {
               title="Schedule a Call"
               style={{
                 border: 'none',
-                borderRadius: '16px'
+                borderRadius: '0'
               }}
             />
           </div>
