@@ -1826,7 +1826,7 @@ export default function NoteworthyPhotoBooths() {
             padding: 0
           }}>
             <Link 
-              to="/backdrops#custom"
+              to="/backdrops#premium"
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1896,7 +1896,7 @@ export default function NoteworthyPhotoBooths() {
               Custom Designs
             </h4>
             <p style={{ color: '#9b9b9b', fontSize: '14px', lineHeight: 1.6, marginBottom: '16px' }}>
-              Choose your backdrop design for your event. Add your logo, branding, or themed designs.
+              Browse hundreds of premium backdrop designs from PBBackdrops. Professional quality prints perfect for weddings, events, and special occasions.
             </p>
             <ul style={{ 
               listStyle: 'none', 
@@ -1906,7 +1906,7 @@ export default function NoteworthyPhotoBooths() {
               maxWidth: '320px',
               margin: '0 auto'
             }}>
-              {['Fully custom designs', 'Your logos & branding', 'Themed artwork', 'Professional printing'].map((feature, idx) => (
+              {['Hundreds of designs', 'Searchable catalog', 'Professional quality', 'Event-ready backdrops'].map((feature, idx) => (
                 <li key={idx} style={{ 
                   display: 'flex', 
                   alignItems: 'flex-start', 

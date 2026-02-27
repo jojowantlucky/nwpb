@@ -305,7 +305,7 @@ function Backdrops() {
       </section>
 
       {/* Premium Backdrops Section */}
-      <section id="custom" style={{ padding: '80px 24px', background: '#FFFFFF' }}>
+      <section id="premium" style={{ padding: '80px 24px', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
