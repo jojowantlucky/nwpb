@@ -9,7 +9,7 @@ function PhotoBooks() {
   // Custom designs with image counts
   const customDesigns = [
     { id: 1, name: 'Bamboo Leaves', folder: 'bamboo-leaves', imageCount: 3 },
-    { id: 2, name: 'Beach Sandals', folder: 'beach-sandles', imageCount: 6 },
+    { id: 2, name: 'Beach Sandals', folder: 'beach-sandals', imageCount: 6 },
     { id: 3, name: 'Best Day', folder: 'best-day', imageCount: 2 },
     { id: 4, name: 'Box Modern', folder: 'box-modern', imageCount: 6 },
     { id: 5, name: 'City Skyline', folder: 'city-skyline', imageCount: 2 },
@@ -32,7 +32,7 @@ function PhotoBooks() {
     { id: 22, name: 'Picture Frames', folder: 'picture-frames', imageCount: 6 },
     { id: 23, name: 'Polka Dots', folder: 'polka-dots', imageCount: 6 },
     { id: 24, name: 'Thistle Flower', folder: 'thistle-flower', imageCount: 6 },
-    { id: 25, name: 'Vintage Lanterns', folder: 'venture-lanterns', imageCount: 6 },
+    { id: 25, name: 'Vintage Lanterns', folder: 'vintage-lanterns', imageCount: 6 },
     { id: 26, name: 'Wildflower Stencil', folder: 'wildflower-stencil', imageCount: 6 }
   ];
 
@@ -77,7 +77,8 @@ function PhotoBooks() {
 
   const getImagePath = (design, index, isCustom) => {
     if (isCustom) {
-      const fileName = `${design.folder}${index + 1}.webp`;
+      const prefix = design.filePrefix || design.folder;
+      const fileName = `${prefix}${index + 1}.webp`;
       return `${process.env.PUBLIC_URL}/img/photobooks/custom/${design.folder}/${fileName}`;
     } else {
       return `${process.env.PUBLIC_URL}/img/photobooks/standard-photobook${design.id}.webp`;
@@ -296,7 +297,7 @@ function PhotoBooks() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(0, 0, 0, 0.9)',
+            background: 'rgba(0, 0, 0, 0.7)',
             zIndex: 1000,
             display: 'flex',
             alignItems: 'center',
