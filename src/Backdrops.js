@@ -20,12 +20,20 @@ function Backdrops() {
     { id: 13, name: 'Black', filename: 'black-standard.webp' }
   ];
 
-  // Sequin backdrops - 14 total
-  const sequinBackdrops = Array.from({ length: 14 }, (_, i) => ({
-    id: i + 1,
-    name: `Sequin Backdrop ${i + 1}`,
-    image: `/img/backdrops/sequin/sequin-${i + 1}.webp`
-  }));
+  // Sequin backdrops - actual products with real names
+  const sequinBackdrops = [
+    { id: 1, name: 'Black', filename: 'black-sequin.webp' },
+    { id: 2, name: 'Blush', filename: 'blush-sequin.webp' },
+    { id: 3, name: 'Champagne', filename: 'champagne-sequin.webp' },
+    { id: 4, name: 'Gold', filename: 'gold-sequin.webp' },
+    { id: 5, name: 'Ivory', filename: 'ivory-sequin.webp' },
+    { id: 6, name: 'Lilac', filename: 'lilac-sequin.webp' },
+    { id: 7, name: 'Navy', filename: 'navy-sequin.webp' },
+    { id: 8, name: 'Purple', filename: 'purple-sequin.webp' },
+    { id: 9, name: 'Slate Grey', filename: 'slate-grey-sequin.webp' },
+    { id: 10, name: 'Spearmint', filename: 'spearmint-sequin.webp' },
+    { id: 11, name: 'Teal', filename: 'teal-sequin.webp' }
+  ];
 
   // Custom backdrops - TBD (placeholder with 6 for now)
   const customBackdrops = Array.from({ length: 6 }, (_, i) => ({
@@ -257,25 +265,22 @@ function Backdrops() {
                   width: '100%',
                   paddingBottom: '100%', // 1:1 aspect ratio
                   position: 'relative',
-                  background: 'linear-gradient(135deg, #ffd700 0%, #ffed4e 100%)',
                   borderRadius: '8px',
                   overflow: 'hidden'
                 }}>
-                  {/* Placeholder */}
-                  <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '64px',
-                    opacity: 0.3
-                  }}>
-                    ✨
-                  </div>
+                  <img
+                    src={`${process.env.PUBLIC_URL}/img/backdrops/sequin/${backdrop.filename}`}
+                    alt={backdrop.name}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                    loading="lazy"
+                  />
                 </div>
                 <h3 style={{
                   textAlign: 'center',
