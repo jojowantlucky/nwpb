@@ -11,8 +11,6 @@ export default function NoteworthyPhotoBooths() {
   const [photoBookPage, setPhotoBookPage] = useState(0);
   const [photoBookGallery, setPhotoBookGallery] = useState(null);
   const [currentPhotoBookImage, setCurrentPhotoBookImage] = useState(0);
-  const [backdropModal, setBackdropModal] = useState(null);
-  const [backdropPage, setBackdropPage] = useState(0);
   const [boothGalleryModal, setBoothGalleryModal] = useState(null);
   const [calendlyModal, setCalendlyModal] = useState(false);
   const [formLoading, setFormLoading] = useState(true);
@@ -1606,45 +1604,43 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <div 
-              onClick={() => setBackdropModal('standard')}
+            <Link 
+              to="/backdrops#standard"
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
                 overflow: 'hidden', 
                 textDecoration: 'none',
                 border: 'none',
-                position: 'relative',
-                cursor: 'pointer'
+                position: 'relative'
               }}
             >
               <div style={{
                 position: 'relative',
                 overflow: 'hidden',
                 lineHeight: 0,
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                height: '400px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                height: '400px'
               }}>
-                <div style={{ 
-                  fontSize: '120px', 
-                  opacity: 0.3,
-                  filter: 'contrast(60%)',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.filter = 'contrast(100%)';
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.filter = 'contrast(60%)';
-                  e.currentTarget.style.transform = 'scale(1)';
-                }}
-                >
-                  🎭
-                </div>
+                <img
+                  src={`${process.env.PUBLIC_URL}/img/backdrops/standard/ocean-blue-standard.webp`}
+                  alt="Standard Backdrops"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    transition: 'all 0.3s ease',
+                    filter: 'contrast(60%)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter = 'contrast(100%)';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = 'contrast(60%)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                />
                 {/* Frame overlay */}
                 <div style={{
                   position: 'absolute',
@@ -1657,7 +1653,7 @@ export default function NoteworthyPhotoBooths() {
                   boxSizing: 'border-box'
                 }} />
               </div>
-            </div>
+            </Link>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,
@@ -1711,16 +1707,15 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <div 
-              onClick={() => setBackdropModal('sequin')}
+            <Link 
+              to="/backdrops#sequin"
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
                 overflow: 'hidden', 
                 textDecoration: 'none',
                 border: 'none',
-                position: 'relative',
-                cursor: 'pointer'
+                position: 'relative'
               }}
             >
               <div style={{
@@ -1777,7 +1772,7 @@ export default function NoteworthyPhotoBooths() {
                   boxSizing: 'border-box'
                 }} />
               </div>
-            </div>
+            </Link>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,
@@ -1831,16 +1826,15 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <div 
-              onClick={() => setBackdropModal('custom')}
+            <Link 
+              to="/backdrops#custom"
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
                 overflow: 'hidden', 
                 textDecoration: 'none',
                 border: 'none',
-                position: 'relative',
-                cursor: 'pointer'
+                position: 'relative'
               }}
             >
               <div style={{
@@ -1882,7 +1876,7 @@ export default function NoteworthyPhotoBooths() {
                   boxSizing: 'border-box'
                 }} />
               </div>
-            </div>
+            </Link>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,
@@ -3527,123 +3521,6 @@ export default function NoteworthyPhotoBooths() {
                 onClick={() => {
                   setPhotoBookModal(null);
                   setPhotoBookPage(0);
-                  scrollToSection('contact');
-                }}
-              >
-                Get a Quote
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Backdrop Modal */}
-      {backdropModal && (
-        <div className="modal-overlay" onClick={() => { setBackdropModal(null); setBackdropPage(0); }}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ 
-            maxWidth: '800px',
-            width: '90vw',
-            maxHeight: '800px',
-            aspectRatio: '1/1',
-            display: 'flex',
-            flexDirection: 'column'
-          }}>
-            <button
-              onClick={() => { setBackdropModal(null); setBackdropPage(0); }}
-              style={{
-                position: 'absolute', top: '20px', right: '20px',
-                background: 'rgba(18, 18, 18, 0.1)', border: 'none', borderRadius: '50%',
-                width: '40px', height: '40px', display: 'flex', alignItems: 'center',
-                justifyContent: 'center', cursor: 'pointer', zIndex: 10
-              }}
-            >
-              <X size={24} color="#4a4a4a" />
-            </button>
-
-            <div style={{ padding: '48px 40px', overflowY: 'auto', flex: 1 }}>
-              {/* Title */}
-              <h3 className="display-font" style={{
-                fontSize: '36px', fontWeight: 600, color: '#4a4a4a',
-                marginBottom: '8px', textAlign: 'center'
-              }}>
-                {backdropModal === 'standard' ? 'Standard Backdrops'
-                  : backdropModal === 'sequin' ? 'Premium Sequin Backdrops'
-                  : 'Custom Backdrops'}
-              </h3>
-              <p className="body-font" style={{
-                fontSize: '16px', color: '#9b9b9b', textAlign: 'center', marginBottom: '40px'
-              }}>
-                {backdropModal === 'standard'
-                  ? 'Our full color selection — coming soon!'
-                  : backdropModal === 'sequin'
-                  ? 'Our shimmer & sequin options — coming soon!'
-                  : 'Browse and configure your custom backdrop below'}
-              </p>
-
-              {backdropModal === 'custom' ? (
-                /* PB Backdrops Widget */
-                <div style={{
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  border: '1px solid rgba(18, 18, 18, 0.08)',
-                  marginBottom: '32px'
-                }}>
-                  <iframe
-                    src="https://widget.pbbackdrops.com/embed/v1/200fa513-91e4-4164-9140-c3c3a04832cc?choice=1"
-                    style={{
-                      width: '100%',
-                      height: '700px',
-                      border: 'none',
-                      display: 'block'
-                    }}
-                    title="Custom Backdrop Designer"
-                  />
-                </div>
-              ) : (
-                /* Placeholder Cards for Standard & Sequin */
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-                  gap: '20px',
-                  marginBottom: '32px'
-                }}>
-                  {[1, 2, 3, 4, 5, 6].map((num) => (
-                    <div key={num} style={{
-                      background: 'linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%)',
-                      borderRadius: '12px', overflow: 'hidden',
-                      border: '1px solid rgba(18,18,18,0.08)',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
-                    }}>
-                      <div style={{
-                        height: '160px',
-                        background: backdropModal === 'standard'
-                          ? 'linear-gradient(135deg, #e8eeff 0%, #d4ddff 100%)'
-                          : 'linear-gradient(135deg, #fff8e1 0%, #fff0b3 100%)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center'
-                      }}>
-                        {backdropModal === 'standard'
-                          ? <span style={{ fontSize: '40px', opacity: 0.4 }}>🎭</span>
-                          : <span style={{ fontSize: '40px', opacity: 0.4 }}>✨</span>}
-                      </div>
-                      <div style={{ padding: '16px' }}>
-                        <p className="body-font" style={{
-                          fontSize: '14px', fontWeight: 600, color: '#9b9b9b', textAlign: 'center'
-                        }}>
-                          Coming Soon
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* CTA */}
-              <button
-                className="btn-primary"
-                style={{ width: '100%', justifyContent: 'center', fontSize: '18px' }}
-                onClick={() => {
-                  setBackdropModal(null);
-                  setBackdropPage(0);
                   scrollToSection('contact');
                 }}
               >
