@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Camera, ChevronDown, X, Phone, Mail, MapPin, Check, Star, Image, Book, Clock, Users, Sparkles, Share2, Menu, User } from 'lucide-react';
+import { Camera, ChevronDown, ChevronLeft, ChevronRight, X, Phone, Mail, MapPin, Check, Star, Image, Book, Clock, Users, Sparkles, Share2, Menu, User } from 'lucide-react';
 
 export default function NoteworthyPhotoBooths() {
   const [navVisible, setNavVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeBoothModal, setActiveBoothModal] = useState(null);
+  const [currentBoothImage, setCurrentBoothImage] = useState(0);
   const [photoBookModal, setPhotoBookModal] = useState(null);
   const [photoBookPage, setPhotoBookPage] = useState(0);
   const [photoBookGallery, setPhotoBookGallery] = useState(null);
@@ -108,7 +109,22 @@ export default function NoteworthyPhotoBooths() {
       subtitle: 'Perfect For Any Group Size',
       description: 'Our open-air booths accommodate groups of any size and can be positioned anywhere at your venue. Professional DSLR camera with customizable backdrop options, perfect for high-traffic events.',
       image: '/img/booths/open-air-booth.webp',
-      icon: '📸'
+      images: [
+        '/img/booths/open-air-booth-1.webp',
+        '/img/booths/open-air-booth-2.webp',
+        '/img/booths/open-air-booth-3.webp',
+        '/img/booths/open-air-booth-4.webp',
+        '/img/booths/open-air-booth-5.webp'
+      ],
+      icon: '📸',
+      features: [
+        'Accommodates groups of any size',
+        'Professional DSLR camera',
+        'Customizable backdrop options',
+        'Perfect for high-traffic events',
+        'Instant 2×6" prints',
+        'Digital sharing options'
+      ]
     },
     {
       id: 2,
@@ -116,7 +132,22 @@ export default function NoteworthyPhotoBooths() {
       subtitle: 'Compact & Modern',
       description: 'A compact, modern solution perfect for corporate events and smaller venues. Guests can take unlimited photos using a touchscreen interface with digital sharing options.',
       image: '/img/booths/selfie-station-booth.webp',
-      icon: '🤳'
+      images: [
+        '/img/booths/selfie-station-booth-1.webp',
+        '/img/booths/selfie-station-booth-2.webp',
+        '/img/booths/selfie-station-booth-3.webp',
+        '/img/booths/selfie-station-booth-4.webp',
+        '/img/booths/selfie-station-booth-5.webp'
+      ],
+      icon: '🤳',
+      features: [
+        'Compact and space-efficient',
+        'Touchscreen interface',
+        'Unlimited digital photos',
+        'Social media sharing',
+        'Perfect for corporate events',
+        'No prints (digital only)'
+      ]
     },
     {
       id: 3,
@@ -124,7 +155,22 @@ export default function NoteworthyPhotoBooths() {
       subtitle: 'Stunning Slow-Motion Videos',
       description: 'Create stunning slow-motion videos with our revolutionary 360-degree video booth. Guests stand on a platform while a camera rotates around them, capturing dynamic content perfect for social sharing.',
       image: '/img/booths/booth-360.webp',
-      icon: '🎬'
+      images: [
+        '/img/booths/360-booth-1.webp',
+        '/img/booths/360-booth-2.webp',
+        '/img/booths/360-booth-3.webp',
+        '/img/booths/360-booth-4.webp',
+        '/img/booths/360-booth-5.webp'
+      ],
+      icon: '🎬',
+      features: [
+        '360-degree slow-motion videos',
+        'Rotating camera arm',
+        'Platform for guests',
+        'Instant digital sharing',
+        'Social media optimized',
+        'No prints (video only)'
+      ]
     },
     {
       id: 4,
@@ -132,7 +178,22 @@ export default function NoteworthyPhotoBooths() {
       subtitle: 'Interactive Touch Experience',
       description: 'An interactive experience featuring a full-length mirror that comes alive with animations and prompts. Touch the mirror to take photos, sign your prints, and enjoy animated emoji stamps for a truly unique photo booth experience.',
       image: '/img/booths/mirror-booth.webp',
-      icon: '🪞'
+      images: [
+        '/img/booths/mirror-booth-1.webp',
+        '/img/booths/mirror-booth-2.webp',
+        '/img/booths/mirror-booth-3.webp',
+        '/img/booths/mirror-booth-4.webp',
+        '/img/booths/mirror-booth-5.webp'
+      ],
+      icon: '🪞',
+      features: [
+        'Full-length interactive mirror',
+        'Touch-activated animations',
+        'Digital signature feature',
+        'Animated emoji stamps',
+        'Instant 2×6" prints',
+        'Unique guest experience'
+      ]
     }
   ];
 
@@ -1113,11 +1174,13 @@ export default function NoteworthyPhotoBooths() {
                     overflow: 'hidden', 
                     textDecoration: 'none',
                     border: 'none',
-                    position: 'relative'
+                    position: 'relative',
+                    cursor: 'pointer'
                   }}
                   onClick={(e) => {
                     e.preventDefault();
-                    // Add click handler later for modal or detail view
+                    setActiveBoothModal(booth);
+                    setCurrentBoothImage(0);
                   }}
                 >
                   <div style={{
@@ -2962,16 +3025,23 @@ export default function NoteworthyPhotoBooths() {
       </footer>
 
       {/* Booth Info Modal */}
+      {/* Photo Booth Modal with Carousel */}
       {activeBoothModal && (
-        <div className="modal-overlay" onClick={() => setActiveBoothModal(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-overlay" onClick={() => { setActiveBoothModal(null); setCurrentBoothImage(0); }}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{
+            maxWidth: '1000px',
+            width: '90vw',
+            maxHeight: '90vh',
+            overflowY: 'auto'
+          }}>
+            {/* Close Button */}
             <button
-              onClick={() => setActiveBoothModal(null)}
+              onClick={() => { setActiveBoothModal(null); setCurrentBoothImage(0); }}
               style={{
                 position: 'absolute',
                 top: '20px',
                 right: '20px',
-                background: 'rgba(18, 18, 18, 0.1)',
+                background: '#FFFFFF',
                 border: 'none',
                 borderRadius: '50%',
                 width: '40px',
@@ -2979,30 +3049,155 @@ export default function NoteworthyPhotoBooths() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                zIndex: 10,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
               }}
             >
               <X size={24} color="#4a4a4a" />
             </button>
+
             <div style={{ padding: '48px 40px' }}>
-              <div style={{
-                fontSize: '80px',
-                marginBottom: '24px',
-                textAlign: 'center'
-              }}>
-                {activeBoothModal.icon}
-              </div>
+              {/* Booth Name */}
               <h3 className="display-font" style={{
                 fontSize: '36px',
                 fontWeight: 600,
                 color: '#4a4a4a',
-                marginBottom: '16px',
+                marginBottom: '8px',
                 textAlign: 'center'
               }}>
                 {activeBoothModal.name}
               </h3>
               <p className="body-font" style={{
-                fontSize: '18px',
+                fontSize: '16px',
+                color: '#e86c6c',
+                fontWeight: 600,
+                marginBottom: '32px',
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: '2px'
+              }}>
+                {activeBoothModal.subtitle}
+              </p>
+
+              {/* Image Carousel */}
+              <div style={{
+                position: 'relative',
+                marginBottom: '40px',
+                background: '#f9f9f9',
+                borderRadius: '0',
+                overflow: 'hidden'
+              }}>
+                {/* Main Image */}
+                <div style={{
+                  width: '100%',
+                  paddingBottom: '66.67%', // 3:2 aspect ratio
+                  position: 'relative',
+                  background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)'
+                }}>
+                  {/* Placeholder - will show gradient until images added */}
+                  <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '80px',
+                    opacity: 0.3
+                  }}>
+                    {activeBoothModal.icon}
+                  </div>
+                  {/* When you add images, uncomment this:
+                  <img
+                    src={process.env.PUBLIC_URL + activeBoothModal.images[currentBoothImage]}
+                    alt={`${activeBoothModal.name} ${currentBoothImage + 1}`}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                  />
+                  */}
+                </div>
+
+                {/* Previous Arrow */}
+                {currentBoothImage > 0 && (
+                  <button
+                    onClick={() => setCurrentBoothImage(currentBoothImage - 1)}
+                    style={{
+                      position: 'absolute',
+                      left: '16px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      background: 'rgba(255, 255, 255, 0.9)',
+                      border: 'none',
+                      borderRadius: '50%',
+                      width: '48px',
+                      height: '48px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                      zIndex: 2
+                    }}
+                  >
+                    <ChevronLeft size={28} color="#4a4a4a" />
+                  </button>
+                )}
+
+                {/* Next Arrow */}
+                {currentBoothImage < activeBoothModal.images.length - 1 && (
+                  <button
+                    onClick={() => setCurrentBoothImage(currentBoothImage + 1)}
+                    style={{
+                      position: 'absolute',
+                      right: '16px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      background: 'rgba(255, 255, 255, 0.9)',
+                      border: 'none',
+                      borderRadius: '50%',
+                      width: '48px',
+                      height: '48px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                      zIndex: 2
+                    }}
+                  >
+                    <ChevronRight size={28} color="#4a4a4a" />
+                  </button>
+                )}
+
+                {/* Image Counter */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: '16px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: 'rgba(0, 0, 0, 0.7)',
+                  color: '#FFFFFF',
+                  padding: '8px 16px',
+                  borderRadius: '0',
+                  fontSize: '14px',
+                  fontWeight: 600
+                }}>
+                  {currentBoothImage + 1} / {activeBoothModal.images.length}
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="body-font" style={{
+                fontSize: '17px',
                 color: '#9b9b9b',
                 lineHeight: 1.7,
                 marginBottom: '40px',
@@ -3011,116 +3206,134 @@ export default function NoteworthyPhotoBooths() {
                 {activeBoothModal.description}
               </p>
 
-              {/* Gallery Section */}
+              {/* Features List */}
               <div style={{ marginBottom: '40px' }}>
-                <h4 className="display-font" style={{
-                  fontSize: '24px',
+                <h4 className="body-font" style={{
+                  fontSize: '20px',
                   fontWeight: 600,
                   color: '#4a4a4a',
-                  marginBottom: '24px',
-                  textAlign: 'center'
+                  marginBottom: '20px'
                 }}>
-                  Gallery
+                  Key Features:
                 </h4>
                 <div style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-                  gap: '16px',
-                  marginBottom: '32px'
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                  gap: '12px'
                 }}>
-                  {[1, 2, 3, 4, 5].map((num) => (
-                    <div
-                      key={num}
-                      style={{
-                        aspectRatio: '4/3',
-                        background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                        borderRadius: '0',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        position: 'relative',
-                        overflow: 'hidden',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-                        cursor: 'pointer',
-                        transition: 'transform 0.3s ease'
-                      }}
-                      onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                      onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                    >
-                      {/* Pattern Background */}
-                      <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        opacity: 0.1,
-                        fontSize: '32px',
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        gap: '10px',
-                        padding: '10px',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                      }}>
-                        {[...Array(4)].map((_, i) => (
-                          <div key={i}>📸</div>
-                        ))}
-                      </div>
-                      
-                      {/* Placeholder Content */}
-                      <div style={{ 
-                        position: 'relative', 
-                        zIndex: 1,
-                        textAlign: 'center'
-                      }}>
-                        <Image size={40} color="#f4f4f4" strokeWidth={2} style={{ marginBottom: '8px' }} />
-                        <p className="body-font" style={{
-                          color: '#f4f4f4',
-                          fontSize: '14px',
-                          fontWeight: 600
-                        }}>
-                          Photo {num}
-                        </p>
-                      </div>
+                  {activeBoothModal.features.map((feature, idx) => (
+                    <div key={idx} style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px'
+                    }}>
+                      <Check size={20} color="#e86c6c" strokeWidth={3} />
+                      <span className="body-font" style={{ fontSize: '15px', color: '#9b9b9b' }}>
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div style={{ marginBottom: '32px' }}>
-                <h4 className="body-font" style={{
-                  fontSize: '20px',
-                  fontWeight: 600,
-                  color: '#4a4a4a',
-                  marginBottom: '16px'
+              {/* Navigation Bar - Next/Previous Booth */}
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '32px',
+                padding: '20px 0',
+                borderTop: '1px solid rgba(18, 18, 18, 0.08)',
+                borderBottom: '1px solid rgba(18, 18, 18, 0.08)'
+              }}>
+                {/* Previous Booth */}
+                {activeBoothModal.id > 1 ? (
+                  <button
+                    onClick={() => {
+                      const prevBooth = boothTypes.find(b => b.id === activeBoothModal.id - 1);
+                      setActiveBoothModal(prevBooth);
+                      setCurrentBoothImage(0);
+                    }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      background: 'none',
+                      border: 'none',
+                      color: '#4a4a4a',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      padding: '8px 12px',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#e86c6c'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#4a4a4a'}
+                  >
+                    <ChevronLeft size={20} />
+                    <span>Previous Booth</span>
+                  </button>
+                ) : (
+                  <div></div>
+                )}
+
+                {/* Current Position */}
+                <span style={{
+                  fontSize: '14px',
+                  color: '#9b9b9b',
+                  fontWeight: 600
                 }}>
-                  Key Features:
-                </h4>
-                {activeBoothModal.features.map((feature, idx) => (
-                  <div key={idx} style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    marginBottom: '12px'
-                  }}>
-                    <Check size={20} color="#e86c6c" strokeWidth={3} />
-                    <span className="body-font" style={{ fontSize: '16px', color: '#9b9b9b' }}>
-                      {feature}
-                    </span>
-                  </div>
-                ))}
+                  {activeBoothModal.id} of {boothTypes.length}
+                </span>
+
+                {/* Next Booth */}
+                {activeBoothModal.id < boothTypes.length ? (
+                  <button
+                    onClick={() => {
+                      const nextBooth = boothTypes.find(b => b.id === activeBoothModal.id + 1);
+                      setActiveBoothModal(nextBooth);
+                      setCurrentBoothImage(0);
+                    }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      background: 'none',
+                      border: 'none',
+                      color: '#4a4a4a',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      padding: '8px 12px',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#e86c6c'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#4a4a4a'}
+                  >
+                    <span>Next Booth</span>
+                    <ChevronRight size={20} />
+                  </button>
+                ) : (
+                  <div></div>
+                )}
               </div>
+
+              {/* Book Now Button */}
               <button 
                 className="btn-primary" 
-                style={{ width: '100%', justifyContent: 'center', fontSize: '18px' }}
+                style={{ 
+                  width: '100%', 
+                  justifyContent: 'center', 
+                  fontSize: '18px',
+                  padding: '16px'
+                }}
                 onClick={() => {
                   setActiveBoothModal(null);
+                  setCurrentBoothImage(0);
                   scrollToSection('contact');
                 }}
               >
-                Book This Booth
+                Book This Booth Now
               </button>
             </div>
           </div>
