@@ -5,7 +5,6 @@ import { Camera, ChevronDown, X, Phone, Mail, MapPin, Check, Star, Image, Book, 
 export default function NoteworthyPhotoBooths() {
   const [navVisible, setNavVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeModal, setActiveModal] = useState(null);
   const [activeBoothModal, setActiveBoothModal] = useState(null);
   const [photoBookModal, setPhotoBookModal] = useState(null);
   const [photoBookPage, setPhotoBookPage] = useState(0);
@@ -72,31 +71,33 @@ export default function NoteworthyPhotoBooths() {
   const teamMembers = [
     {
       id: 1,
-      name: 'Sarah Johnson',
-      role: 'Founder & Lead Photographer',
-      bio: 'With over 10 years of experience in event photography, Sarah founded Noteworthy Photo Booths to bring joy and lasting memories to every celebration. Her passion for capturing authentic moments and creating unforgettable experiences drives everything we do.',
-      image: '👩‍💼'
+      name: 'Joe Ebner',
+      role: 'Founder & President',
+      image: '/img/team/joe-ebner.webp'
     },
     {
       id: 2,
-      name: 'Mike Chen',
-      role: 'Technical Director',
-      bio: 'Mike ensures all our photo booth equipment runs flawlessly at every event. With a background in audio-visual technology and a keen eye for detail, he guarantees picture-perfect results every time.',
-      image: '👨‍💻'
+      name: 'Janice Guion',
+      role: 'Photo Booth Host',
+      image: '/img/team/janice-guion.webp'
     },
     {
       id: 3,
-      name: 'Emily Rodriguez',
-      role: 'Event Coordinator',
-      bio: 'Emily works closely with clients to customize every aspect of their photo booth experience. Her organizational skills and creative vision help bring each event to life exactly as imagined.',
-      image: '👩‍🎨'
+      name: 'Rudy Hedges',
+      role: 'Photo Booth Host',
+      image: '/img/team/rudy-hedges.webp'
     },
     {
       id: 4,
-      name: 'James Taylor',
-      role: 'Booth Operator',
-      bio: 'James keeps the energy high and guests smiling at every event. His friendly personality and technical expertise ensure everyone has a fantastic photo booth experience.',
-      image: '👨‍🎤'
+      name: 'Chris Watrous',
+      role: 'Photo Booth Host',
+      image: '/img/team/chris-watrous.webp'
+    },
+    {
+      id: 5,
+      name: 'Tami Laue',
+      role: 'Photo Booth Host',
+      image: '/img/team/tami-laue.webp'
     }
   ];
 
@@ -2007,12 +2008,12 @@ export default function NoteworthyPhotoBooths() {
           </p>
         </div>
 
-        {/* Team Cards - 2x2 Grid */}
+        {/* Team Cards - Grid for 5 members */}
         <div style={{ 
           display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
           gap: '48px', 
-          maxWidth: '900px',
+          maxWidth: '1200px',
           margin: '0 auto 64px',
           padding: '0 24px'
         }}
@@ -2025,60 +2026,55 @@ export default function NoteworthyPhotoBooths() {
               background: 'transparent',
               padding: 0
             }}>
-              <div 
-                onClick={() => setActiveModal(member)}
-                style={{ 
-                  display: 'block', 
-                  marginBottom: '16px', 
-                  overflow: 'hidden', 
-                  textDecoration: 'none',
-                  border: 'none',
-                  position: 'relative',
-                  cursor: 'pointer'
-                }}
-              >
+              <div style={{ 
+                display: 'block', 
+                marginBottom: '16px', 
+                overflow: 'hidden', 
+                border: 'none',
+                position: 'relative'
+              }}>
                 <div style={{
                   position: 'relative',
                   overflow: 'hidden',
                   lineHeight: 0,
+                  paddingBottom: '100%', // 1:1 aspect ratio
                   background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                  height: '400px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
+                  borderRadius: '8px'
                 }}>
+                  {/* Placeholder - will show gradient until images are added */}
                   <div style={{ 
-                    fontSize: '120px', 
-                    opacity: 0.9,
-                    filter: 'contrast(60%)',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.filter = 'contrast(100%)';
-                    e.currentTarget.style.transform = 'scale(1.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.filter = 'contrast(60%)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
-                  >
-                    {member.image}
-                  </div>
-                  {/* Frame overlay */}
-                  <div style={{
                     position: 'absolute',
                     top: 0,
                     left: 0,
-                    right: 0,
-                    bottom: 0,
-                    border: '8px solid rgba(255, 255, 255, 0.3)',
-                    pointerEvents: 'none',
-                    boxSizing: 'border-box'
-                  }} />
+                    width: '100%',
+                    height: '100%',
+                    fontSize: '120px', 
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    opacity: 0.3
+                  }}>
+                    👤
+                  </div>
+                  {/* When you add images, uncomment this and remove the placeholder above:
+                  <img
+                    src={process.env.PUBLIC_URL + member.image}
+                    alt={member.name}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                    loading="lazy"
+                  />
+                  */}
                 </div>
               </div>
               <h3 className="script-font" style={{
-                fontSize: '32px',
+                fontSize: '28px',
                 fontWeight: 400,
                 marginTop: 0,
                 marginBottom: '8px',
@@ -2092,18 +2088,10 @@ export default function NoteworthyPhotoBooths() {
                 letterSpacing: '2px',
                 fontWeight: 700,
                 color: '#4a4a4a',
-                marginBottom: '12px'
+                marginBottom: 0
               }}>
                 {member.role}
               </h4>
-              <p style={{ 
-                color: '#9b9b9b', 
-                fontSize: '14px', 
-                lineHeight: 1.6,
-                marginBottom: '16px'
-              }}>
-                {member.bio}
-              </p>
             </div>
           ))}
         </div>
@@ -2991,83 +2979,6 @@ export default function NoteworthyPhotoBooths() {
           </div>
         </div>
       </footer>
-
-      {/* Team Member Modal */}
-      {activeModal && (
-        <div className="modal-overlay" onClick={() => setActiveModal(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{
-            maxWidth: '600px',
-            width: '90vw',
-            maxHeight: '600px',
-            aspectRatio: '1/1',
-            display: 'flex',
-            flexDirection: 'column'
-          }}>
-            <button
-              onClick={() => setActiveModal(null)}
-              style={{
-                position: 'absolute',
-                top: '20px',
-                right: '20px',
-                background: 'rgba(18, 18, 18, 0.1)',
-                border: 'none',
-                borderRadius: '50%',
-                width: '40px',
-                height: '40px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <X size={24} color="#4a4a4a" />
-            </button>
-            <div style={{ padding: '48px 40px', overflowY: 'auto', flex: 1 }}>
-              <div style={{
-                width: '120px',
-                height: '120px',
-                background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 24px',
-                fontSize: '60px',
-                boxShadow: '0 8px 24px rgba(255, 58, 124, 0.25)'
-              }}>
-                {activeModal.image}
-              </div>
-              <h3 className="display-font" style={{
-                fontSize: '32px',
-                fontWeight: 600,
-                color: '#4a4a4a',
-                marginBottom: '8px',
-                textAlign: 'center'
-              }}>
-                {activeModal.name}
-              </h3>
-              <p className="body-font" style={{
-                fontSize: '18px',
-                color: '#e86c6c',
-                fontWeight: 600,
-                marginBottom: '32px',
-                textAlign: 'center'
-              }}>
-                {activeModal.role}
-              </p>
-              <p className="body-font" style={{
-                fontSize: '17px',
-                color: '#9b9b9b',
-                lineHeight: 1.8,
-                textAlign: 'center'
-              }}>
-                {activeModal.bio}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Booth Info Modal */}
       {activeBoothModal && (
