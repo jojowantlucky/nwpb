@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
@@ -35,12 +35,18 @@ function Backdrops() {
     { id: 11, name: 'Teal', filename: 'teal-sequin.webp' }
   ];
 
-  // Custom backdrops - TBD (placeholder with 6 for now)
-  const customBackdrops = Array.from({ length: 6 }, (_, i) => ({
-    id: i + 1,
-    name: `Custom Design ${i + 1}`,
-    image: `/img/backdrops/custom/custom-${i + 1}.webp`
-  }));
+  // Load PB Backdrops widget script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://widget.pbbackdrops.com/app/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup: remove script when component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div style={{ minHeight: '100vh', background: '#FFFFFF' }}>
@@ -219,7 +225,7 @@ function Backdrops() {
               fontWeight: 300,
               color: '#4a4a4a'
             }}>
-              Premium Sequin Backdrops
+              Sequin Backdrops
             </h2>
             
             {/* Line below */}
@@ -298,7 +304,7 @@ function Backdrops() {
         </div>
       </section>
 
-      {/* Custom Designs Section */}
+      {/* Premium Backdrops Section */}
       <section id="custom" style={{ padding: '80px 24px', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           {/* Section Header */}
@@ -311,7 +317,7 @@ function Backdrops() {
               fontWeight: 300,
               color: '#4a4a4a'
             }}>
-              Custom Backdrop Designs
+              Premium Backdrops
             </h2>
             
             {/* Line below */}
@@ -335,98 +341,28 @@ function Backdrops() {
               maxWidth: '700px',
               margin: '2em auto 0'
             }}>
-              Choose your backdrop design for your event. Add your logo, branding, or themed designs.
+              Browse hundreds of premium custom backdrop designs. Perfect for weddings, corporate events, and special occasions.
             </p>
           </div>
 
-          {/* Custom Backdrops Grid */}
+          {/* PB Backdrops Widget */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: '32px'
-          }}>
-            {customBackdrops.map(backdrop => (
-              <div key={backdrop.id} style={{
-                overflow: 'hidden',
-                transition: 'transform 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-              >
-                <div style={{
-                  width: '100%',
-                  paddingBottom: '100%', // 1:1 aspect ratio
-                  position: 'relative',
-                  background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                  borderRadius: '8px',
-                  overflow: 'hidden'
-                }}>
-                  {/* Placeholder */}
-                  <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '64px',
-                    opacity: 0.3
-                  }}>
-                    🖼️
-                  </div>
-                </div>
-                <h3 style={{
-                  textAlign: 'center',
-                  fontSize: '16px',
-                  fontWeight: 500,
-                  color: '#4a4a4a',
-                  marginTop: '12px',
-                  marginBottom: 0
-                }}>
-                  {backdrop.name}
-                </h3>
-              </div>
-            ))}
-          </div>
-
-          {/* Info Box */}
-          <div style={{
-            marginTop: '64px',
-            textAlign: 'center',
-            background: '#f9f9f9',
-            padding: '48px',
             borderRadius: '16px',
-            maxWidth: '700px',
-            margin: '64px auto 0'
+            overflow: 'hidden',
+            border: '1px solid rgba(18, 18, 18, 0.08)',
+            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
+            background: '#FFFFFF'
           }}>
-            <h3 style={{
-              fontSize: '24px',
-              fontWeight: 600,
-              color: '#4a4a4a',
-              marginBottom: '16px'
-            }}>
-              Need Something Custom?
-            </h3>
-            <p style={{
-              color: '#9b9b9b',
-              fontSize: '16px',
-              lineHeight: 1.6,
-              marginBottom: '24px'
-            }}>
-              We can create fully customized backdrops designed specifically for your event. Add your logo, branding, or themed designs.
-            </p>
-            <Link 
-              to="/#contact"
-              className="btn-primary"
+            <iframe 
+              src="https://widget.pbbackdrops.com/embed/v1/200fa513-91e4-4164-9140-c3c3a04832cc?choice=1&search=1" 
               style={{
-                display: 'inline-flex',
-                textDecoration: 'none'
+                width: '100%',
+                height: '700px',
+                border: 'none',
+                display: 'block'
               }}
-            >
-              Contact Us
-            </Link>
+              title="Premium Backdrop Designer"
+            />
           </div>
         </div>
       </section>

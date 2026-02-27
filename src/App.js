@@ -1779,7 +1779,7 @@ export default function NoteworthyPhotoBooths() {
               marginBottom: '8px',
               color: '#e86c6c'
             }}>
-              Premium Sequin
+              Sequin Backdrops
             </h3>
             <h4 style={{
               fontSize: '11px',
@@ -1883,7 +1883,7 @@ export default function NoteworthyPhotoBooths() {
               marginBottom: '8px',
               color: '#e86c6c'
             }}>
-              Custom Designs
+              Premium Backdrops
             </h3>
             <h4 style={{
               fontSize: '11px',
@@ -1893,7 +1893,7 @@ export default function NoteworthyPhotoBooths() {
               color: '#4a4a4a',
               marginBottom: '12px'
             }}>
-              Fully Customized
+              Custom Designs
             </h4>
             <p style={{ color: '#9b9b9b', fontSize: '14px', lineHeight: 1.6, marginBottom: '16px' }}>
               Choose your backdrop design for your event. Add your logo, branding, or themed designs.
