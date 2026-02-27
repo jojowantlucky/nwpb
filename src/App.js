@@ -2038,25 +2038,8 @@ export default function NoteworthyPhotoBooths() {
                   overflow: 'hidden',
                   lineHeight: 0,
                   paddingBottom: '100%', // 1:1 aspect ratio
-                  background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)',
-                  borderRadius: '8px'
+                  borderRadius: '0' // Square corners
                 }}>
-                  {/* Placeholder - will show gradient until images are added */}
-                  <div style={{ 
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    fontSize: '120px', 
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    opacity: 0.3
-                  }}>
-                    👤
-                  </div>
-                  {/* When you add images, uncomment this and remove the placeholder above:
                   <img
                     src={process.env.PUBLIC_URL + member.image}
                     alt={member.name}
@@ -2070,7 +2053,6 @@ export default function NoteworthyPhotoBooths() {
                     }}
                     loading="lazy"
                   />
-                  */}
                 </div>
               </div>
               <h3 className="script-font" style={{
@@ -2188,7 +2170,7 @@ export default function NoteworthyPhotoBooths() {
                     className="feature-card"
                     style={{
                       background: '#FFFFFF',
-                      borderRadius: '16px',
+                      borderRadius: '0',
                       padding: '32px',
                       textAlign: 'center',
                       border: '1px solid rgba(18, 18, 18, 0.1)',
@@ -2207,7 +2189,7 @@ export default function NoteworthyPhotoBooths() {
                       width: '72px',
                       height: '72px',
                       background: 'linear-gradient(135deg, #e14040 0%, #e14040 100%)',
-                      borderRadius: '16px',
+                      borderRadius: '0',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
