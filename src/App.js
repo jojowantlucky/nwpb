@@ -14,6 +14,7 @@ export default function NoteworthyPhotoBooths() {
   const [backdropModal, setBackdropModal] = useState(null);
   const [backdropPage, setBackdropPage] = useState(0);
   const [boothGalleryModal, setBoothGalleryModal] = useState(null);
+  const [calendlyModal, setCalendlyModal] = useState(false);
   const [formLoading, setFormLoading] = useState(true);
   const DESIGNS_PER_PAGE = 6;
   const [isPaused, setIsPaused] = useState(false);
@@ -668,6 +669,27 @@ export default function NoteworthyPhotoBooths() {
           }
         }
         */
+
+        /* Mobile Hero Vertical Centering */
+        @media (max-width: 768px) {
+          .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70vh;
+          }
+          
+          .booth-cards-container {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-content {
+            min-height: 60vh;
+          }
+        }
       `}</style>
 
       {/* Sticky Navigation */}
@@ -832,8 +854,9 @@ export default function NoteworthyPhotoBooths() {
           zIndex: 2,
           textAlign: 'center',
           maxWidth: '1000px',
-          padding: '24px'
-        }}>
+          padding: '24px',
+          width: '100%'
+        }} className="hero-content">
           <div style={{ marginBottom: '16px' }}>
             <Camera size={64} color="#e86c6c" strokeWidth={2} />
           </div>
@@ -923,10 +946,8 @@ export default function NoteworthyPhotoBooths() {
             >
               Get an Instant Quote
             </a>
-            <a 
-              href="https://calendly.com/noteworthydjs"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button 
+              onClick={() => setCalendlyModal(true)}
               style={{ 
                 fontSize: '14px',
                 padding: '12px 28px',
@@ -951,7 +972,7 @@ export default function NoteworthyPhotoBooths() {
               }}
             >
               Schedule a Call
-            </a>
+            </button>
             <a 
               href="tel:503-770-0382"
               style={{ 
@@ -1369,17 +1390,6 @@ export default function NoteworthyPhotoBooths() {
                     e.currentTarget.style.transform = 'scale(1)';
                   }}
                 />
-                {/* Frame overlay */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  border: '8px solid rgba(255, 255, 255, 0.3)',
-                  pointerEvents: 'none',
-                  boxSizing: 'border-box'
-                }} />
               </div>
             </Link>
             <h3 className="script-font" style={{
@@ -1485,17 +1495,6 @@ export default function NoteworthyPhotoBooths() {
                     e.currentTarget.style.transform = 'scale(1)';
                   }}
                 />
-                {/* Frame overlay */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  border: '8px solid rgba(255, 255, 255, 0.3)',
-                  pointerEvents: 'none',
-                  boxSizing: 'border-box'
-                }} />
               </div>
             </Link>
             <h3 className="script-font" style={{
@@ -1528,7 +1527,7 @@ export default function NoteworthyPhotoBooths() {
               maxWidth: '320px',
               margin: '0 auto'
             }}>
-              {['Fully customized designs', 'Your branding & logos', 'Premium paper options', 'Dedicated design consultation'].map((feature, idx) => (
+              {['Choose your design', 'Your branding & logos', 'Premium paper options', 'Dedicated design consultation'].map((feature, idx) => (
                 <li key={idx} style={{ 
                   display: 'flex', 
                   alignItems: 'flex-start', 
@@ -1904,7 +1903,7 @@ export default function NoteworthyPhotoBooths() {
               Fully Customized
             </h4>
             <p style={{ color: '#9b9b9b', fontSize: '14px', lineHeight: 1.6, marginBottom: '16px' }}>
-              Fully customized backdrops designed for your event. Add your logo, branding, or themed designs.
+              Choose your backdrop design for your event. Add your logo, branding, or themed designs.
             </p>
             <ul style={{ 
               listStyle: 'none', 
@@ -2214,7 +2213,13 @@ export default function NoteworthyPhotoBooths() {
                       border: '1px solid rgba(18, 18, 18, 0.1)',
                       boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
                       flexShrink: 0,
-                      scrollSnapAlign: 'start'
+                      scrollSnapAlign: 'start',
+                      width: '280px',
+                      height: '280px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'center'
                     }}
                   >
                     <div style={{
@@ -2247,6 +2252,26 @@ export default function NoteworthyPhotoBooths() {
                   </div>
                 );
               })}
+            </div>
+            
+            {/* Swipe Indicator */}
+            <div style={{
+              textAlign: 'center',
+              marginTop: '24px',
+              color: '#9b9b9b',
+              fontSize: '14px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px'
+            }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+              <span>Swipe to see more</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
             </div>
           </div>
         </div>
@@ -2423,6 +2448,19 @@ export default function NoteworthyPhotoBooths() {
               margin: '0 auto 24px'
             }}>
               We serve all cities throughout Washington and Oregon. Contact us to confirm availability for your location!
+            </p>
+            <Link 
+              to="/areas-served"
+              className="btn-secondary"
+              style={{
+                display: 'inline-flex',
+                textDecoration: 'none',
+                fontSize: '14px',
+                padding: '12px 28px'
+              }}
+            >
+              View All Service Areas
+            </Link>
             </p>
             <button 
               className="btn-primary" 
@@ -3060,7 +3098,14 @@ export default function NoteworthyPhotoBooths() {
       {/* Team Member Modal */}
       {activeModal && (
         <div className="modal-overlay" onClick={() => setActiveModal(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{
+            maxWidth: '600px',
+            width: '90vw',
+            maxHeight: '600px',
+            aspectRatio: '1/1',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
             <button
               onClick={() => setActiveModal(null)}
               style={{
@@ -3081,7 +3126,7 @@ export default function NoteworthyPhotoBooths() {
             >
               <X size={24} color="#4a4a4a" />
             </button>
-            <div style={{ padding: '48px 40px' }}>
+            <div style={{ padding: '48px 40px', overflowY: 'auto', flex: 1 }}>
               <div style={{
                 width: '120px',
                 height: '120px',
@@ -3591,7 +3636,14 @@ export default function NoteworthyPhotoBooths() {
       {/* Backdrop Modal */}
       {backdropModal && (
         <div className="modal-overlay" onClick={() => { setBackdropModal(null); setBackdropPage(0); }}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: backdropModal === 'custom' ? '1200px' : '1100px' }}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ 
+            maxWidth: '800px',
+            width: '90vw',
+            maxHeight: '800px',
+            aspectRatio: '1/1',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
             <button
               onClick={() => { setBackdropModal(null); setBackdropPage(0); }}
               style={{
@@ -3604,7 +3656,7 @@ export default function NoteworthyPhotoBooths() {
               <X size={24} color="#4a4a4a" />
             </button>
 
-            <div style={{ padding: '48px 40px' }}>
+            <div style={{ padding: '48px 40px', overflowY: 'auto', flex: 1 }}>
               {/* Title */}
               <h3 className="display-font" style={{
                 fontSize: '36px', fontWeight: 600, color: '#4a4a4a',
@@ -3868,6 +3920,80 @@ export default function NoteworthyPhotoBooths() {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Calendly Modal */}
+      {calendlyModal && (
+        <div 
+          className="modal-overlay" 
+          onClick={() => setCalendlyModal(false)}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 0, 0, 0.8)',
+            zIndex: 1000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px'
+          }}
+        >
+          <div 
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '1000px',
+              height: '90vh',
+              background: '#FFFFFF',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+            }}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setCalendlyModal(false)}
+              style={{
+                position: 'absolute',
+                top: '16px',
+                right: '16px',
+                zIndex: 10,
+                background: 'rgba(255, 255, 255, 0.9)',
+                border: 'none',
+                borderRadius: '50%',
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: 'background 0.2s ease',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = '#FFFFFF'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)'}
+            >
+              <X size={24} color="#4a4a4a" />
+            </button>
+
+            {/* Calendly Embed */}
+            <iframe
+              src="https://calendly.com/noteworthydjs"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              title="Schedule a Call"
+              style={{
+                border: 'none',
+                borderRadius: '16px'
+              }}
+            />
           </div>
         </div>
       )}

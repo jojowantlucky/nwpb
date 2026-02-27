@@ -1,49 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 function PhotoBooks() {
+  const [activeModal, setActiveModal] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Custom designs with image counts
   const customDesigns = [
-    { id: 1, name: 'Bamboo Leaves', image: '/img/photobooks/custom/bamboo-leaves/bamboo-leaves1.webp' },
-    { id: 2, name: 'Beach Sandals', image: '/img/photobooks/custom/beach-sandles/beach-sandals1.webp' },
-    { id: 3, name: 'Best Day', image: '/img/photobooks/custom/best-day/best-day1.webp' },
-    { id: 4, name: 'Box Modern', image: '/img/photobooks/custom/box-modern/box-modern1.webp' },
-    { id: 5, name: 'City Skyline', image: '/img/photobooks/custom/city-skyline/city-skyline1.webp' },
-    { id: 6, name: 'Color Explosion', image: '/img/photobooks/custom/color-explosion/color-explosion1.webp' },
-    { id: 7, name: 'Diamond Geo', image: '/img/photobooks/custom/diamond-geo/diamond-geo1.webp' },
-    { id: 8, name: 'Double Diamond', image: '/img/photobooks/custom/double-diamond/double-diamond1.webp' },
-    { id: 9, name: 'Eat Drink and Be Married', image: '/img/photobooks/custom/eat-drink-and-be-married/eat-drink-and-be-married1.webp' },
-    { id: 10, name: 'Endless Love', image: '/img/photobooks/custom/endless-love/endless-love1.webp' },
-    { id: 11, name: 'Eucalyptus', image: '/img/photobooks/custom/eucalyptus/eucalyptus1.webp' },
-    { id: 12, name: 'Feather Flowers', image: '/img/photobooks/custom/feather-flowers/feather-flowers1.webp' },
-    { id: 13, name: 'Floral Swirls', image: '/img/photobooks/custom/floral-swirls/floral-swirls1.webp' },
-    { id: 14, name: 'Geo Flowers', image: '/img/photobooks/custom/geo-flowers/geo-flowers1.webp' },
-    { id: 15, name: 'Geo Sparks', image: '/img/photobooks/custom/geo-sparks/geo-sparks1.webp' },
-    { id: 16, name: 'Hanging Sign', image: '/img/photobooks/custom/hanging-sign/hanging-sign1.webp' },
-    { id: 17, name: 'Heart Duo', image: '/img/photobooks/custom/heart-duo/heart-duo1.webp' },
-    { id: 18, name: 'Keep It Simple', image: '/img/photobooks/custom/keep-it-simple/keep-it-simple1.webp' },
-    { id: 19, name: 'Lace Design', image: '/img/photobooks/custom/lace-design/lace-design1.webp' },
-    { id: 20, name: 'Line Simple', image: '/img/photobooks/custom/line-simple/line-simple1.webp' },
-    { id: 21, name: 'Mums', image: '/img/photobooks/custom/mums/mums1.webp' },
-    { id: 22, name: 'Picture Frames', image: '/img/photobooks/custom/picture-frames/picture-frames1.webp' },
-    { id: 23, name: 'Polka Dots', image: '/img/photobooks/custom/polka-dots/polka-dots1.webp' },
-    { id: 24, name: 'Thistle Flower', image: '/img/photobooks/custom/thistle-flower/thistle-flower1.webp' },
-    { id: 25, name: 'Vintage Lanterns', image: '/img/photobooks/custom/venture-lanterns/vintage-lanterns1.webp' },
-    { id: 26, name: 'Wildflower Stencil', image: '/img/photobooks/custom/wildflower-stencil/wildflower-stencil1.webp' }
+    { id: 1, name: 'Bamboo Leaves', folder: 'bamboo-leaves', imageCount: 3 },
+    { id: 2, name: 'Beach Sandals', folder: 'beach-sandles', imageCount: 6 },
+    { id: 3, name: 'Best Day', folder: 'best-day', imageCount: 2 },
+    { id: 4, name: 'Box Modern', folder: 'box-modern', imageCount: 6 },
+    { id: 5, name: 'City Skyline', folder: 'city-skyline', imageCount: 2 },
+    { id: 6, name: 'Color Explosion', folder: 'color-explosion', imageCount: 6 },
+    { id: 7, name: 'Diamond Geo', folder: 'diamond-geo', imageCount: 6 },
+    { id: 8, name: 'Double Diamond', folder: 'double-diamond', imageCount: 6 },
+    { id: 9, name: 'Eat Drink and Be Married', folder: 'eat-drink-and-be-married', imageCount: 6 },
+    { id: 10, name: 'Endless Love', folder: 'endless-love', imageCount: 6 },
+    { id: 11, name: 'Eucalyptus', folder: 'eucalyptus', imageCount: 6 },
+    { id: 12, name: 'Feather Flowers', folder: 'feather-flowers', imageCount: 6 },
+    { id: 13, name: 'Floral Swirls', folder: 'floral-swirls', imageCount: 2 },
+    { id: 14, name: 'Geo Flowers', folder: 'geo-flowers', imageCount: 6 },
+    { id: 15, name: 'Geo Sparks', folder: 'geo-sparks', imageCount: 6 },
+    { id: 16, name: 'Hanging Sign', folder: 'hanging-sign', imageCount: 2 },
+    { id: 17, name: 'Heart Duo', folder: 'heart-duo', imageCount: 6 },
+    { id: 18, name: 'Keep It Simple', folder: 'keep-it-simple', imageCount: 6 },
+    { id: 19, name: 'Lace Design', folder: 'lace-design', imageCount: 6 },
+    { id: 20, name: 'Line Simple', folder: 'line-simple', imageCount: 6 },
+    { id: 21, name: 'Mums', folder: 'mums', imageCount: 2 },
+    { id: 22, name: 'Picture Frames', folder: 'picture-frames', imageCount: 6 },
+    { id: 23, name: 'Polka Dots', folder: 'polka-dots', imageCount: 6 },
+    { id: 24, name: 'Thistle Flower', folder: 'thistle-flower', imageCount: 6 },
+    { id: 25, name: 'Vintage Lanterns', folder: 'venture-lanterns', imageCount: 6 },
+    { id: 26, name: 'Wildflower Stencil', folder: 'wildflower-stencil', imageCount: 6 }
   ];
 
   const standardDesigns = [
-    { id: 1, name: 'Standard Design 1', image: '/img/photobooks/standard-photobook1.webp' },
-    { id: 2, name: 'Standard Design 2', image: '/img/photobooks/standard-photobook2.webp' },
-    { id: 3, name: 'Standard Design 3', image: '/img/photobooks/standard-photobook3.webp' },
-    { id: 4, name: 'Standard Design 4', image: '/img/photobooks/standard-photobook4.webp' },
-    { id: 5, name: 'Standard Design 5', image: '/img/photobooks/standard-photobook5.webp' },
-    { id: 6, name: 'Standard Design 6', image: '/img/photobooks/standard-photobook6.webp' },
-    { id: 7, name: 'Standard Design 7', image: '/img/photobooks/standard-photobook7.webp' },
-    { id: 8, name: 'Standard Design 8', image: '/img/photobooks/standard-photobook8.webp' },
-    { id: 9, name: 'Standard Design 9', image: '/img/photobooks/standard-photobook9.webp' },
-    { id: 10, name: 'Standard Design 10', image: '/img/photobooks/standard-photobook10.webp' }
+    { id: 1, name: 'Standard Design 1', imageCount: 1 },
+    { id: 2, name: 'Standard Design 2', imageCount: 1 },
+    { id: 3, name: 'Standard Design 3', imageCount: 1 },
+    { id: 4, name: 'Standard Design 4', imageCount: 1 },
+    { id: 5, name: 'Standard Design 5', imageCount: 1 },
+    { id: 6, name: 'Standard Design 6', imageCount: 1 },
+    { id: 7, name: 'Standard Design 7', imageCount: 1 },
+    { id: 8, name: 'Standard Design 8', imageCount: 1 },
+    { id: 9, name: 'Standard Design 9', imageCount: 1 },
+    { id: 10, name: 'Standard Design 10', imageCount: 1 }
   ];
+
+  const openModal = (design, isCustom) => {
+    setActiveModal({ ...design, isCustom });
+    setCurrentImageIndex(0);
+  };
+
+  const closeModal = () => {
+    setActiveModal(null);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    if (activeModal) {
+      setCurrentImageIndex((prev) => 
+        prev < activeModal.imageCount - 1 ? prev + 1 : 0
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (activeModal) {
+      setCurrentImageIndex((prev) => 
+        prev > 0 ? prev - 1 : activeModal.imageCount - 1
+      );
+    }
+  };
+
+  const getImagePath = (design, index, isCustom) => {
+    if (isCustom) {
+      const fileName = `${design.folder}${index + 1}.webp`;
+      return `${process.env.PUBLIC_URL}/img/photobooks/custom/${design.folder}/${fileName}`;
+    } else {
+      return `${process.env.PUBLIC_URL}/img/photobooks/standard-photobook${design.id}.webp`;
+    }
+  };
 
   return (
     <div style={{ minHeight: '100vh', background: '#FFFFFF' }}>
@@ -126,26 +165,37 @@ function PhotoBooks() {
             gap: '32px'
           }}>
             {customDesigns.map(design => (
-              <div key={design.id} style={{
-                overflow: 'hidden',
-                cursor: 'pointer',
-                transition: 'transform 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              <div key={design.id} 
+                onClick={() => openModal(design, true)}
+                style={{
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  transition: 'transform 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
               >
                 <img
-                  src={`${process.env.PUBLIC_URL}${design.image}`}
+                  src={getImagePath(design, 0, true)}
                   alt={design.name}
                   style={{
                     width: '100%',
                     height: 'auto',
                     display: 'block',
-                    border: '1px solid rgba(0, 0, 0, 0.1)',
                     transition: 'all 0.3s ease'
                   }}
                   loading="lazy"
                 />
+                <h3 style={{
+                  textAlign: 'center',
+                  fontSize: '18px',
+                  fontWeight: 500,
+                  color: '#4a4a4a',
+                  marginTop: '12px',
+                  marginBottom: 0
+                }}>
+                  {design.name}
+                </h3>
               </div>
             ))}
           </div>
@@ -200,31 +250,187 @@ function PhotoBooks() {
             gap: '32px'
           }}>
             {standardDesigns.map(design => (
-              <div key={design.id} style={{
-                overflow: 'hidden',
-                cursor: 'pointer',
-                transition: 'transform 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              <div key={design.id}
+                onClick={() => openModal(design, false)}
+                style={{
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  transition: 'transform 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
               >
                 <img
-                  src={`${process.env.PUBLIC_URL}${design.image}`}
+                  src={getImagePath(design, 0, false)}
                   alt={design.name}
                   style={{
                     width: '100%',
                     height: 'auto',
                     display: 'block',
-                    border: '1px solid rgba(0, 0, 0, 0.1)',
                     transition: 'all 0.3s ease'
                   }}
                   loading="lazy"
                 />
+                <h3 style={{
+                  textAlign: 'center',
+                  fontSize: '18px',
+                  fontWeight: 500,
+                  color: '#4a4a4a',
+                  marginTop: '12px',
+                  marginBottom: 0
+                }}>
+                  {design.name}
+                </h3>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Photo Book Modal */}
+      {activeModal && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 0, 0, 0.9)',
+            zIndex: 1000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px'
+          }}
+          onClick={closeModal}
+        >
+          {/* Modal Content */}
+          <div
+            style={{
+              position: 'relative',
+              maxWidth: '900px',
+              width: '100%',
+              background: '#FFFFFF',
+              borderRadius: '8px',
+              overflow: 'hidden'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              style={{
+                position: 'absolute',
+                top: '16px',
+                right: '16px',
+                zIndex: 10,
+                background: 'rgba(255, 255, 255, 0.9)',
+                border: 'none',
+                borderRadius: '50%',
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: 'background 0.2s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = '#FFFFFF'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)'}
+            >
+              <X size={24} color="#4a4a4a" />
+            </button>
+
+            {/* Image Display */}
+            <div style={{ position: 'relative', background: '#f9f9f9' }}>
+              <img
+                src={getImagePath(activeModal, currentImageIndex, activeModal.isCustom)}
+                alt={`${activeModal.name} - Image ${currentImageIndex + 1}`}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block'
+                }}
+              />
+
+              {/* Navigation Arrows (only if more than 1 image) */}
+              {activeModal.imageCount > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    style={{
+                      position: 'absolute',
+                      left: '16px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      background: 'rgba(255, 255, 255, 0.9)',
+                      border: 'none',
+                      borderRadius: '50%',
+                      width: '48px',
+                      height: '48px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      transition: 'background 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = '#FFFFFF'}
+                    onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)'}
+                  >
+                    <ChevronLeft size={28} color="#4a4a4a" />
+                  </button>
+
+                  <button
+                    onClick={nextImage}
+                    style={{
+                      position: 'absolute',
+                      right: '16px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      background: 'rgba(255, 255, 255, 0.9)',
+                      border: 'none',
+                      borderRadius: '50%',
+                      width: '48px',
+                      height: '48px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      transition: 'background 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = '#FFFFFF'}
+                    onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)'}
+                  >
+                    <ChevronRight size={28} color="#4a4a4a" />
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div style={{ padding: '24px', textAlign: 'center' }}>
+              <h3 style={{
+                fontSize: '24px',
+                fontWeight: 600,
+                color: '#4a4a4a',
+                marginBottom: '8px'
+              }}>
+                {activeModal.name}
+              </h3>
+              {activeModal.imageCount > 1 && (
+                <p style={{
+                  color: '#9b9b9b',
+                  fontSize: '14px',
+                  margin: 0
+                }}>
+                  Image {currentImageIndex + 1} of {activeModal.imageCount}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
