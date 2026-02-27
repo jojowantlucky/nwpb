@@ -272,16 +272,6 @@ function PhotoBooks() {
                   }}
                   loading="lazy"
                 />
-                <h3 style={{
-                  textAlign: 'center',
-                  fontSize: '18px',
-                  fontWeight: 500,
-                  color: '#4a4a4a',
-                  marginTop: '12px',
-                  marginBottom: 0
-                }}>
-                  {design.name}
-                </h3>
               </div>
             ))}
           </div>
