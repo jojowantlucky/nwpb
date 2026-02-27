@@ -1353,8 +1353,8 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <Link 
-              to="/photo-books#standard"
+            <a 
+              href={`${process.env.PUBLIC_URL}/photo-books#standard`}
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1389,7 +1389,7 @@ export default function NoteworthyPhotoBooths() {
                   }}
                 />
               </div>
-            </Link>
+            </a>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,
@@ -1443,8 +1443,8 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <Link 
-              to="/photo-books#custom"
+            <a 
+              href={`${process.env.PUBLIC_URL}/photo-books#custom`}
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1494,7 +1494,7 @@ export default function NoteworthyPhotoBooths() {
                   }}
                 />
               </div>
-            </Link>
+            </a>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,
@@ -1604,8 +1604,8 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <Link 
-              to="/backdrops#standard"
+            <a 
+              href={`${process.env.PUBLIC_URL}/backdrops#standard`}
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1653,7 +1653,7 @@ export default function NoteworthyPhotoBooths() {
                   boxSizing: 'border-box'
                 }} />
               </div>
-            </Link>
+            </a>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,
@@ -1707,8 +1707,8 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <Link 
-              to="/backdrops#sequin"
+            <a 
+              href={`${process.env.PUBLIC_URL}/backdrops#sequin`}
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1771,7 +1771,7 @@ export default function NoteworthyPhotoBooths() {
                   boxSizing: 'border-box'
                 }} />
               </div>
-            </Link>
+            </a>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,
@@ -1825,8 +1825,8 @@ export default function NoteworthyPhotoBooths() {
             background: 'transparent',
             padding: 0
           }}>
-            <Link 
-              to="/backdrops#premium"
+            <a 
+              href={`${process.env.PUBLIC_URL}/backdrops#premium`}
               style={{ 
                 display: 'block', 
                 marginBottom: '16px', 
@@ -1875,7 +1875,7 @@ export default function NoteworthyPhotoBooths() {
                   boxSizing: 'border-box'
                 }} />
               </div>
-            </Link>
+            </a>
             <h3 className="script-font" style={{
               fontSize: '32px',
               fontWeight: 400,
