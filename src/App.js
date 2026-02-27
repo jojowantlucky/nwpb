@@ -2325,104 +2325,6 @@ export default function NoteworthyPhotoBooths() {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '32px',
-            marginBottom: '48px'
-          }}>
-            {/* Oregon */}
-            <div style={{
-              background: '#FFFFFF',
-              borderRadius: '20px',
-              padding: '40px',
-              border: '1px solid rgba(18, 18, 18, 0.08)',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)'
-            }}>
-              <h3 className="display-font" style={{
-                fontSize: '32px',
-                fontWeight: 600,
-                color: '#4a4a4a',
-                marginBottom: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px'
-              }}>
-                <span style={{ fontSize: '40px' }}>🌲</span>
-                Oregon
-              </h3>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '12px'
-              }}>
-                {[
-                  'Portland', 'Eugene', 'Salem', 'Gresham',
-                  'Hillsboro', 'Beaverton', 'Bend', 'Medford',
-                  'Springfield', 'Corvallis', 'Albany', 'Tigard',
-                  'Lake Oswego', 'Keizer', 'Grants Pass', 'Oregon City',
-                  'McMinnville', 'Redmond', 'Tualatin', 'West Linn'
-                ].map((city, idx) => (
-                  <p key={idx} className="body-font" style={{
-                    fontSize: '15px',
-                    color: '#9b9b9b',
-                    padding: '8px 12px',
-                    background: '#FAF8FC',
-                    borderRadius: '8px',
-                    textAlign: 'center'
-                  }}>
-                    {city}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            {/* Washington */}
-            <div style={{
-              background: '#FFFFFF',
-              borderRadius: '20px',
-              padding: '40px',
-              border: '1px solid rgba(18, 18, 18, 0.08)',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)'
-            }}>
-              <h3 className="display-font" style={{
-                fontSize: '32px',
-                fontWeight: 600,
-                color: '#4a4a4a',
-                marginBottom: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px'
-              }}>
-                <span style={{ fontSize: '40px' }}>🏔️</span>
-                Washington
-              </h3>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '12px'
-              }}>
-                {[
-                  'Seattle', 'Spokane', 'Tacoma', 'Vancouver',
-                  'Bellevue', 'Kent', 'Everett', 'Renton',
-                  'Spokane Valley', 'Federal Way', 'Yakima', 'Kirkland',
-                  'Bellingham', 'Kennewick', 'Auburn', 'Pasco',
-                  'Marysville', 'Lakewood', 'Redmond', 'Shoreline'
-                ].map((city, idx) => (
-                  <p key={idx} className="body-font" style={{
-                    fontSize: '15px',
-                    color: '#9b9b9b',
-                    padding: '8px 12px',
-                    background: '#FAF8FC',
-                    borderRadius: '8px',
-                    textAlign: 'center'
-                  }}>
-                    {city}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
 
           <div style={{
             textAlign: 'center',
@@ -2430,7 +2332,9 @@ export default function NoteworthyPhotoBooths() {
             background: '#FFFFFF',
             borderRadius: '16px',
             border: '1px solid rgba(18, 18, 18, 0.08)',
-            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)'
+            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
+            maxWidth: '700px',
+            margin: '0 auto'
           }}>
             <p className="body-font" style={{
               fontSize: '17px',
@@ -3935,7 +3839,7 @@ export default function NoteworthyPhotoBooths() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(0, 0, 0, 0.8)',
+            background: 'rgba(0, 0, 0, 0.7)',
             zIndex: 1000,
             display: 'flex',
             alignItems: 'center',
