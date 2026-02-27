@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nwpb_updates/static/css/main.e6c13ad2.css",
+    "main.js": "/nwpb_updates/static/js/main.2eb68171.js",
+    "index.html": "/nwpb_updates/index.html",
+    "main.e6c13ad2.css.map": "/nwpb_updates/static/css/main.e6c13ad2.css.map",
+    "main.2eb68171.js.map": "/nwpb_updates/static/js/main.2eb68171.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.2eb68171.js"
+  ]
+}

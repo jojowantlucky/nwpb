@@ -1,0 +1,378 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-02-22",
+    "businessName": "Noteworthy Photo Booths",
+    "contact": {
+      "email": "booking@noteworthyphotobooths.com",
+      "phone": "503-770-0382",
+      "website": "https://noteworthyphotobooths.com"
+    }
+  },
+  "booths": [
+    {
+      "id": 1,
+      "slug": "open-air",
+      "name": "Open-Air Photo Booth",
+      "tagline": "Perfect for larger groups",
+      "description": "Perfect for larger groups and events where flexibility is key. Our open-air booths accommodate groups of any size and can be positioned anywhere at your venue.",
+      "icon": "📸",
+      "features": [
+        "Accommodates unlimited group sizes",
+        "Professional DSLR camera",
+        "Customizable backdrop options",
+        "Perfect for high-traffic events"
+      ],
+      "imageUrl": "/booths/open-air-booth.jpg",
+      "popular": true
+    },
+    {
+      "id": 2,
+      "slug": "360-video",
+      "name": "360 Photo Booth",
+      "tagline": "Cinematic slow-motion videos",
+      "description": "Create stunning slow-motion videos with our revolutionary 360-degree video booth. Guests stand on a platform while a camera rotates around them, capturing dynamic content perfect for social sharing.",
+      "icon": "🎬",
+      "features": [
+        "Cinematic slow-motion video",
+        "360-degree rotating camera",
+        "Instant social media sharing",
+        "Digital delivery only"
+      ],
+      "imageUrl": "/booths/360-booth.jpg",
+      "popular": false
+    },
+    {
+      "id": 3,
+      "slug": "enclosed",
+      "name": "Enclosed Photo Booth",
+      "tagline": "Classic photo booth experience",
+      "description": "The classic photo booth experience with modern technology. Private, intimate space for smaller groups to let loose and have fun.",
+      "icon": "📦",
+      "features": [
+        "Private enclosed space",
+        "Seats up to 6 people",
+        "Vintage aesthetic with modern tech",
+        "Instant print strips"
+      ],
+      "imageUrl": "/booths/enclosed-booth.jpg",
+      "popular": false
+    },
+    {
+      "id": 4,
+      "slug": "selfie-station",
+      "name": "Selfie-Station Booth",
+      "tagline": "Compact and modern",
+      "description": "A compact, modern solution perfect for corporate events and smaller venues. Guests can take unlimited photos using a touchscreen interface.",
+      "icon": "🤳",
+      "features": [
+        "Compact footprint",
+        "Touchscreen interface",
+        "Digital sharing options",
+        "No instant prints"
+      ],
+      "imageUrl": "/booths/selfie-station.jpg",
+      "popular": false
+    },
+    {
+      "id": 5,
+      "slug": "mirror",
+      "name": "Mirror Photo Booth",
+      "tagline": "Interactive touch experience",
+      "description": "An interactive experience featuring a full-length mirror that comes alive with animations and prompts. Touch the mirror to take photos, sign your prints, and more.",
+      "icon": "🪞",
+      "features": [
+        "Interactive touch mirror",
+        "Full-length elegance",
+        "Animated emoji stamps",
+        "Digital signature capture"
+      ],
+      "imageUrl": "/booths/mirror-booth.jpg",
+      "popular": false
+    }
+  ],
+  "features": [
+    {
+      "icon": "clock",
+      "title": "3 Hours Photography",
+      "description": "Extended coverage time"
+    },
+    {
+      "icon": "image",
+      "title": "Instant 2x6\" Prints",
+      "description": "Two prints per session"
+    },
+    {
+      "icon": "users",
+      "title": "Unlimited Sessions",
+      "description": "As many photos as you want"
+    },
+    {
+      "icon": "sparkles",
+      "title": "Props Included",
+      "description": "Fun accessories provided"
+    },
+    {
+      "icon": "share",
+      "title": "Social Sharing",
+      "description": "Text or email instantly"
+    },
+    {
+      "icon": "star",
+      "title": "Custom Print Design",
+      "description": "Your assets or our templates"
+    }
+  ],
+  "photoBookDesigns": [
+    {
+      "id": "bamboo-leaves",
+      "name": "Bamboo Leaves",
+      "imageCount": 3,
+      "thumbnailUrl": "/photo-books/bamboo-leaves-1.webp"
+    },
+    {
+      "id": "best-day",
+      "name": "Best Day",
+      "imageCount": 2,
+      "thumbnailUrl": "/photo-books/best-day-1.webp"
+    },
+    {
+      "id": "box-modern",
+      "name": "Box Modern",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/box-modern-1.webp"
+    },
+    {
+      "id": "city-skyline",
+      "name": "City Skyline",
+      "imageCount": 2,
+      "thumbnailUrl": "/photo-books/city-skyline-1.webp"
+    },
+    {
+      "id": "color-explosion",
+      "name": "Color Explosion",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/color-explosion-1.webp"
+    },
+    {
+      "id": "diamond-geo",
+      "name": "Diamond Geo",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/diamond-geo-1.webp"
+    },
+    {
+      "id": "double-diamond",
+      "name": "Double Diamond",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/double-diamond-1.webp"
+    },
+    {
+      "id": "eat-drink-and-be-married",
+      "name": "Eat Drink And Be Married",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/eat-drink-and-be-married-1.webp"
+    },
+    {
+      "id": "endless-love",
+      "name": "Endless Love",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/endless-love-1.webp"
+    },
+    {
+      "id": "eucalyptus",
+      "name": "Eucalyptus",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/eucalyptus-1.webp"
+    },
+    {
+      "id": "feather-flowers",
+      "name": "Feather Flowers",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/feather-flowers-1.webp"
+    },
+    {
+      "id": "floral-swirls",
+      "name": "Floral Swirls",
+      "imageCount": 2,
+      "thumbnailUrl": "/photo-books/floral-swirls-1.webp"
+    },
+    {
+      "id": "geo-flowers",
+      "name": "Geo Flowers",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/geo-flowers-1.webp"
+    },
+    {
+      "id": "geo-sparks",
+      "name": "Geo Sparks",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/geo-sparks-1.webp"
+    },
+    {
+      "id": "hanging-sign",
+      "name": "Hanging Sign",
+      "imageCount": 8,
+      "thumbnailUrl": "/photo-books/hanging-sign-1.webp"
+    },
+    {
+      "id": "heart-duo",
+      "name": "Heart Duo",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/heart-duo-1.webp"
+    },
+    {
+      "id": "keep-it-simple",
+      "name": "Keep It Simple",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/keep-it-simple-1.webp"
+    },
+    {
+      "id": "lace-design",
+      "name": "Lace Design",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/lace-design-1.webp"
+    },
+    {
+      "id": "line-simple",
+      "name": "Line Simple",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/line-simple-1.webp"
+    },
+    {
+      "id": "mums",
+      "name": "Mums",
+      "imageCount": 2,
+      "thumbnailUrl": "/photo-books/mums-1.webp"
+    },
+    {
+      "id": "picture-frames",
+      "name": "Picture Frames",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/picture-frames-1.webp"
+    },
+    {
+      "id": "polka-dots",
+      "name": "Polka Dots",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/polka-dots-1.webp"
+    },
+    {
+      "id": "thistle-flower",
+      "name": "Thistle Flower",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/thistle-flower-1.webp"
+    },
+    {
+      "id": "vintage-lanterns",
+      "name": "Vintage Lanterns",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/vintage-lanterns-1.webp"
+    },
+    {
+      "id": "wildflower-stencil",
+      "name": "Wildflower Stencil",
+      "imageCount": 6,
+      "thumbnailUrl": "/photo-books/wildflower-stencil-1.webp"
+    }
+  ],
+  "badges": [
+    {
+      "name": "WeddingWire",
+      "filename": "weddingwire.png",
+      "color": "#6C5CE7",
+      "url": "https://www.weddingwire.com/biz/noteworthy-djs-portland/9661cffdf7751c14.html"
+    },
+    {
+      "name": "The Knot",
+      "filename": "theknot.png",
+      "color": "#FF6B9D",
+      "url": "https://www.theknot.com/marketplace/redirect-558056"
+    },
+    {
+      "name": "Yelp",
+      "filename": "yelp.png",
+      "color": "#D32323",
+      "url": "https://www.yelp.com/biz/noteworthy-djs-and-photo-booths-portland"
+    },
+    {
+      "name": "Google",
+      "filename": "google.png",
+      "color": "#4285F4",
+      "url": "https://g.page/r/CZfmtyV1dyK0EBM/review"
+    },
+    {
+      "name": "Zola",
+      "filename": "zola.png",
+      "color": "#2EC4B6",
+      "url": "https://www.zola.com/wedding-vendors/wedding-bands-djs/noteworthy-djs-photo-booths"
+    },
+    {
+      "name": "BBB",
+      "filename": "bbb.png",
+      "color": "#003366",
+      "url": "https://www.bbb.org/us/or/portland/profile/photo-booth-rental/YOUR-ID"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Jennifer Martinez",
+      "company": "Nike",
+      "quote": "Noteworthy Photo Booths made our corporate event unforgettable! The 360 booth was a huge hit and the team was incredibly professional.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "David Thompson",
+      "company": "Intel",
+      "quote": "From setup to teardown, everything was seamless. Our employees are still talking about the mirror booth experience!",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Amanda Lee",
+      "company": "Adidas",
+      "quote": "The open-air booth was perfect for our product launch. High quality prints and excellent service throughout.",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Robert Kim",
+      "company": "Columbia Sportswear",
+      "quote": "Best investment we made for our company party. The photo books are now treasured keepsakes for our team.",
+      "rating": 5
+    }
+  ],
+  "pricing": {
+    "basePackage": {
+      "duration": 3,
+      "durationUnit": "hours",
+      "startingPrice": 700,
+      "currency": "USD",
+      "includes": [
+        "3 hours of booth service",
+        "Unlimited photo sessions",
+        "Two 2x6\" prints per session",
+        "Props package",
+        "Digital copies",
+        "On-site attendant"
+      ]
+    },
+    "addOns": {
+      "extraHour": 150,
+      "photoBook": {
+        "standard": null,
+        "custom": null,
+        "description": "Contact for pricing"
+      },
+      "customBackdrop": {
+        "description": "Contact for pricing"
+      }
+    },
+    "notes": [
+      "*Instant prints not available for selfie-station or 360 booths",
+      "Travel fees may apply for locations outside Portland metro area",
+      "Custom packages available - contact for quote"
+    ]
+  }
+}
