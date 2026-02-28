@@ -117,6 +117,7 @@ export default function NoteworthyPhotoBooths() {
         '/img/booths/open-air-booth-5.webp'
       ],
       icon: '📸',
+      bookingUrl: 'https://noteworthy-djs.checkcherry.com/reservation/set_event?event_type_id=105359',
       features: [
         'Accommodates groups of any size',
         'Professional DSLR camera',
@@ -140,6 +141,7 @@ export default function NoteworthyPhotoBooths() {
         '/img/booths/selfie-station-booth-5.webp'
       ],
       icon: '🤳',
+      bookingUrl: 'https://noteworthy-djs.checkcherry.com/reservation/set_event?event_type_id=105358',
       features: [
         'Compact and space-efficient',
         'Touchscreen interface',
@@ -163,6 +165,7 @@ export default function NoteworthyPhotoBooths() {
         '/img/booths/360-booth-5.webp'
       ],
       icon: '🎬',
+      bookingUrl: 'https://noteworthy-djs.checkcherry.com/reservation/set_event?event_type_id=105361',
       features: [
         '360-degree slow-motion videos',
         'Rotating camera arm',
@@ -186,6 +189,7 @@ export default function NoteworthyPhotoBooths() {
         '/img/booths/mirror-booth-5.webp'
       ],
       icon: '🪞',
+      bookingUrl: 'https://noteworthy-djs.checkcherry.com/reservation/set_event?event_type_id=105362',
       features: [
         'Full-length interactive mirror',
         'Touch-activated animations',
@@ -3238,22 +3242,22 @@ export default function NoteworthyPhotoBooths() {
                   </div>
                   
                   {/* Book Now Button in Features Column */}
-                  <button 
+                  <a 
+                    href={activeBoothModal.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-primary" 
                     style={{ 
                       width: '100%', 
                       justifyContent: 'center', 
                       fontSize: '18px',
-                      padding: '16px'
-                    }}
-                    onClick={() => {
-                      setActiveBoothModal(null);
-                      setCurrentBoothImage(0);
-                      scrollToSection('contact');
+                      padding: '16px',
+                      display: 'flex',
+                      textDecoration: 'none'
                     }}
                   >
                     Book This Booth Now
-                  </button>
+                  </a>
                 </div>
               </div>
 
