@@ -491,7 +491,7 @@ export default function NoteworthyPhotoBooths() {
 
         .modal-content {
           background: #f4f4f4;
-          border-radius: 16px;
+          border-radius: 0;
           max-width: 600px;
           width: 100%;
           max-height: 90vh;
@@ -505,7 +505,7 @@ export default function NoteworthyPhotoBooths() {
           color: #f4f4f4;
           padding: 14px 32px;
           border: none;
-          border-radius: 8px;
+          border-radius: 0;
           font-weight: 600;
           font-size: 16px;
           cursor: pointer;
@@ -3220,7 +3220,8 @@ export default function NoteworthyPhotoBooths() {
                   <div style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '12px'
+                    gap: '12px',
+                    marginBottom: '24px'
                   }}>
                     {activeBoothModal.features.map((feature, idx) => (
                       <div key={idx} style={{
@@ -3235,6 +3236,24 @@ export default function NoteworthyPhotoBooths() {
                       </div>
                     ))}
                   </div>
+                  
+                  {/* Book Now Button in Features Column */}
+                  <button 
+                    className="btn-primary" 
+                    style={{ 
+                      width: '100%', 
+                      justifyContent: 'center', 
+                      fontSize: '18px',
+                      padding: '16px'
+                    }}
+                    onClick={() => {
+                      setActiveBoothModal(null);
+                      setCurrentBoothImage(0);
+                      scrollToSection('contact');
+                    }}
+                  >
+                    Book This Booth Now
+                  </button>
                 </div>
               </div>
 
@@ -3337,24 +3356,6 @@ export default function NoteworthyPhotoBooths() {
                   <div></div>
                 )}
               </div>
-
-              {/* Book Now Button */}
-              <button 
-                className="btn-primary" 
-                style={{ 
-                  width: '100%', 
-                  justifyContent: 'center', 
-                  fontSize: '18px',
-                  padding: '16px'
-                }}
-                onClick={() => {
-                  setActiveBoothModal(null);
-                  setCurrentBoothImage(0);
-                  scrollToSection('contact');
-                }}
-              >
-                Book This Booth Now
-              </button>
             </div>
           </div>
         </div>
