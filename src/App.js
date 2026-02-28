@@ -126,7 +126,8 @@ export default function NoteworthyPhotoBooths() {
         'Instant 2×6" prints',
         'Digital sharing options',
         'All photos available in your account after event',
-        'Free travel within 50 miles of Portland, OR'
+        'Free travel within 50 miles of Portland, OR',
+        'Starting at $899'
       ]
     },
     {
@@ -152,7 +153,8 @@ export default function NoteworthyPhotoBooths() {
         'Perfect for corporate events',
         'No prints (digital only)',
         'All photos available in your account after event',
-        'Free travel within 50 miles of Portland, OR'
+        'Free travel within 50 miles of Portland, OR',
+        'Starting at $599'
       ]
     },
     {
@@ -178,7 +180,8 @@ export default function NoteworthyPhotoBooths() {
         'Social media optimized',
         'No prints (video only)',
         'All videos available in your account after event',
-        'Free travel within 50 miles of Portland, OR'
+        'Free travel within 50 miles of Portland, OR',
+        'Starting at $699'
       ]
     },
     {
@@ -204,7 +207,8 @@ export default function NoteworthyPhotoBooths() {
         'Instant 2×6" prints',
         'Unique guest experience',
         'All photos available in your account after event',
-        'Free travel within 50 miles of Portland, OR'
+        'Free travel within 50 miles of Portland, OR',
+        'Starting at $999'
       ]
     }
   ];
