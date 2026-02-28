@@ -729,13 +729,7 @@ export default function NoteworthyPhotoBooths() {
           }
         }
 
-        /* Hero Mobile Image Setup:
-           1. Add your mobile hero image to /public/hero-mobile.jpg
-           2. Uncomment the CSS below (remove the /* and */ lines)
-           3. Image will show on mobile (≤768px), video shows on desktop
-           Recommended image size: 1080px wide × 1920px tall (portrait)
-        */
-        /*
+        /* Hero Mobile Portrait Image - Active */
         @media (max-width: 768px) {
           .hero-video {
             display: none;
@@ -744,7 +738,6 @@ export default function NoteworthyPhotoBooths() {
             display: block !important;
           }
         }
-        */
 
         /* Mobile Hero Vertical Centering */
         @media (max-width: 768px) {
@@ -898,7 +891,7 @@ export default function NoteworthyPhotoBooths() {
         position: 'relative',
         overflow: 'hidden'
       }}>
-        {/* Hero Video Background */}
+        {/* Hero Video Background - Desktop */}
         <video className="hero-video" autoPlay muted loop playsInline style={{
           position: 'absolute',
           top: '50%',
@@ -913,6 +906,26 @@ export default function NoteworthyPhotoBooths() {
         }}>
           <source src={process.env.PUBLIC_URL + '/NWPB_Home_Page_Video_v3.webm'} type="video/webm" />
         </video>
+
+        {/* Hero Image Background - Mobile Portrait */}
+        <img 
+          className="hero-mobile-image"
+          src={process.env.PUBLIC_URL + '/img/hero-mobile-portrait.webp'}
+          alt="Noteworthy Photo Booths"
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            minWidth: '100%',
+            minHeight: '100%',
+            width: 'auto',
+            height: 'auto',
+            transform: 'translate(-50%, -50%)',
+            objectFit: 'cover',
+            zIndex: 0,
+            display: 'none'
+          }}
+        />
 
         {/* Overlay - Darker for better readability */}
         <div style={{
