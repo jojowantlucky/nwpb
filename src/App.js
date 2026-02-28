@@ -3025,7 +3025,7 @@ export default function NoteworthyPhotoBooths() {
       </footer>
 
       {/* Booth Info Modal */}
-      {/* Photo Booth Modal with Carousel */}
+      {/* Photo Booth Modal with Two-Column Layout */}
       {activeBoothModal && (
         <div className="modal-overlay" onClick={() => { setActiveBoothModal(null); setCurrentBoothImage(0); }}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{
@@ -3080,162 +3080,180 @@ export default function NoteworthyPhotoBooths() {
                 {activeBoothModal.subtitle}
               </p>
 
-              {/* Image Carousel */}
+              {/* Two-Column Layout: Image + Features */}
               <div style={{
-                position: 'relative',
-                marginBottom: '40px',
-                background: '#f9f9f9',
-                borderRadius: '0',
-                overflow: 'hidden',
-                maxWidth: '600px',
-                margin: '0 auto 40px'
-              }}>
-                {/* Main Image */}
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '32px',
+                marginBottom: '32px'
+              }}
+              className="booth-modal-columns"
+              >
+                {/* Left Column: Image Carousel */}
                 <div style={{
-                  width: '100%',
-                  paddingBottom: '40%', // Compact ratio - more content above fold
                   position: 'relative',
-                  background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)'
+                  background: '#f9f9f9',
+                  borderRadius: '0',
+                  overflow: 'hidden'
                 }}>
-                  {/* Placeholder - will show gradient until images added */}
+                  {/* Main Image - Square Aspect Ratio */}
                   <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
                     width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '80px',
-                    opacity: 0.3
+                    paddingBottom: '100%', // 1:1 square ratio
+                    position: 'relative',
+                    background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)'
                   }}>
-                    {activeBoothModal.icon}
-                  </div>
-                  {/* When you add images, uncomment this:
-                  <img
-                    src={process.env.PUBLIC_URL + activeBoothModal.images[currentBoothImage]}
-                    alt={`${activeBoothModal.name} ${currentBoothImage + 1}`}
-                    style={{
+                    {/* Placeholder - will show gradient until images added */}
+                    <div style={{
                       position: 'absolute',
                       top: 0,
                       left: 0,
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover'
-                    }}
-                  />
-                  */}
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '80px',
+                      opacity: 0.3
+                    }}>
+                      {activeBoothModal.icon}
+                    </div>
+                    {/* When you add images, uncomment this:
+                    <img
+                      src={process.env.PUBLIC_URL + activeBoothModal.images[currentBoothImage]}
+                      alt={`${activeBoothModal.name} ${currentBoothImage + 1}`}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                    />
+                    */}
+                  </div>
+
+                  {/* Previous Arrow */}
+                  {currentBoothImage > 0 && (
+                    <button
+                      onClick={() => setCurrentBoothImage(currentBoothImage - 1)}
+                      style={{
+                        position: 'absolute',
+                        left: '8px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        background: 'rgba(255, 255, 255, 0.9)',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                        zIndex: 2
+                      }}
+                    >
+                      <ChevronLeft size={24} color="#4a4a4a" />
+                    </button>
+                  )}
+
+                  {/* Next Arrow */}
+                  {currentBoothImage < activeBoothModal.images.length - 1 && (
+                    <button
+                      onClick={() => setCurrentBoothImage(currentBoothImage + 1)}
+                      style={{
+                        position: 'absolute',
+                        right: '8px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        background: 'rgba(255, 255, 255, 0.9)',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                        zIndex: 2
+                      }}
+                    >
+                      <ChevronRight size={24} color="#4a4a4a" />
+                    </button>
+                  )}
+
+                  {/* Image Counter */}
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '12px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'rgba(0, 0, 0, 0.7)',
+                    color: '#FFFFFF',
+                    padding: '6px 12px',
+                    borderRadius: '0',
+                    fontSize: '13px',
+                    fontWeight: 600
+                  }}>
+                    {currentBoothImage + 1} / {activeBoothModal.images.length}
+                  </div>
                 </div>
 
-                {/* Previous Arrow */}
-                {currentBoothImage > 0 && (
-                  <button
-                    onClick={() => setCurrentBoothImage(currentBoothImage - 1)}
-                    style={{
-                      position: 'absolute',
-                      left: '16px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      background: 'rgba(255, 255, 255, 0.9)',
-                      border: 'none',
-                      borderRadius: '50%',
-                      width: '48px',
-                      height: '48px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                      zIndex: 2
-                    }}
-                  >
-                    <ChevronLeft size={28} color="#4a4a4a" />
-                  </button>
-                )}
-
-                {/* Next Arrow */}
-                {currentBoothImage < activeBoothModal.images.length - 1 && (
-                  <button
-                    onClick={() => setCurrentBoothImage(currentBoothImage + 1)}
-                    style={{
-                      position: 'absolute',
-                      right: '16px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      background: 'rgba(255, 255, 255, 0.9)',
-                      border: 'none',
-                      borderRadius: '50%',
-                      width: '48px',
-                      height: '48px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                      zIndex: 2
-                    }}
-                  >
-                    <ChevronRight size={28} color="#4a4a4a" />
-                  </button>
-                )}
-
-                {/* Image Counter */}
+                {/* Right Column: Features List */}
                 <div style={{
-                  position: 'absolute',
-                  bottom: '16px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  background: 'rgba(0, 0, 0, 0.7)',
-                  color: '#FFFFFF',
-                  padding: '8px 16px',
-                  borderRadius: '0',
-                  fontSize: '14px',
-                  fontWeight: 600
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center'
                 }}>
-                  {currentBoothImage + 1} / {activeBoothModal.images.length}
+                  <h4 className="body-font" style={{
+                    fontSize: '20px',
+                    fontWeight: 600,
+                    color: '#4a4a4a',
+                    marginBottom: '20px'
+                  }}>
+                    Key Features:
+                  </h4>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  }}>
+                    {activeBoothModal.features.map((feature, idx) => (
+                      <div key={idx} style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px'
+                      }}>
+                        <Check size={20} color="#e86c6c" strokeWidth={3} style={{ flexShrink: 0 }} />
+                        <span className="body-font" style={{ fontSize: '15px', color: '#9b9b9b' }}>
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="body-font" style={{
-                fontSize: '17px',
-                color: '#9b9b9b',
-                lineHeight: 1.7,
-                marginBottom: '40px',
-                textAlign: 'center'
+              {/* Full-Width Description */}
+              <div style={{
+                marginBottom: '32px',
+                paddingTop: '24px',
+                borderTop: '1px solid rgba(18, 18, 18, 0.08)'
               }}>
-                {activeBoothModal.description}
-              </p>
-
-              {/* Features List */}
-              <div style={{ marginBottom: '40px' }}>
-                <h4 className="body-font" style={{
-                  fontSize: '20px',
-                  fontWeight: 600,
-                  color: '#4a4a4a',
-                  marginBottom: '20px'
+                <p className="body-font" style={{
+                  fontSize: '16px',
+                  color: '#9b9b9b',
+                  lineHeight: 1.7,
+                  textAlign: 'center',
+                  maxWidth: '800px',
+                  margin: '0 auto'
                 }}>
-                  Key Features:
-                </h4>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                  gap: '12px'
-                }}>
-                  {activeBoothModal.features.map((feature, idx) => (
-                    <div key={idx} style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px'
-                    }}>
-                      <Check size={20} color="#e86c6c" strokeWidth={3} />
-                      <span className="body-font" style={{ fontSize: '15px', color: '#9b9b9b' }}>
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                  {activeBoothModal.description}
+                </p>
               </div>
 
               {/* Navigation Bar - Next/Previous Booth */}
