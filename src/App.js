@@ -124,7 +124,8 @@ export default function NoteworthyPhotoBooths() {
         'Customizable backdrop options',
         'Perfect for high-traffic events',
         'Instant 2×6" prints',
-        'Digital sharing options'
+        'Digital sharing options',
+        'All photos available in your account after event'
       ]
     },
     {
@@ -148,7 +149,8 @@ export default function NoteworthyPhotoBooths() {
         'Unlimited digital photos',
         'Social media sharing',
         'Perfect for corporate events',
-        'No prints (digital only)'
+        'No prints (digital only)',
+        'All photos available in your account after event'
       ]
     },
     {
@@ -172,7 +174,8 @@ export default function NoteworthyPhotoBooths() {
         'Platform for guests',
         'Instant digital sharing',
         'Social media optimized',
-        'No prints (video only)'
+        'No prints (video only)',
+        'All videos available in your account after event'
       ]
     },
     {
@@ -196,7 +199,8 @@ export default function NoteworthyPhotoBooths() {
         'Digital signature feature',
         'Animated emoji stamps',
         'Instant 2×6" prints',
-        'Unique guest experience'
+        'Unique guest experience',
+        'All photos available in your account after event'
       ]
     }
   ];
