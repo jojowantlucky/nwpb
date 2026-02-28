@@ -125,7 +125,8 @@ export default function NoteworthyPhotoBooths() {
         'Perfect for high-traffic events',
         'Instant 2×6" prints',
         'Digital sharing options',
-        'All photos available in your account after event'
+        'All photos available in your account after event',
+        'Free travel within 50 miles of Portland, OR'
       ]
     },
     {
@@ -150,7 +151,8 @@ export default function NoteworthyPhotoBooths() {
         'Social media sharing',
         'Perfect for corporate events',
         'No prints (digital only)',
-        'All photos available in your account after event'
+        'All photos available in your account after event',
+        'Free travel within 50 miles of Portland, OR'
       ]
     },
     {
@@ -175,7 +177,8 @@ export default function NoteworthyPhotoBooths() {
         'Instant digital sharing',
         'Social media optimized',
         'No prints (video only)',
-        'All videos available in your account after event'
+        'All videos available in your account after event',
+        'Free travel within 50 miles of Portland, OR'
       ]
     },
     {
@@ -200,7 +203,8 @@ export default function NoteworthyPhotoBooths() {
         'Animated emoji stamps',
         'Instant 2×6" prints',
         'Unique guest experience',
-        'All photos available in your account after event'
+        'All photos available in your account after event',
+        'Free travel within 50 miles of Portland, OR'
       ]
     }
   ];
