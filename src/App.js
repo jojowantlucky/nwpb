@@ -1992,49 +1992,6 @@ export default function NoteworthyPhotoBooths() {
       </section>
 
       {/* Parallax Divider */}
-      <section style={{
-        height: '300px',
-        background: '#f9f9f9',
-        position: 'relative',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
-        {/* Animated Pattern */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `
-            radial-gradient(circle at 20% 50%, rgba(74, 74, 74, 0.05) 1px, transparent 1px),
-            radial-gradient(circle at 80% 50%, rgba(74, 74, 74, 0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-          opacity: 0.5,
-          transform: 'translateZ(0)',
-          willChange: 'transform'
-        }}
-        className="parallax-bg"
-        />
-        
-        {/* Decorative Elements */}
-        <div style={{
-          position: 'relative',
-          zIndex: 1,
-          fontSize: '80px',
-          opacity: 0.08,
-          display: 'flex',
-          gap: '40px',
-          animation: 'float 4s ease-in-out infinite'
-        }}>
-          <span>📸</span>
-          <span>🎉</span>
-          <span>✨</span>
-        </div>
-      </section>
       {/* Team Section - NWDJ Style */}
       <section id="team" className="section-padding" style={{ background: '#FFFFFF' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
