@@ -108,13 +108,13 @@ export default function NoteworthyPhotoBooths() {
       name: 'Open-Air Photo Booth',
       subtitle: 'Perfect For Any Group Size',
       description: 'Our open-air booths accommodate groups of any size and can be positioned anywhere at your venue. Professional DSLR camera with customizable backdrop options, perfect for high-traffic events.',
-      image: '/img/booths/open-air-booth.webp',
+      image: '/img/booths/open-air-booth/open-air-booth.webp',
       images: [
-        '/img/booths/open-air-booth-1.webp',
-        '/img/booths/open-air-booth-2.webp',
-        '/img/booths/open-air-booth-3.webp',
-        '/img/booths/open-air-booth-4.webp',
-        '/img/booths/open-air-booth-5.webp'
+        '/img/booths/open-air-booth/open-air-booth.webp',
+        '/img/booths/open-air-booth/open-air-booth2.webp',
+        '/img/booths/open-air-booth/open-air-booth3.webp',
+        '/img/booths/open-air-booth/open-air-booth4.webp',
+        '/img/booths/open-air-booth/open-air-booth5.webp'
       ],
       icon: '📸',
       bookingUrl: 'https://noteworthy-djs.checkcherry.com/reservation/set_event?event_type_id=105359',
@@ -135,13 +135,13 @@ export default function NoteworthyPhotoBooths() {
       name: 'Selfie-Station Booth',
       subtitle: 'Compact & Modern',
       description: 'A compact, modern solution perfect for corporate events and smaller venues. Guests can take unlimited photos using a touchscreen interface with digital sharing options.',
-      image: '/img/booths/selfie-station-booth.webp',
+      image: '/img/booths/selfie-station/selfie-station-booth.webp',
       images: [
-        '/img/booths/selfie-station-booth-1.webp',
-        '/img/booths/selfie-station-booth-2.webp',
-        '/img/booths/selfie-station-booth-3.webp',
-        '/img/booths/selfie-station-booth-4.webp',
-        '/img/booths/selfie-station-booth-5.webp'
+        '/img/booths/selfie-station/selfie-station-booth.webp',
+        '/img/booths/selfie-station/selfie-station2.webp',
+        '/img/booths/selfie-station/selfie-station3.webp',
+        '/img/booths/selfie-station/selfie-station4.webp',
+        '/img/booths/selfie-station/selfie-station5.webp'
       ],
       icon: '🤳',
       bookingUrl: 'https://noteworthy-djs.checkcherry.com/reservation/set_event?event_type_id=105358',
@@ -162,13 +162,13 @@ export default function NoteworthyPhotoBooths() {
       name: '360 Photo Booth',
       subtitle: 'Stunning Slow-Motion Videos',
       description: 'Create stunning slow-motion videos with our revolutionary 360-degree video booth. Guests stand on a platform while a camera rotates around them, capturing dynamic content perfect for social sharing.',
-      image: '/img/booths/booth-360.webp',
+      image: '/img/booths/booth-360/booth-360.webp',
       images: [
-        '/img/booths/360-booth-1.webp',
-        '/img/booths/360-booth-2.webp',
-        '/img/booths/360-booth-3.webp',
-        '/img/booths/360-booth-4.webp',
-        '/img/booths/360-booth-5.webp'
+        '/img/booths/booth-360/booth-360.webp',
+        '/img/booths/booth-360/booth-360-2.webp',
+        '/img/booths/booth-360/booth-360-3.webp',
+        '/img/booths/booth-360/booth-360-4.webp',
+        '/img/booths/booth-360/booth-360.webp'
       ],
       icon: '🎬',
       bookingUrl: 'https://noteworthy-djs.checkcherry.com/reservation/set_event?event_type_id=105361',
@@ -189,13 +189,13 @@ export default function NoteworthyPhotoBooths() {
       name: 'Mirror Photo Booth',
       subtitle: 'Interactive Touch Experience',
       description: 'An interactive experience featuring a full-length mirror that comes alive with animations and prompts. Touch the mirror to take photos, sign your prints, and enjoy animated emoji stamps for a truly unique photo booth experience.',
-      image: '/img/booths/mirror-booth.webp',
+      image: '/img/booths/mirror-booth/mirror-booth.webp',
       images: [
-        '/img/booths/mirror-booth-1.webp',
-        '/img/booths/mirror-booth-2.webp',
-        '/img/booths/mirror-booth-3.webp',
-        '/img/booths/mirror-booth-4.webp',
-        '/img/booths/mirror-booth-5.webp'
+        '/img/booths/mirror-booth/mirror-booth.webp',
+        '/img/booths/mirror-booth/mirror-booth2.webp',
+        '/img/booths/mirror-booth/mirror-booth3.webp',
+        '/img/booths/mirror-booth/mirror-booth4.webp',
+        '/img/booths/mirror-booth/mirror-booth.webp'
       ],
       icon: '🪞',
       bookingUrl: 'https://noteworthy-djs.checkcherry.com/reservation/set_event?event_type_id=105362',
@@ -3122,22 +3122,7 @@ export default function NoteworthyPhotoBooths() {
                     position: 'relative',
                     background: 'linear-gradient(135deg, #e86c6c 0%, #ff5c94 100%)'
                   }}>
-                    {/* Placeholder - will show gradient until images added */}
-                    <div style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '80px',
-                      opacity: 0.3
-                    }}>
-                      {activeBoothModal.icon}
-                    </div>
-                    {/* When you add images, uncomment this:
+                    {/* Booth Image */}
                     <img
                       src={process.env.PUBLIC_URL + activeBoothModal.images[currentBoothImage]}
                       alt={`${activeBoothModal.name} ${currentBoothImage + 1}`}
@@ -3150,7 +3135,6 @@ export default function NoteworthyPhotoBooths() {
                         objectFit: 'cover'
                       }}
                     />
-                    */}
                   </div>
 
                   {/* Previous Arrow */}
