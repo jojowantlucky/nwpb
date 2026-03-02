@@ -2395,8 +2395,9 @@ export default function NoteworthyPhotoBooths() {
         </div>
       </section>
 
+      {/* TEMPORARILY COMMENTED OUT - What Our Clients Say Section
       {/* Testimonials */}
-      <section className="section-padding" style={{ background: '#F8FAFB' }}>
+      {/* <section className="section-padding" style={{ background: '#F8FAFB' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <p className="script-font" style={{
@@ -2491,7 +2492,8 @@ export default function NoteworthyPhotoBooths() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      {/* END COMMENTED OUT SECTION */}
 
       {/* Book With Confidence Section - NWDJ Style */}
       <section id="reviews" className="section-padding" style={{ 
