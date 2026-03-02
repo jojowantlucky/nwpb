@@ -2640,14 +2640,23 @@ export default function NoteworthyPhotoBooths() {
             {[...Array(3)].map((_, setIndex) => (
               <React.Fragment key={setIndex}>
                 {[
-                  { name: 'Nike', logo: '✓', color: '#4a4a4a' },
-                  { name: 'Intel', logo: '◉', color: '#0071C5' },
-                  { name: 'Adidas', logo: '⚡', color: '#4a4a4a' },
-                  { name: 'Columbia', logo: '▲', color: '#1D4F91' },
-                  { name: 'Google', logo: 'G', color: '#4285F4' },
-                  { name: 'Amazon', logo: '↗', color: '#FF9900' },
-                  { name: 'Microsoft', logo: '⊞', color: '#00A4EF' },
-                  { name: 'Apple', logo: '', color: '#4a4a4a' }
+                  { name: 'Alaska Airlines', filename: 'alaska-airlines.webp' },
+                  { name: 'Ann Sacks', filename: 'ann-sacks.webp' },
+                  { name: 'Beaverton Auto Group', filename: 'beaverton-auto-group.webp' },
+                  { name: 'Camas High School', filename: 'camas-highschool.webp' },
+                  { name: 'Colas Construction', filename: 'colas-construction.webp' },
+                  { name: 'Damerow Ford', filename: 'damerow-ford.webp' },
+                  { name: 'Ebara', filename: 'ebara.webp' },
+                  { name: 'Extreme Excavating', filename: 'extreme-excavating.webp' },
+                  { name: 'Gerding Companies', filename: 'gerding-companies.webp' },
+                  { name: 'Horizon Airlines', filename: 'horizon-airlines.webp' },
+                  { name: 'Hormel', filename: 'hormel.webp' },
+                  { name: 'NACADA', filename: 'nacada.webp' },
+                  { name: 'OMSI', filename: 'omsi.webp' },
+                  { name: 'Porsche', filename: 'porche.webp' },
+                  { name: 'RVK', filename: 'rvk.webp' },
+                  { name: 'TEC Equipment', filename: 'tec-equipment.webp' },
+                  { name: 'Turner Construction Company', filename: 'turner-construction-company.webp' }
                 ].map((client, index) => (
                   <div
                     key={`${setIndex}-${index}`}
@@ -2661,7 +2670,8 @@ export default function NoteworthyPhotoBooths() {
                       borderRadius: '0',
                       border: '1px solid rgba(18, 18, 18, 0.08)',
                       transition: 'all 0.3s ease',
-                      cursor: 'pointer'
+                      cursor: 'pointer',
+                      padding: '12px'
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = 'scale(1.05)';
@@ -2672,24 +2682,26 @@ export default function NoteworthyPhotoBooths() {
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
-                    <div style={{ textAlign: 'center' }}>
-                      <div style={{
-                        fontSize: '36px',
-                        fontWeight: 'bold',
-                        color: client.color,
-                        marginBottom: '8px'
-                      }}>
-                        {client.logo}
-                      </div>
-                      <div className="body-font" style={{
-                        fontSize: '14px',
-                        fontWeight: 600,
-                        color: '#4a4a4a',
-                        letterSpacing: '1px'
-                      }}>
-                        {client.name}
-                      </div>
-                    </div>
+                    <img
+                      src={process.env.PUBLIC_URL + `/img/clients/${client.filename}`}
+                      alt={client.name}
+                      style={{
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain',
+                        filter: 'grayscale(100%)',
+                        opacity: 0.7,
+                        transition: 'all 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.filter = 'grayscale(0%)';
+                        e.currentTarget.style.opacity = '1';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.filter = 'grayscale(100%)';
+                        e.currentTarget.style.opacity = '0.7';
+                      }}
+                    />
                   </div>
                 ))}
               </React.Fragment>
