@@ -1,0 +1,78 @@
+[
+  {
+    "id": "open-air",
+    "name": "Open-Air Photo Booth",
+    "image": "/img/booths/open-air-booth.webp",
+    "alt": "Open-air photo booth with professional DSLR camera",
+    "description": "Our open-air booths accommodate groups of any size and can be positioned anywhere at your venue. Professional DSLR camera with customizable backdrop options, perfect for high-traffic events.",
+    "features": [
+      "Accommodates groups of any size",
+      "Professional DSLR camera",
+      "Customizable backdrop options",
+      "Perfect for high-traffic events",
+      "Instant 2×6\" prints",
+      "Digital sharing options",
+      "All photos available in your account after event",
+      "Free travel within 50 miles of Portland, OR",
+      "Starting at $899"
+    ],
+    "printNote": "Included"
+  },
+  {
+    "id": "selfie-station",
+    "name": "Selfie-Station Booth",
+    "image": "/img/booths/selfie-station-booth.webp",
+    "alt": "Selfie-station photo booth with touchscreen interface",
+    "description": "A compact, modern solution perfect for corporate events and smaller venues. Guests can take unlimited photos using a touchscreen interface with digital sharing options.",
+    "features": [
+      "Compact and space-efficient",
+      "Touchscreen interface",
+      "Unlimited digital photos",
+      "Social media sharing",
+      "Perfect for corporate events",
+      "No prints (digital only)",
+      "All photos available in your account after event",
+      "Free travel within 50 miles of Portland, OR",
+      "Starting at $599"
+    ],
+    "printNote": "Not Available"
+  },
+  {
+    "id": "360",
+    "name": "360 Photo Booth",
+    "image": "/img/booths/booth-360.webp",
+    "alt": "360 photo booth with rotating camera capturing slow-motion video",
+    "description": "Create stunning slow-motion videos with our revolutionary 360-degree video booth. Guests stand on a platform while a camera rotates around them, capturing dynamic content perfect for social sharing.",
+    "features": [
+      "360-degree slow-motion videos",
+      "Rotating camera arm",
+      "Platform for guests",
+      "Instant digital sharing",
+      "Social media optimized",
+      "No prints (video only)",
+      "All videos available in your account after event",
+      "Free travel within 50 miles of Portland, OR",
+      "Starting at $699"
+    ],
+    "printNote": "Not Available"
+  },
+  {
+    "id": "mirror",
+    "name": "Mirror Photo Booth",
+    "image": "/img/booths/mirror-booth.webp",
+    "alt": "Interactive mirror photo booth with touch animations",
+    "description": "An interactive experience featuring a full-length mirror that comes alive with animations and prompts. Touch the mirror to take photos, sign your prints, and enjoy animated emoji stamps for a truly unique photo booth experience.",
+    "features": [
+      "Full-length interactive mirror",
+      "Touch-activated animations",
+      "Digital signature feature",
+      "Animated emoji stamps",
+      "Instant 2×6\" prints",
+      "Unique guest experience",
+      "All photos available in your account after event",
+      "Free travel within 50 miles of Portland, OR",
+      "Starting at $999"
+    ],
+    "printNote": "Included"
+  }
+]

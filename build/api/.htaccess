@@ -1,0 +1,30 @@
+# Allow access to API directory
+<IfModule mod_authz_core.c>
+    Require all granted
+</IfModule>
+
+# For older Apache versions
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Allow from all
+</IfModule>
+
+# Set correct MIME type for JSON
+<IfModule mod_mime.c>
+    AddType application/json .json
+</IfModule>
+
+# Enable CORS if needed
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Enable MultiViews to allow /api/packages to work without trailing slash
+<IfModule mod_negotiation.c>
+    Options +MultiViews
+</IfModule>

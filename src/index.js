@@ -10,7 +10,7 @@ import Backdrops from './Backdrops';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/nwpb_updates">
+    <BrowserRouter basename={process.env.PUBLIC_URL || ''}>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/photo-books" element={<PhotoBooks />} />
