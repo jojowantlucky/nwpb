@@ -2364,26 +2364,33 @@ export default function NoteworthyPhotoBooths() {
             }}>
               We serve all cities throughout Washington and Oregon. Contact us to confirm availability for your location!
             </p>
-            <Link 
-              to="/areas-served"
-              className="btn-secondary"
-              style={{
-                display: 'inline-flex',
-                textDecoration: 'none',
-                fontSize: '14px',
-                padding: '12px 28px',
-                marginRight: '12px'
-              }}
-            >
-              View All Service Areas
-            </Link>
-            <button 
-              className="btn-primary" 
-              style={{ padding: '14px 32px', fontSize: '16px' }}
-              onClick={() => scrollToSection('contact')}
-            >
-              Contact Us
-            </button>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '16px',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              <Link 
+                to="/areas-served"
+                className="btn-secondary"
+                style={{
+                  display: 'inline-flex',
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                  padding: '12px 28px'
+                }}
+              >
+                View All Service Areas
+              </Link>
+              <button 
+                className="btn-primary" 
+                style={{ padding: '14px 32px', fontSize: '16px' }}
+                onClick={() => scrollToSection('contact')}
+              >
+                Contact Us
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -2503,6 +2510,18 @@ export default function NoteworthyPhotoBooths() {
             }}>
               Book With Confidence
             </h2>
+            
+            {/* Subheading */}
+            <p className="body-font" style={{
+              fontSize: '18px',
+              color: '#9b9b9b',
+              marginTop: '16px',
+              marginBottom: '0',
+              maxWidth: '700px',
+              margin: '16px auto 0'
+            }}>
+              Noteworthy Productions is proud to give our clients 5-star service
+            </p>
             
             {/* Line below */}
             <div style={{
