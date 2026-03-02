@@ -248,7 +248,7 @@ export default function NoteworthyPhotoBooths() {
     { icon: Clock, title: '3 Hours Photography', desc: 'Extended coverage time' },
     { icon: Image, title: 'Instant 2x6" Prints', desc: 'Two prints per session' },
     { icon: Users, title: 'Unlimited Sessions', desc: 'As many photos as you want' },
-    { icon: Sparkles, title: 'Props Included', desc: 'Fun accessories provided' },
+    { icon: Sparkles, title: 'Props Included', desc: 'Fun accessories provided*' },
     { icon: Share2, title: 'Social Sharing', desc: 'Text or email instantly' },
     { icon: Star, title: 'Custom Print Design', desc: 'Your assets or our templates' }
   ];
@@ -2185,9 +2185,11 @@ export default function NoteworthyPhotoBooths() {
               fontSize: '14px',
               color: '#999999',
               marginTop: '12px',
-              fontStyle: 'italic'
+              fontStyle: 'italic',
+              lineHeight: '1.6'
             }}>
-              *Instant prints not available for selfie-station or 360 booths
+              *Instant prints not available for selfie-station or 360 booths<br />
+              *Props not included with selfie-station booths
             </p>
           </div>
 
