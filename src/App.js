@@ -578,7 +578,7 @@ export default function NoteworthyPhotoBooths() {
 
         @media (min-width: 640px) {
           .badges-grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
           }
         }
 
