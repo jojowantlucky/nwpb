@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Camera, ChevronDown, ChevronLeft, ChevronRight, X, Phone, Mail, MapPin, Check, Star, Image, Book, Clock, Users, Sparkles, Share2, Menu, User } from 'lucide-react';
+import { Camera, ChevronDown, ChevronLeft, ChevronRight, X, Phone, Mail, MapPin, Check, Star, Image, Book, Clock, Users, Sparkles, Share2, Menu, User, Truck } from 'lucide-react';
 
 export default function NoteworthyPhotoBooths() {
   const [navVisible, setNavVisible] = useState(false);
@@ -250,7 +250,8 @@ export default function NoteworthyPhotoBooths() {
     { icon: Users, title: 'Unlimited Sessions', desc: 'As many photos as you want' },
     { icon: Sparkles, title: 'Props Included', desc: 'Fun accessories provided*' },
     { icon: Share2, title: 'Social Sharing', desc: 'Text or email instantly' },
-    { icon: Star, title: 'Custom Print Design', desc: 'Your assets or our templates' }
+    { icon: Star, title: 'Custom Print Design', desc: 'Your assets or our templates' },
+    { icon: Truck, title: 'Free Travel', desc: 'Within 50 miles of Portland', link: 'https://noteworthydjs.com/nwdjs_updates/services/dj-mc/', linkText: 'DJ services' }
   ];
 
   const photoBookDesigns = [
@@ -2189,7 +2190,8 @@ export default function NoteworthyPhotoBooths() {
               lineHeight: '1.6'
             }}>
               *Instant prints not available for selfie-station or 360 booths<br />
-              *Props not included with selfie-station booths
+              *Props not included with selfie-station booths<br />
+              *Travel fees waived when booking photo booth with DJ services
             </p>
           </div>
 
@@ -2256,12 +2258,40 @@ export default function NoteworthyPhotoBooths() {
                     }}>
                       {feature.title}
                     </h3>
-                    <p className="body-font" style={{
-                      fontSize: '15px',
-                      color: '#9b9b9b'
-                    }}>
-                      {feature.desc}
-                    </p>
+                    {feature.link ? (
+                      <p className="body-font" style={{
+                        fontSize: '15px',
+                        color: '#9b9b9b',
+                        lineHeight: '1.6'
+                      }}>
+                        {feature.desc}<br />
+                        <span style={{ fontSize: '13px', color: '#999999' }}>
+                          (Free with{' '}
+                          <a 
+                            href={feature.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              color: '#e86c6c',
+                              textDecoration: 'none',
+                              fontWeight: 600
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
+                            onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
+                          >
+                            {feature.linkText}
+                          </a>
+                          )
+                        </span>
+                      </p>
+                    ) : (
+                      <p className="body-font" style={{
+                        fontSize: '15px',
+                        color: '#9b9b9b'
+                      }}>
+                        {feature.desc}
+                      </p>
+                    )}
                   </div>
                 );
               })}
